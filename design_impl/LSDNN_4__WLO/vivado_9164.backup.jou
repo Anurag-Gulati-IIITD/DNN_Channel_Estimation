@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Aug  1 17:22:19 2022
+# Process ID: 9164
+# Current directory: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19092 D:\IIIT-D\Channel_Estimation\design_impl\LSDNN_4__WLO\LSDNN_4__WLO.xpr
+# Log file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO/vivado.log
+# Journal file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO/LSDNN_4__WLO.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO/LSDNN_4__WLO.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_4__WLO/LSDNN_4__WLO.sdk/design_LSDNN_wrapper.hdf

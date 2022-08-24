@@ -1,0 +1,1557 @@
+14:51:38 **** Build of project LS_SDK_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_9/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/axidma_v9_9/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling axidma"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+14:52:44 **** Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19064	   1144	  22568	  42776	   a718	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+14:54:11 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:54:47 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:55:10 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:55:13 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:55:15 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68924	   2648	  23328	  94900	  172b4	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+15:24:08 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68924	   2648	  23328	  94900	  172b4	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+15:24:17 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68924	   2648	  23328	  94900	  172b4	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:08:06 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:11:05 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:22:12 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68924	   2648	  23328	  94900	  172b4	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+19:29:14 **** Auto Build of project LS_SDK_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_9/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/axidma_v9_9/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling axidma"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v7_0/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v7_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+19:30:20 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68860	   2648	  23328	  94836	  17274	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+19:30:26 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:53:31 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68860	   2648	  23328	  94836	  17274	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+20:03:04 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/helloworld.c:49:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  68860	   2648	  23328	  94836	  17274	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+14:22:31 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:87:17: error: 'nCH' undeclared (first use in this function)
+  for(int i=0; i<nCH; i++) { // for the i-th channel realization
+                 ^~~
+../src/helloworld.c:87:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:96:21: error: 'Yin_0dB' undeclared (first use in this function); did you mean 'phf_0dB'?
+    in_stream[k++] = Yin_0dB[i][j];
+                     ^~~~~~~
+                     phf_0dB
+../src/helloworld.c:99:21: error: 'training_sym' undeclared (first use in this function); did you mean 'trainingSym'?
+    in_stream[k++] = training_sym[j];
+                     ^~~~~~~~~~~~
+                     trainingSym
+../src/helloworld.c:127:33: error: 'act_0dB' undeclared (first use in this function); did you mean 'phf_0dB'?
+    COMPLEXD e = out_stream[j] - act_0dB[i][j];
+                                 ^~~~~~~
+                                 phf_0dB
+../src/helloworld.c:153:21: error: 'Yin_5dB' undeclared (first use in this function); did you mean 'phf_5dB'?
+    in_stream[k++] = Yin_5dB[i][j];
+                     ^~~~~~~
+                     phf_5dB
+../src/helloworld.c:183:33: error: 'act_5dB' undeclared (first use in this function); did you mean 'phf_5dB'?
+    COMPLEXD e = out_stream[j] - act_5dB[i][j];
+                                 ^~~~~~~
+                                 phf_5dB
+../src/helloworld.c:209:21: error: 'Yin_10dB' undeclared (first use in this function); did you mean 'phf_10dB'?
+    in_stream[k++] = Yin_10dB[i][j];
+                     ^~~~~~~~
+                     phf_10dB
+../src/helloworld.c:240:33: error: 'act_10dB' undeclared (first use in this function); did you mean 'phf_10dB'?
+    COMPLEXD e = out_stream[j] - act_10dB[i][j];
+                                 ^~~~~~~~
+                                 phf_10dB
+../src/helloworld.c:266:21: error: 'Yin_15dB' undeclared (first use in this function); did you mean 'phf_15dB'?
+    in_stream[k++] = Yin_15dB[i][j];
+                     ^~~~~~~~
+                     phf_15dB
+../src/helloworld.c:297:33: error: 'act_15dB' undeclared (first use in this function); did you mean 'phf_15dB'?
+    COMPLEXD e = out_stream[j] - act_15dB[i][j];
+                                 ^~~~~~~~
+                                 phf_15dB
+../src/helloworld.c:323:21: error: 'Yin_20dB' undeclared (first use in this function); did you mean 'phf_20dB'?
+    in_stream[k++] = Yin_20dB[i][j];
+                     ^~~~~~~~
+                     phf_20dB
+../src/helloworld.c:354:33: error: 'act_20dB' undeclared (first use in this function); did you mean 'phf_20dB'?
+    COMPLEXD e = out_stream[j] - act_20dB[i][j];
+                                 ^~~~~~~~
+                                 phf_20dB
+../src/helloworld.c:380:21: error: 'Yin_25dB' undeclared (first use in this function); did you mean 'phf_25dB'?
+    in_stream[k++] = Yin_25dB[i][j];
+                     ^~~~~~~~
+                     phf_25dB
+../src/helloworld.c:411:33: error: 'act_25dB' undeclared (first use in this function); did you mean 'phf_25dB'?
+    COMPLEXD e = out_stream[j] - act_25dB[i][j];
+                                 ^~~~~~~~
+                                 phf_25dB
+../src/helloworld.c:437:21: error: 'Yin_30dB' undeclared (first use in this function); did you mean 'phf_30dB'?
+    in_stream[k++] = Yin_30dB[i][j];
+                     ^~~~~~~~
+                     phf_30dB
+../src/helloworld.c:468:33: error: 'act_30dB' undeclared (first use in this function); did you mean 'phf_30dB'?
+    COMPLEXD e = out_stream[j] - act_30dB[i][j];
+                                 ^~~~~~~~
+                                 phf_30dB
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:23:15 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from ../src/helloworld.c:48:
+../src/data.h:13:24: error: 'nCH' undeclared here (not in a function)
+ const COMPLEXD Yin_0dB[nCH][nUSC] = {
+                        ^~~
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+14:23:39 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: ./src/helloworld.o: in function `main':
+D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:128: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:128: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:129: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:129: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:134: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:135: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:184: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:184: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:185: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:185: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:190: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:191: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:241: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:241: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:242: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:242: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:247: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:248: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:298: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:298: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:299: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:299: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:304: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:305: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:355: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:355: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:356: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:356: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:361: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:362: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:412: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:412: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:413: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:413: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:418: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:419: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:469: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:469: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:470: undefined reference to `cabs'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:470: undefined reference to `pow'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:475: undefined reference to `sqrt'
+d:/softwares/xilinx/vivado/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: D:\IIIT-D\Channel_Estimation\design_impl\least_squares\least_squares.sdk\LS_SDK\Debug/../src/helloworld.c:476: undefined reference to `sqrt'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: LS_SDK.elf] Error 1
+14:25:30 **** Clean-only build of configuration Debug for project LS_SDK ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  LS_SDK.elf.size  LS_SDK.elf
+' '
+14:25:31 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1244864	   2656	  23328	1270848	 136440	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+14:25:53 **** Clean-only build of configuration Debug for project LS_SDK ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  LS_SDK.elf.size  LS_SDK.elf
+' '
+14:25:54 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1244864	   2656	  23328	1270848	 136440	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+14:28:58 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:30:37 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:40:58 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+14:54:49 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1245188	   2656	  23328	1271172	 136584	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+14:55:35 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:00:05 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:12:51 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:157:21: error: 'Yin_5dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_5dB[i][j];
+                     ^~~~~~~
+                     Yin_0dB
+../src/helloworld.c:157:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:187:33: error: 'act_5dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_5dB[i][j];
+                                 ^~~~~~~
+                                 act_0dB
+../src/helloworld.c:213:21: error: 'Yin_10dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_10dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:244:33: error: 'act_10dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_10dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:270:21: error: 'Yin_15dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_15dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:301:33: error: 'act_15dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_15dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:327:21: error: 'Yin_20dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_20dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:358:33: error: 'act_20dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_20dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:384:21: error: 'Yin_25dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_25dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:415:33: error: 'act_25dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_25dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:441:21: error: 'Yin_30dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_30dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:472:33: error: 'act_30dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_30dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+15:13:47 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:80:37: warning: unused variable 'phf_30dB' [-Wunused-variable]
+  float NMSE_30dB = 0, mse_30dB = 0, phf_30dB = 0;
+                                     ^~~~~~~~
+../src/helloworld.c:80:23: warning: unused variable 'mse_30dB' [-Wunused-variable]
+  float NMSE_30dB = 0, mse_30dB = 0, phf_30dB = 0;
+                       ^~~~~~~~
+../src/helloworld.c:80:8: warning: unused variable 'NMSE_30dB' [-Wunused-variable]
+  float NMSE_30dB = 0, mse_30dB = 0, phf_30dB = 0;
+        ^~~~~~~~~
+../src/helloworld.c:79:37: warning: unused variable 'phf_25dB' [-Wunused-variable]
+  float NMSE_25dB = 0, mse_25dB = 0, phf_25dB = 0;
+                                     ^~~~~~~~
+../src/helloworld.c:79:23: warning: unused variable 'mse_25dB' [-Wunused-variable]
+  float NMSE_25dB = 0, mse_25dB = 0, phf_25dB = 0;
+                       ^~~~~~~~
+../src/helloworld.c:79:8: warning: unused variable 'NMSE_25dB' [-Wunused-variable]
+  float NMSE_25dB = 0, mse_25dB = 0, phf_25dB = 0;
+        ^~~~~~~~~
+../src/helloworld.c:78:37: warning: unused variable 'phf_20dB' [-Wunused-variable]
+  float NMSE_20dB = 0, mse_20dB = 0, phf_20dB = 0;
+                                     ^~~~~~~~
+../src/helloworld.c:78:23: warning: unused variable 'mse_20dB' [-Wunused-variable]
+  float NMSE_20dB = 0, mse_20dB = 0, phf_20dB = 0;
+                       ^~~~~~~~
+../src/helloworld.c:78:8: warning: unused variable 'NMSE_20dB' [-Wunused-variable]
+  float NMSE_20dB = 0, mse_20dB = 0, phf_20dB = 0;
+        ^~~~~~~~~
+../src/helloworld.c:77:37: warning: unused variable 'phf_15dB' [-Wunused-variable]
+  float NMSE_15dB = 0, mse_15dB = 0, phf_15dB = 0;
+                                     ^~~~~~~~
+../src/helloworld.c:77:23: warning: unused variable 'mse_15dB' [-Wunused-variable]
+  float NMSE_15dB = 0, mse_15dB = 0, phf_15dB = 0;
+                       ^~~~~~~~
+../src/helloworld.c:77:8: warning: unused variable 'NMSE_15dB' [-Wunused-variable]
+  float NMSE_15dB = 0, mse_15dB = 0, phf_15dB = 0;
+        ^~~~~~~~~
+../src/helloworld.c:76:37: warning: unused variable 'phf_10dB' [-Wunused-variable]
+  float NMSE_10dB = 0, mse_10dB = 0, phf_10dB = 0;
+                                     ^~~~~~~~
+../src/helloworld.c:76:23: warning: unused variable 'mse_10dB' [-Wunused-variable]
+  float NMSE_10dB = 0, mse_10dB = 0, phf_10dB = 0;
+                       ^~~~~~~~
+../src/helloworld.c:76:8: warning: unused variable 'NMSE_10dB' [-Wunused-variable]
+  float NMSE_10dB = 0, mse_10dB = 0, phf_10dB = 0;
+        ^~~~~~~~~
+../src/helloworld.c:75:35: warning: unused variable 'phf_5dB' [-Wunused-variable]
+  float NMSE_5dB = 0, mse_5dB = 0, phf_5dB = 0;
+                                   ^~~~~~~
+../src/helloworld.c:75:22: warning: unused variable 'mse_5dB' [-Wunused-variable]
+  float NMSE_5dB = 0, mse_5dB = 0, phf_5dB = 0;
+                      ^~~~~~~
+../src/helloworld.c:75:8: warning: unused variable 'NMSE_5dB' [-Wunused-variable]
+  float NMSE_5dB = 0, mse_5dB = 0, phf_5dB = 0;
+        ^~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239564	   2656	  23328	 265548	  40d4c	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+15:14:24 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	  23328	 265420	  40ccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+15:14:39 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:18:04 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:20:53 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+15:28:32 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	  23328	 265420	  40ccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+15:28:53 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:49:27 **** Clean-only build of configuration Debug for project LS_SDK ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  LS_SDK.elf.size  LS_SDK.elf
+' '
+16:49:29 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	 211744	 453836	  6eccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:51:13 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:52:27 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:54:01 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:56:01 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:57:31 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:59:59 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:37:24 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:43:30 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:44:30 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:45:21 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:48:41 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:50:26 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:59:06 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+23:40:41 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+23:41:02 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+00:03:14 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+00:08:02 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+00:10:24 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+11:44:35 **** Clean-only build of configuration Debug for project LS_SDK ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  LS_SDK.elf.size  LS_SDK.elf
+' '
+11:44:37 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	102509344	102751436	61fdccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+11:46:22 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	102509344	102751436	61fdccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+11:51:52 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	102509344	102751436	61fdccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+11:52:06 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+11:52:57 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+11:55:38 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+12:01:25 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 239436	   2656	102509344	102751436	61fdccc	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+12:01:41 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:07:59 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:160:21: error: 'Yin_5dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_5dB[i][j];
+                     ^~~~~~~
+                     Yin_0dB
+../src/helloworld.c:160:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:193:33: error: 'act_5dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_5dB[i][j];
+                                 ^~~~~~~
+                                 act_0dB
+../src/helloworld.c:219:21: error: 'Yin_10dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_10dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:253:33: error: 'act_10dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_10dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:279:21: error: 'Yin_15dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_15dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:313:33: error: 'act_15dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_15dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:339:21: error: 'Yin_20dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_20dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:373:33: error: 'act_20dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_20dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:399:21: error: 'Yin_25dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_25dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:433:33: error: 'act_25dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_25dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:459:21: error: 'Yin_30dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_30dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:493:33: error: 'act_30dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_30dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:08:53 **** Clean-only build of configuration Debug for project LS_SDK ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  LS_SDK.elf.size  LS_SDK.elf
+' '
+13:08:54 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:160:21: error: 'Yin_5dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_5dB[i][j];
+                     ^~~~~~~
+                     Yin_0dB
+../src/helloworld.c:160:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:193:33: error: 'act_5dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_5dB[i][j];
+                                 ^~~~~~~
+                                 act_0dB
+../src/helloworld.c:219:21: error: 'Yin_10dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_10dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:253:33: error: 'act_10dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_10dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:279:21: error: 'Yin_15dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_15dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:313:33: error: 'act_15dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_15dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:339:21: error: 'Yin_20dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_20dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:373:33: error: 'act_20dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_20dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:399:21: error: 'Yin_25dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_25dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:433:33: error: 'act_25dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_25dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:459:21: error: 'Yin_30dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_30dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:493:33: error: 'act_30dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_30dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:09:14 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:160:21: error: 'Yin_5dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_5dB[i][j];
+                     ^~~~~~~
+                     Yin_0dB
+../src/helloworld.c:160:21: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:193:33: error: 'act_5dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_5dB[i][j];
+                                 ^~~~~~~
+                                 act_0dB
+../src/helloworld.c:219:21: error: 'Yin_10dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_10dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:253:33: error: 'act_10dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_10dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:279:21: error: 'Yin_15dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_15dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:313:33: error: 'act_15dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_15dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:339:21: error: 'Yin_20dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_20dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:373:33: error: 'act_20dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_20dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:399:21: error: 'Yin_25dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_25dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:433:33: error: 'act_25dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_25dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+../src/helloworld.c:459:21: error: 'Yin_30dB' undeclared (first use in this function); did you mean 'Yin_0dB'?
+    in_stream[k++] = Yin_30dB[i][j];
+                     ^~~~~~~~
+                     Yin_0dB
+../src/helloworld.c:493:33: error: 'act_30dB' undeclared (first use in this function); did you mean 'act_0dB'?
+    COMPLEXD e = out_stream[j] - act_30dB[i][j];
+                                 ^~~~~~~~
+                                 act_0dB
+make: *** [src/subdir.mk:26: src/helloworld.o] Error 1
+13:11:39 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1244736	   2656	204806944	206054336	c4823c0	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+13:12:04 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:12:37 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:12:48 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:15:04 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:31:14 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:35:20 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:23:20 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1245060	   2656	204806944	206054660	c482504	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:24:29 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:35:03 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1245060	   2656	204806944	206054660	c482504	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:36:01 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:39:47 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1244736	   2656	204806944	206054336	c4823c0	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:40:23 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:49:24 **** Auto Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../LS_SDK_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/main.h:19,
+                 from ../src/data.h:11,
+                 from ../src/helloworld.c:48:
+../../LS_SDK_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LS_SDK.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../LS_SDK_bsp/ps7_cortexa9_0/lib -o "LS_SDK.elf"  ./src/helloworld.o ./src/platform.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LS_SDK.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size LS_SDK.elf  |tee "LS_SDK.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1244024	   2656	204806944	206053624	c4820f8	LS_SDK.elf
+'Finished building: LS_SDK.elf.size'
+' '
+16:49:44 **** Incremental Build of configuration Debug for project LS_SDK ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="least_squares.h" path="D:\IIIT-D\Channel_Estimation\HLS\least_squares\least_squares.h"/>
+    <originFiles name="least_squares.cpp" path="D:\IIIT-D\Channel_Estimation\HLS\least_squares\least_squares.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="least_squares_tb.cpp" path="D:\IIIT-D\Channel_Estimation\HLS\least_squares\least_squares_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,145 @@
+
+
+================================================================
+== Vivado HLS Report for 'separate_complex_up'
+================================================================
+* Date:           Thu Jul 28 17:41:20 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dnn
+* Solution:       unrolled
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.124|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   54|   54|   54|   54|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- separation  |   52|   52|         1|          1|          1|    52|    yes   |
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|     43|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     39|    -|
+|Register         |        -|      -|       9|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|       9|     82|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |add_ln261_fu_145_p2  |     +    |      0|  0|  15|           6|           7|
+    |i_fu_102_p2          |     +    |      0|  0|  15|           6|           1|
+    |ap_block_state2      |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln257_fu_96_p2  |   icmp   |      0|  0|  11|           6|           5|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  43|          19|          14|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |LS_stream_TDATA_blk_n  |   9|          2|    1|          2|
+    |ap_NS_fsm              |  21|          4|    1|          4|
+    |i_0_reg_85             |   9|          2|    6|         12|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  |  39|          8|    8|         18|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------+---+----+-----+-----------+
+    |    Name    | FF| LUT| Bits| Const Bits|
+    +------------+---+----+-----+-----------+
+    |ap_CS_fsm   |  3|   0|    3|          0|
+    |i_0_reg_85  |  6|   0|    6|          0|
+    +------------+---+----+-----+-----------+
+    |Total       |  9|   0|    9|          0|
+    +------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+---------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_hs | separate_complex_up | return value |
+|ap_rst            |  in |    1| ap_ctrl_hs | separate_complex_up | return value |
+|ap_start          |  in |    1| ap_ctrl_hs | separate_complex_up | return value |
+|ap_done           | out |    1| ap_ctrl_hs | separate_complex_up | return value |
+|ap_idle           | out |    1| ap_ctrl_hs | separate_complex_up | return value |
+|ap_ready          | out |    1| ap_ctrl_hs | separate_complex_up | return value |
+|LS_stream_TDATA   |  in |   64|    axis    |   LS_stream_V_data  |    pointer   |
+|LS_stream_TVALID  |  in |    1|    axis    |   LS_stream_V_data  |    pointer   |
+|LS_stream_TREADY  | out |    1|    axis    |  LS_stream_V_last_V |    pointer   |
+|LS_stream_TLAST   |  in |    1|    axis    |  LS_stream_V_last_V |    pointer   |
+|sep_address0      | out |    7|  ap_memory |         sep         |     array    |
+|sep_ce0           | out |    1|  ap_memory |         sep         |     array    |
+|sep_we0           | out |    1|  ap_memory |         sep         |     array    |
+|sep_d0            | out |   32|  ap_memory |         sep         |     array    |
+|sep_address1      | out |    7|  ap_memory |         sep         |     array    |
+|sep_ce1           | out |    1|  ap_memory |         sep         |     array    |
+|sep_we1           | out |    1|  ap_memory |         sep         |     array    |
+|sep_d1            | out |   32|  ap_memory |         sep         |     array    |
++------------------+-----+-----+------------+---------------------+--------------+
+

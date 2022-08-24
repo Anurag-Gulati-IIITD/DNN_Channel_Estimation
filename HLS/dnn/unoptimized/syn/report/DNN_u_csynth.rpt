@@ -1,0 +1,301 @@
+
+
+================================================================
+== Vivado HLS Report for 'DNN_u'
+================================================================
+* Date:           Mon Aug  8 23:06:52 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dnn
+* Solution:       unoptimized
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.256|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  123458|  123458|  123458|  123458|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------+-----------------------+-----+-----+-----+-----+---------+
+        |                                  |                       |  Latency  |  Interval | Pipeline|
+        |             Instance             |         Module        | min | max | min | max |   Type  |
+        +----------------------------------+-----------------------+-----+-----+-----+-----+---------+
+        |grp_reconstruct_complex_s_fu_422  |reconstruct_complex_s  |  105|  105|  105|  105|   none  |
+        |grp_separate_complex_u_fu_431     |separate_complex_u     |   53|   53|   53|   53|   none  |
+        +----------------------------------+-----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                    |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- normalization     |   2496|   2496|        24|          -|          -|   104|    no    |
+        |- layer_2           |  59748|  59748|      1149|          -|          -|    52|    no    |
+        | + weighted_sum_L2  |   1144|   1144|        11|          -|          -|   104|    no    |
+        |- layer_3           |  59800|  59800|       575|          -|          -|   104|    no    |
+        | + weighted_sum_L3  |    572|    572|        11|          -|          -|    52|    no    |
+        |- denormalization   |   1248|   1248|        12|          -|          -|   104|    no    |
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    341|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      5|    1199|   2111|    -|
+|Memory           |       45|      -|       0|      0|    0|
+|Multiplexer      |        -|      -|       -|    763|    -|
+|Register         |        -|      -|    1000|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |       45|      5|    2199|   3215|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |       16|      2|       2|      6|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |             Instance             |         Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +----------------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |DNN_u_faddfsub_32bkb_U7           |DNN_u_faddfsub_32bkb   |        0|      2|  205|  390|    0|
+    |DNN_u_fcmp_32ns_3eOg_U10          |DNN_u_fcmp_32ns_3eOg   |        0|      0|   66|  239|    0|
+    |DNN_u_fdiv_32ns_3dEe_U9           |DNN_u_fdiv_32ns_3dEe   |        0|      0|  761|  994|    0|
+    |DNN_u_fmul_32ns_3cud_U8           |DNN_u_fmul_32ns_3cud   |        0|      3|  143|  321|    0|
+    |grp_reconstruct_complex_s_fu_422  |reconstruct_complex_s  |        0|      0|   16|   91|    0|
+    |grp_separate_complex_u_fu_431     |separate_complex_u     |        0|      0|    8|   76|    0|
+    +----------------------------------+-----------------------+---------+-------+-----+-----+-----+
+    |Total                             |                       |        0|      5| 1199| 2111|    0|
+    +----------------------------------+-----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +----------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |     Memory     |       Module       | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |L1_BIAS_U       |DNN_u_L1_BIAS       |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |L1_WEIGHTS_U    |DNN_u_L1_WEIGHTS    |       16|  0|   0|    0|  5408|   32|     1|       173056|
+    |L2_BIAS_U       |DNN_u_L2_BIAS       |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |L2_WEIGHTS_U    |DNN_u_L2_WEIGHTS    |       16|  0|   0|    0|  5408|   32|     1|       173056|
+    |LS_data_U       |DNN_u_LS_data       |        2|  0|   0|    0|   104|   32|     1|         3328|
+    |denorm_DNN_U    |DNN_u_denorm_DNN    |        2|  0|   0|    0|   104|   32|     1|         3328|
+    |mean_in_U       |DNN_u_mean_in       |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |mean_o_U        |DNN_u_mean_o        |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |norm_LS_data_U  |DNN_u_norm_LS_data  |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |y_L3_U          |DNN_u_norm_LS_data  |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |std_in_U        |DNN_u_std_in        |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |std_o_U         |DNN_u_std_o         |        1|  0|   0|    0|   104|   32|     1|         3328|
+    |y_L2_U          |DNN_u_y_L2          |        1|  0|   0|    0|    52|   32|     1|         1664|
+    +----------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total           |                    |       45|  0|   0|    0| 11856|  416|    13|       379392|
+    +----------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------------------------------+----------+-------+---+----+------------+------------+
+    |                  Variable Name                  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln142_1_fu_530_p2                            |     +    |      0|  0|  17|          13|           6|
+    |add_ln142_fu_536_p2                              |     +    |      0|  0|  17|          13|          13|
+    |add_ln155_1_fu_634_p2                            |     +    |      0|  0|  17|          13|           7|
+    |add_ln155_fu_640_p2                              |     +    |      0|  0|  17|          13|          13|
+    |i_1_fu_498_p2                                    |     +    |      0|  0|  15|           6|           1|
+    |i_2_fu_656_p2                                    |     +    |      0|  0|  15|           7|           1|
+    |i_3_fu_602_p2                                    |     +    |      0|  0|  15|           7|           1|
+    |i_fu_480_p2                                      |     +    |      0|  0|  15|           7|           1|
+    |j_1_fu_623_p2                                    |     +    |      0|  0|  15|           6|           1|
+    |j_fu_519_p2                                      |     +    |      0|  0|  15|           7|           1|
+    |DNN_out_V_data_1_load_A                          |    and   |      0|  0|   2|           1|           1|
+    |DNN_out_V_data_1_load_B                          |    and   |      0|  0|   2|           1|           1|
+    |DNN_out_V_last_V_1_load_A                        |    and   |      0|  0|   2|           1|           1|
+    |DNN_out_V_last_V_1_load_B                        |    and   |      0|  0|   2|           1|           1|
+    |LS_stream_V_data_0_load_A                        |    and   |      0|  0|   2|           1|           1|
+    |LS_stream_V_data_0_load_B                        |    and   |      0|  0|   2|           1|           1|
+    |LS_stream_V_last_V_0_load_A                      |    and   |      0|  0|   2|           1|           1|
+    |LS_stream_V_last_V_0_load_B                      |    and   |      0|  0|   2|           1|           1|
+    |and_ln110_fu_582_p2                              |    and   |      0|  0|   2|           1|           1|
+    |DNN_out_V_data_1_state_cmp_full                  |   icmp   |      0|  0|   8|           2|           1|
+    |DNN_out_V_last_V_1_state_cmp_full                |   icmp   |      0|  0|   8|           2|           1|
+    |LS_stream_V_data_0_state_cmp_full                |   icmp   |      0|  0|   8|           2|           1|
+    |LS_stream_V_last_V_0_state_cmp_full              |   icmp   |      0|  0|   8|           2|           1|
+    |icmp_ln110_1_fu_570_p2                           |   icmp   |      0|  0|  18|          23|           1|
+    |icmp_ln110_fu_564_p2                             |   icmp   |      0|  0|  11|           8|           2|
+    |icmp_ln131_fu_474_p2                             |   icmp   |      0|  0|  11|           7|           6|
+    |icmp_ln138_fu_492_p2                             |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln141_fu_513_p2                             |   icmp   |      0|  0|  11|           7|           6|
+    |icmp_ln151_fu_596_p2                             |   icmp   |      0|  0|  11|           7|           6|
+    |icmp_ln154_fu_617_p2                             |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln164_fu_650_p2                             |   icmp   |      0|  0|  11|           7|           6|
+    |ap_block_state69                                 |    or    |      0|  0|   2|           1|           1|
+    |grp_reconstruct_complex_s_fu_422_DNN_out_TREADY  |    or    |      0|  0|   2|           1|           1|
+    |or_ln110_fu_576_p2                               |    or    |      0|  0|   2|           1|           1|
+    |y_L2_d0                                          |  select  |      0|  0|  32|           1|           1|
+    +-------------------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                            |          |      0|  0| 341|         184|          99|
+    +-------------------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------+-----+-----------+-----+-----------+
+    |              Name             | LUT | Input Size| Bits| Total Bits|
+    +-------------------------------+-----+-----------+-----+-----------+
+    |DNN_out_V_data_1_data_out      |    9|          2|   64|        128|
+    |DNN_out_V_data_1_state         |   15|          3|    2|          6|
+    |DNN_out_V_last_V_1_data_out    |    9|          2|    1|          2|
+    |DNN_out_V_last_V_1_state       |   15|          3|    2|          6|
+    |LS_data_address0               |   15|          3|    7|         21|
+    |LS_data_ce0                    |   15|          3|    1|          3|
+    |LS_data_ce1                    |    9|          2|    1|          2|
+    |LS_data_we0                    |    9|          2|    1|          2|
+    |LS_data_we1                    |    9|          2|    1|          2|
+    |LS_stream_V_data_0_ack_out     |    9|          2|    1|          2|
+    |LS_stream_V_data_0_data_out    |    9|          2|   64|        128|
+    |LS_stream_V_data_0_state       |   15|          3|    2|          6|
+    |LS_stream_V_last_V_0_ack_out   |    9|          2|    1|          2|
+    |LS_stream_V_last_V_0_data_out  |    9|          2|    1|          2|
+    |LS_stream_V_last_V_0_state     |   15|          3|    2|          6|
+    |ap_NS_fsm                      |  313|         70|    1|         70|
+    |before_relu_0_i17_reg_378      |    9|          2|   32|         64|
+    |denorm_DNN_address0            |   15|          3|    7|         21|
+    |denorm_DNN_ce0                 |   15|          3|    1|          3|
+    |denorm_DNN_ce1                 |    9|          2|    1|          2|
+    |grp_fu_440_opcode              |   15|          3|    2|          6|
+    |grp_fu_440_p0                  |   27|          5|   32|        160|
+    |grp_fu_440_p1                  |   21|          4|   32|        128|
+    |grp_fu_446_p0                  |   21|          4|   32|        128|
+    |grp_fu_446_p1                  |   21|          4|   32|        128|
+    |i_0_i12_reg_322                |    9|          2|    6|         12|
+    |i_0_i14_reg_366                |    9|          2|    7|         14|
+    |i_0_i24_reg_411                |    9|          2|    7|         14|
+    |i_0_i_reg_311                  |    9|          2|    7|         14|
+    |j_0_i18_reg_389                |    9|          2|    6|         12|
+    |j_0_i_reg_344                  |    9|          2|    7|         14|
+    |norm_LS_data_address0          |   15|          3|    7|         21|
+    |phi_mul1_reg_400               |    9|          2|   13|         26|
+    |phi_mul_reg_355                |    9|          2|   13|         26|
+    |x_assign_reg_334               |    9|          2|   32|         64|
+    |y_L2_address0                  |   15|          3|    6|         18|
+    |y_L3_address0                  |   15|          3|    7|         21|
+    +-------------------------------+-----+-----------+-----+-----------+
+    |Total                          |  763|        163|  441|       1284|
+    +-------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------+----+----+-----+-----------+
+    |                      Name                     | FF | LUT| Bits| Const Bits|
+    +-----------------------------------------------+----+----+-----+-----------+
+    |DNN_out_V_data_1_payload_A                     |  64|   0|   64|          0|
+    |DNN_out_V_data_1_payload_B                     |  64|   0|   64|          0|
+    |DNN_out_V_data_1_sel_rd                        |   1|   0|    1|          0|
+    |DNN_out_V_data_1_sel_wr                        |   1|   0|    1|          0|
+    |DNN_out_V_data_1_state                         |   2|   0|    2|          0|
+    |DNN_out_V_last_V_1_payload_A                   |   1|   0|    1|          0|
+    |DNN_out_V_last_V_1_payload_B                   |   1|   0|    1|          0|
+    |DNN_out_V_last_V_1_sel_rd                      |   1|   0|    1|          0|
+    |DNN_out_V_last_V_1_sel_wr                      |   1|   0|    1|          0|
+    |DNN_out_V_last_V_1_state                       |   2|   0|    2|          0|
+    |L1_WEIGHTS_load_reg_773                        |  32|   0|   32|          0|
+    |L2_WEIGHTS_load_reg_839                        |  32|   0|   32|          0|
+    |LS_data_load_reg_692                           |  32|   0|   32|          0|
+    |LS_stream_V_data_0_payload_A                   |  64|   0|   64|          0|
+    |LS_stream_V_data_0_payload_B                   |  64|   0|   64|          0|
+    |LS_stream_V_data_0_sel_rd                      |   1|   0|    1|          0|
+    |LS_stream_V_data_0_sel_wr                      |   1|   0|    1|          0|
+    |LS_stream_V_data_0_state                       |   2|   0|    2|          0|
+    |LS_stream_V_last_V_0_payload_A                 |   1|   0|    1|          0|
+    |LS_stream_V_last_V_0_payload_B                 |   1|   0|    1|          0|
+    |LS_stream_V_last_V_0_sel_rd                    |   1|   0|    1|          0|
+    |LS_stream_V_last_V_0_sel_wr                    |   1|   0|    1|          0|
+    |LS_stream_V_last_V_0_state                     |   2|   0|    2|          0|
+    |add_ln142_1_reg_753                            |  13|   0|   13|          0|
+    |add_ln155_1_reg_819                            |  13|   0|   13|          0|
+    |ap_CS_fsm                                      |  69|   0|   69|          0|
+    |before_relu_0_i17_reg_378                      |  32|   0|   32|          0|
+    |grp_reconstruct_complex_s_fu_422_ap_start_reg  |   1|   0|    1|          0|
+    |grp_separate_complex_u_fu_431_ap_start_reg     |   1|   0|    1|          0|
+    |i_0_i12_reg_322                                |   6|   0|    6|          0|
+    |i_0_i14_reg_366                                |   7|   0|    7|          0|
+    |i_0_i24_reg_411                                |   7|   0|    7|          0|
+    |i_0_i_reg_311                                  |   7|   0|    7|          0|
+    |i_1_reg_720                                    |   6|   0|    6|          0|
+    |i_2_reg_847                                    |   7|   0|    7|          0|
+    |i_3_reg_786                                    |   7|   0|    7|          0|
+    |i_reg_671                                      |   7|   0|    7|          0|
+    |j_0_i18_reg_389                                |   6|   0|    6|          0|
+    |j_0_i_reg_344                                  |   7|   0|    7|          0|
+    |j_1_reg_814                                    |   6|   0|    6|          0|
+    |j_reg_748                                      |   7|   0|    7|          0|
+    |mean_in_load_reg_697                           |  32|   0|   32|          0|
+    |mean_o_load_reg_883                            |  32|   0|   32|          0|
+    |norm_LS_data_load_reg_768                      |  32|   0|   32|          0|
+    |phi_mul1_reg_400                               |  13|   0|   13|          0|
+    |phi_mul_reg_355                                |  13|   0|   13|          0|
+    |reg_460                                        |  32|   0|   32|          0|
+    |reg_468                                        |  32|   0|   32|          0|
+    |std_in_load_reg_707                            |  32|   0|   32|          0|
+    |std_o_load_reg_873                             |  32|   0|   32|          0|
+    |tmp_1_i_reg_712                                |  32|   0|   32|          0|
+    |tmp_1_reg_778                                  |   1|   0|    1|          0|
+    |x_assign_reg_334                               |  32|   0|   32|          0|
+    |y_L2_load_reg_834                              |  32|   0|   32|          0|
+    |y_L3_load_reg_868                              |  32|   0|   32|          0|
+    |zext_ln132_reg_676                             |   7|   0|   64|         57|
+    |zext_ln140_1_reg_735                           |   6|   0|   13|          7|
+    |zext_ln140_reg_725                             |   6|   0|   64|         58|
+    |zext_ln153_1_reg_801                           |   7|   0|   13|          6|
+    |zext_ln153_reg_791                             |   7|   0|   64|         57|
+    |zext_ln165_reg_852                             |   7|   0|   64|         57|
+    +-----------------------------------------------+----+----+-----+-----------+
+    |Total                                          |1000|   0| 1242|        242|
+    +-----------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+--------------+--------------------+--------------+
+|     RTL Ports    | Dir | Bits|   Protocol   |    Source Object   |    C Type    |
++------------------+-----+-----+--------------+--------------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_none |        DNN_u       | return value |
+|ap_rst_n          |  in |    1| ap_ctrl_none |        DNN_u       | return value |
+|LS_stream_TDATA   |  in |   64|     axis     |  LS_stream_V_data  |    pointer   |
+|LS_stream_TVALID  |  in |    1|     axis     | LS_stream_V_last_V |    pointer   |
+|LS_stream_TREADY  | out |    1|     axis     | LS_stream_V_last_V |    pointer   |
+|LS_stream_TLAST   |  in |    1|     axis     | LS_stream_V_last_V |    pointer   |
+|DNN_out_TDATA     | out |   64|     axis     |   DNN_out_V_data   |    pointer   |
+|DNN_out_TVALID    | out |    1|     axis     |  DNN_out_V_last_V  |    pointer   |
+|DNN_out_TREADY    |  in |    1|     axis     |  DNN_out_V_last_V  |    pointer   |
+|DNN_out_TLAST     | out |    1|     axis     |  DNN_out_V_last_V  |    pointer   |
++------------------+-----+-----+--------------+--------------------+--------------+
+

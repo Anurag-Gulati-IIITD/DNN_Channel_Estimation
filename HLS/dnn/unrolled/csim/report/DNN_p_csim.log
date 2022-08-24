@@ -1,0 +1,34 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../dnn_tb.cpp in debug mode
+csim.mk:75: recipe for target 'obj/dnn_tb.o' failed
+In file included from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/hls_fpo.h:186,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/hls_half.h:44,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/etc/ap_private.h:90,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/ap_common.h:641,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/ap_int.h:54,
+                 from ../../../dnn.h:4,
+                 from ../../../dnn_tb.h:1,
+                 from ../../../dnn_tb.cpp:1:
+D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/hls_fpo.h:186:0,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/hls_half.h:44,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/etc/ap_private.h:90,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/ap_common.h:641,
+                 from D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/ap_int.h:54,
+                 from ../../../dnn.h:4,
+                 from ../../../dnn_tb.h:1,
+                 from ../../../dnn_tb.cpp:1:
+D:/Softwares/Xilinx/Vivado/Vivado/2019.1/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+../../../dnn_tb.cpp: In function 'int main()':
+../../../dnn_tb.cpp:44:28: error: 'DNN_up' was not declared in this scope
+   DNN_up(LS_stream, DNN_out);
+                            ^
+make: *** [obj/dnn_tb.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

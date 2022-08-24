@@ -1,0 +1,16 @@
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.bss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.data=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.data1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.fixup=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.rodata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.rodata1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.sbss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.sbss2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.sdata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.sdata2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:.text=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:heap=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:heap-size=102400000
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:stack=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.LSDNN_SDK\:stack-size=102400000
+eclipse.preferences.version=1

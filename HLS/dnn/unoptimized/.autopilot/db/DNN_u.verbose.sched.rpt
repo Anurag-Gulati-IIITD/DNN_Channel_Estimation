@@ -1,0 +1,864 @@
+
+
+================================================================
+== Vivado HLS Report for 'DNN_u'
+================================================================
+* Date:           Mon Aug  8 23:06:51 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dnn
+* Solution:       unoptimized
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.256|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  123458|  123458|  123458|  123458|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |                    |    Latency    | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |  min  |  max  |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+        |- normalization     |   2496|   2496|        24|          -|          -|   104|    no    |
+        |- layer_2           |  59748|  59748|      1149|          -|          -|    52|    no    |
+        | + weighted_sum_L2  |   1144|   1144|        11|          -|          -|   104|    no    |
+        |- layer_3           |  59800|  59800|       575|          -|          -|   104|    no    |
+        | + weighted_sum_L3  |    572|    572|        11|          -|          -|    52|    no    |
+        |- denormalization   |   1248|   1248|        12|          -|          -|   104|    no    |
+        +--------------------+-------+-------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 69
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 28 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 4 
+28 --> 29 43 
+29 --> 30 
+30 --> 31 41 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 30 
+41 --> 42 
+42 --> 28 
+43 --> 44 56 
+44 --> 45 
+45 --> 46 43 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 45 
+56 --> 57 68 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 56 
+68 --> 69 
+69 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%LS_data = alloca [104 x float], align 16"   --->   Operation 70 'alloca' 'LS_data' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%norm_LS_data = alloca [104 x float], align 16" [dnn/dnn.cpp:197]   --->   Operation 71 'alloca' 'norm_LS_data' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%y_L2 = alloca [52 x float], align 16" [dnn/dnn.cpp:199]   --->   Operation 72 'alloca' 'y_L2' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%y_L3 = alloca [104 x float], align 16" [dnn/dnn.cpp:201]   --->   Operation 73 'alloca' 'y_L3' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%denorm_DNN = alloca [104 x float], align 16" [dnn/dnn.cpp:203]   --->   Operation 74 'alloca' 'denorm_DNN' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 75 [2/2] (3.25ns)   --->   "call fastcc void @separate_complex_u(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [104 x float]* %LS_data)" [dnn/dnn.cpp:206]   --->   Operation 75 'call' <Predicate = true> <Delay = 3.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %DNN_out_V_data), !map !71"   --->   Operation 76 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %LS_stream_V_data), !map !78"   --->   Operation 77 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %LS_stream_V_last_V), !map !85"   --->   Operation 78 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %DNN_out_V_last_V), !map !89"   --->   Operation 79 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @DNN_u_str) nounwind"   --->   Operation 80 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str8, i32 0, i32 0, [1 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9) nounwind" [dnn/dnn.cpp:190]   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %DNN_out_V_data, i1* %DNN_out_V_last_V, [5 x i8]* @p_str10, i32 1, i32 1, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9) nounwind" [dnn/dnn.cpp:191]   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [5 x i8]* @p_str10, i32 1, i32 1, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9) nounwind" [dnn/dnn.cpp:192]   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/2] (0.00ns)   --->   "call fastcc void @separate_complex_u(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [104 x float]* %LS_data)" [dnn/dnn.cpp:206]   --->   Operation 84 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 85 [1/1] (1.76ns)   --->   "br label %1" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 85 'br' <Predicate = true> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 86 [1/1] (0.00ns)   --->   "%i_0_i = phi i7 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 86 'phi' 'i_0_i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 87 [1/1] (1.48ns)   --->   "%icmp_ln131 = icmp eq i7 %i_0_i, -24" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 87 'icmp' 'icmp_ln131' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 104, i64 104, i64 104)"   --->   Operation 88 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [1/1] (1.87ns)   --->   "%i = add i7 %i_0_i, 1" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 89 'add' 'i' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 90 [1/1] (0.00ns)   --->   "br i1 %icmp_ln131, label %normalize_u.exit.preheader, label %2" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 90 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 91 [1/1] (0.00ns)   --->   "%zext_ln132 = zext i7 %i_0_i to i64" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 91 'zext' 'zext_ln132' <Predicate = (!icmp_ln131)> <Delay = 0.00>
+ST_4 : Operation 92 [1/1] (0.00ns)   --->   "%LS_data_addr = getelementptr [104 x float]* %LS_data, i64 0, i64 %zext_ln132" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 92 'getelementptr' 'LS_data_addr' <Predicate = (!icmp_ln131)> <Delay = 0.00>
+ST_4 : Operation 93 [2/2] (3.25ns)   --->   "%LS_data_load = load float* %LS_data_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 93 'load' 'LS_data_load' <Predicate = (!icmp_ln131)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_4 : Operation 94 [1/1] (0.00ns)   --->   "%mean_in_addr = getelementptr inbounds [104 x float]* @mean_in, i64 0, i64 %zext_ln132" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 94 'getelementptr' 'mean_in_addr' <Predicate = (!icmp_ln131)> <Delay = 0.00>
+ST_4 : Operation 95 [2/2] (3.25ns)   --->   "%mean_in_load = load float* %mean_in_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 95 'load' 'mean_in_load' <Predicate = (!icmp_ln131)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_4 : Operation 96 [1/1] (1.76ns)   --->   "br label %normalize_u.exit" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 96 'br' <Predicate = (icmp_ln131)> <Delay = 1.76>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 97 [1/2] (3.25ns)   --->   "%LS_data_load = load float* %LS_data_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 97 'load' 'LS_data_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_5 : Operation 98 [1/2] (3.25ns)   --->   "%mean_in_load = load float* %mean_in_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 98 'load' 'mean_in_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 6 <SV = 5> <Delay = 7.25>
+ST_6 : Operation 99 [5/5] (7.25ns)   --->   "%tmp_i = fsub float %LS_data_load, %mean_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 99 'fsub' 'tmp_i' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 7.25>
+ST_7 : Operation 100 [4/5] (7.25ns)   --->   "%tmp_i = fsub float %LS_data_load, %mean_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 100 'fsub' 'tmp_i' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 7.25>
+ST_8 : Operation 101 [3/5] (7.25ns)   --->   "%tmp_i = fsub float %LS_data_load, %mean_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 101 'fsub' 'tmp_i' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 7.25>
+ST_9 : Operation 102 [2/5] (7.25ns)   --->   "%tmp_i = fsub float %LS_data_load, %mean_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 102 'fsub' 'tmp_i' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 103 [1/1] (0.00ns)   --->   "%std_in_addr = getelementptr inbounds [104 x float]* @std_in, i64 0, i64 %zext_ln132" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 103 'getelementptr' 'std_in_addr' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 104 [2/2] (3.25ns)   --->   "%std_in_load = load float* %std_in_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 104 'load' 'std_in_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 10 <SV = 9> <Delay = 7.25>
+ST_10 : Operation 105 [1/5] (7.25ns)   --->   "%tmp_i = fsub float %LS_data_load, %mean_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 105 'fsub' 'tmp_i' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 106 [1/2] (3.25ns)   --->   "%std_in_load = load float* %std_in_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 106 'load' 'std_in_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 11 <SV = 10> <Delay = 6.07>
+ST_11 : Operation 107 [16/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 107 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 6.07>
+ST_12 : Operation 108 [15/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 108 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 6.07>
+ST_13 : Operation 109 [14/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 109 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.07>
+ST_14 : Operation 110 [13/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 110 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.07>
+ST_15 : Operation 111 [12/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 111 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 6.07>
+ST_16 : Operation 112 [11/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 112 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.07>
+ST_17 : Operation 113 [10/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 113 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.07>
+ST_18 : Operation 114 [9/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 114 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.07>
+ST_19 : Operation 115 [8/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 115 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.07>
+ST_20 : Operation 116 [7/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 116 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.07>
+ST_21 : Operation 117 [6/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 117 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 6.07>
+ST_22 : Operation 118 [5/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 118 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 6.07>
+ST_23 : Operation 119 [4/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 119 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 6.07>
+ST_24 : Operation 120 [3/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 120 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 6.07>
+ST_25 : Operation 121 [2/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 121 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 6.07>
+ST_26 : Operation 122 [1/16] (6.07ns)   --->   "%tmp_1_i = fdiv float %tmp_i, %std_in_load" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 122 'fdiv' 'tmp_1_i' <Predicate = true> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 3.25>
+ST_27 : Operation 123 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str1) nounwind" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 123 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 124 [1/1] (0.00ns)   --->   "%norm_LS_data_addr = getelementptr [104 x float]* %norm_LS_data, i64 0, i64 %zext_ln132" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 124 'getelementptr' 'norm_LS_data_addr' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 125 [1/1] (3.25ns)   --->   "store float %tmp_1_i, float* %norm_LS_data_addr, align 4" [dnn/dnn.cpp:132->dnn/dnn.cpp:209]   --->   Operation 125 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_27 : Operation 126 [1/1] (0.00ns)   --->   "br label %1" [dnn/dnn.cpp:131->dnn/dnn.cpp:209]   --->   Operation 126 'br' <Predicate = true> <Delay = 0.00>
+
+State 28 <SV = 4> <Delay = 3.25>
+ST_28 : Operation 127 [1/1] (0.00ns)   --->   "%i_0_i12 = phi i6 [ %i_1, %layer_2_end ], [ 0, %normalize_u.exit.preheader ]"   --->   Operation 127 'phi' 'i_0_i12' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 128 [1/1] (1.42ns)   --->   "%icmp_ln138 = icmp eq i6 %i_0_i12, -12" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 128 'icmp' 'icmp_ln138' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 129 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 129 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 130 [1/1] (1.82ns)   --->   "%i_1 = add i6 %i_0_i12, 1" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 130 'add' 'i_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 131 [1/1] (0.00ns)   --->   "br i1 %icmp_ln138, label %L2_u.exit.preheader, label %layer_2_begin" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 131 'br' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 132 [1/1] (0.00ns)   --->   "%zext_ln140 = zext i6 %i_0_i12 to i64" [dnn/dnn.cpp:140->dnn/dnn.cpp:212]   --->   Operation 132 'zext' 'zext_ln140' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_28 : Operation 133 [1/1] (0.00ns)   --->   "%L1_BIAS_addr = getelementptr inbounds [52 x float]* @L1_BIAS, i64 0, i64 %zext_ln140" [dnn/dnn.cpp:140->dnn/dnn.cpp:212]   --->   Operation 133 'getelementptr' 'L1_BIAS_addr' <Predicate = (!icmp_ln138)> <Delay = 0.00>
+ST_28 : Operation 134 [2/2] (3.25ns)   --->   "%before_relu = load float* %L1_BIAS_addr, align 4" [dnn/dnn.cpp:140->dnn/dnn.cpp:212]   --->   Operation 134 'load' 'before_relu' <Predicate = (!icmp_ln138)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_28 : Operation 135 [1/1] (1.76ns)   --->   "br label %L2_u.exit" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 135 'br' <Predicate = (icmp_ln138)> <Delay = 1.76>
+
+State 29 <SV = 5> <Delay = 3.25>
+ST_29 : Operation 136 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([8 x i8]* @p_str2) nounwind" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 136 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_2_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([8 x i8]* @p_str2)" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 137 'specregionbegin' 'tmp_2_i' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 138 [1/1] (0.00ns)   --->   "%zext_ln140_1 = zext i6 %i_0_i12 to i13" [dnn/dnn.cpp:140->dnn/dnn.cpp:212]   --->   Operation 138 'zext' 'zext_ln140_1' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 139 [1/2] (3.25ns)   --->   "%before_relu = load float* %L1_BIAS_addr, align 4" [dnn/dnn.cpp:140->dnn/dnn.cpp:212]   --->   Operation 139 'load' 'before_relu' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_29 : Operation 140 [1/1] (1.76ns)   --->   "br label %3" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 140 'br' <Predicate = true> <Delay = 1.76>
+
+State 30 <SV = 6> <Delay = 5.43>
+ST_30 : Operation 141 [1/1] (0.00ns)   --->   "%x_assign = phi float [ %before_relu, %layer_2_begin ], [ %before_relu_2, %4 ]"   --->   Operation 141 'phi' 'x_assign' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 142 [1/1] (0.00ns)   --->   "%j_0_i = phi i7 [ 0, %layer_2_begin ], [ %j, %4 ]"   --->   Operation 142 'phi' 'j_0_i' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 143 [1/1] (0.00ns)   --->   "%phi_mul = phi i13 [ 0, %layer_2_begin ], [ %add_ln142_1, %4 ]" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 143 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 144 [1/1] (1.48ns)   --->   "%icmp_ln141 = icmp eq i7 %j_0_i, -24" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 144 'icmp' 'icmp_ln141' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 145 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 104, i64 104, i64 104)"   --->   Operation 145 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 146 [1/1] (1.87ns)   --->   "%j = add i7 %j_0_i, 1" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 146 'add' 'j' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 147 [1/1] (0.00ns)   --->   "br i1 %icmp_ln141, label %layer_2_end, label %4" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 147 'br' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 148 [1/1] (0.00ns)   --->   "%zext_ln142 = zext i7 %j_0_i to i64" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 148 'zext' 'zext_ln142' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_30 : Operation 149 [1/1] (1.67ns)   --->   "%add_ln142_1 = add i13 %phi_mul, 52" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 149 'add' 'add_ln142_1' <Predicate = (!icmp_ln141)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 150 [1/1] (1.67ns)   --->   "%add_ln142 = add i13 %zext_ln140_1, %phi_mul" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 150 'add' 'add_ln142' <Predicate = (!icmp_ln141)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln142_1 = zext i13 %add_ln142 to i64" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 151 'zext' 'zext_ln142_1' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_30 : Operation 152 [1/1] (0.00ns)   --->   "%L1_WEIGHTS_addr = getelementptr [5408 x float]* @L1_WEIGHTS, i64 0, i64 %zext_ln142_1" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 152 'getelementptr' 'L1_WEIGHTS_addr' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_30 : Operation 153 [1/1] (0.00ns)   --->   "%norm_LS_data_addr_1 = getelementptr [104 x float]* %norm_LS_data, i64 0, i64 %zext_ln142" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 153 'getelementptr' 'norm_LS_data_addr_1' <Predicate = (!icmp_ln141)> <Delay = 0.00>
+ST_30 : Operation 154 [2/2] (3.25ns)   --->   "%norm_LS_data_load = load float* %norm_LS_data_addr_1, align 4" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 154 'load' 'norm_LS_data_load' <Predicate = (!icmp_ln141)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_30 : Operation 155 [2/2] (3.25ns)   --->   "%L1_WEIGHTS_load = load float* %L1_WEIGHTS_addr, align 4" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 155 'load' 'L1_WEIGHTS_load' <Predicate = (!icmp_ln141)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_30 : Operation 156 [2/2] (5.43ns)   --->   "%tmp_1 = fcmp olt float %x_assign, 0.000000e+00" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 156 'fcmp' 'tmp_1' <Predicate = (icmp_ln141)> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 7> <Delay = 3.25>
+ST_31 : Operation 157 [1/2] (3.25ns)   --->   "%norm_LS_data_load = load float* %norm_LS_data_addr_1, align 4" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 157 'load' 'norm_LS_data_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_31 : Operation 158 [1/2] (3.25ns)   --->   "%L1_WEIGHTS_load = load float* %L1_WEIGHTS_addr, align 4" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 158 'load' 'L1_WEIGHTS_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 32 <SV = 8> <Delay = 5.70>
+ST_32 : Operation 159 [4/4] (5.70ns)   --->   "%tmp_4_i = fmul float %norm_LS_data_load, %L1_WEIGHTS_load" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 159 'fmul' 'tmp_4_i' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 9> <Delay = 5.70>
+ST_33 : Operation 160 [3/4] (5.70ns)   --->   "%tmp_4_i = fmul float %norm_LS_data_load, %L1_WEIGHTS_load" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 160 'fmul' 'tmp_4_i' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 10> <Delay = 5.70>
+ST_34 : Operation 161 [2/4] (5.70ns)   --->   "%tmp_4_i = fmul float %norm_LS_data_load, %L1_WEIGHTS_load" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 161 'fmul' 'tmp_4_i' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 11> <Delay = 5.70>
+ST_35 : Operation 162 [1/4] (5.70ns)   --->   "%tmp_4_i = fmul float %norm_LS_data_load, %L1_WEIGHTS_load" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 162 'fmul' 'tmp_4_i' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 12> <Delay = 7.25>
+ST_36 : Operation 163 [5/5] (7.25ns)   --->   "%before_relu_2 = fadd float %x_assign, %tmp_4_i" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 163 'fadd' 'before_relu_2' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 13> <Delay = 7.25>
+ST_37 : Operation 164 [4/5] (7.25ns)   --->   "%before_relu_2 = fadd float %x_assign, %tmp_4_i" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 164 'fadd' 'before_relu_2' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 14> <Delay = 7.25>
+ST_38 : Operation 165 [3/5] (7.25ns)   --->   "%before_relu_2 = fadd float %x_assign, %tmp_4_i" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 165 'fadd' 'before_relu_2' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 15> <Delay = 7.25>
+ST_39 : Operation 166 [2/5] (7.25ns)   --->   "%before_relu_2 = fadd float %x_assign, %tmp_4_i" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 166 'fadd' 'before_relu_2' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 16> <Delay = 7.25>
+ST_40 : Operation 167 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str3) nounwind" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 167 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 168 [1/5] (7.25ns)   --->   "%before_relu_2 = fadd float %x_assign, %tmp_4_i" [dnn/dnn.cpp:142->dnn/dnn.cpp:212]   --->   Operation 168 'fadd' 'before_relu_2' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 169 [1/1] (0.00ns)   --->   "br label %3" [dnn/dnn.cpp:141->dnn/dnn.cpp:212]   --->   Operation 169 'br' <Predicate = true> <Delay = 0.00>
+
+State 41 <SV = 7> <Delay = 5.43>
+ST_41 : Operation 170 [1/2] (5.43ns)   --->   "%tmp_1 = fcmp olt float %x_assign, 0.000000e+00" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 170 'fcmp' 'tmp_1' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 8> <Delay = 6.68>
+ST_42 : Operation 171 [1/1] (0.00ns)   --->   "%bitcast_ln110 = bitcast float %x_assign to i32" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 171 'bitcast' 'bitcast_ln110' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 172 [1/1] (0.00ns)   --->   "%tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln110, i32 23, i32 30)" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 172 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 173 [1/1] (0.00ns)   --->   "%trunc_ln110 = trunc i32 %bitcast_ln110 to i23" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 173 'trunc' 'trunc_ln110' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 174 [1/1] (1.55ns)   --->   "%icmp_ln110 = icmp ne i8 %tmp, -1" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 174 'icmp' 'icmp_ln110' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 175 [1/1] (2.44ns)   --->   "%icmp_ln110_1 = icmp eq i23 %trunc_ln110, 0" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 175 'icmp' 'icmp_ln110_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 176 [1/1] (0.00ns) (grouped into LUT with out node select_ln110)   --->   "%or_ln110 = or i1 %icmp_ln110_1, %icmp_ln110" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 176 'or' 'or_ln110' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 177 [1/1] (0.00ns) (grouped into LUT with out node select_ln110)   --->   "%and_ln110 = and i1 %or_ln110, %tmp_1" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 177 'and' 'and_ln110' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 178 [1/1] (0.97ns) (out node of the LUT)   --->   "%select_ln110 = select i1 %and_ln110, float 0.000000e+00, float %x_assign" [dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 178 'select' 'select_ln110' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_42 : Operation 179 [1/1] (0.00ns)   --->   "%y_L2_addr = getelementptr [52 x float]* %y_L2, i64 0, i64 %zext_ln140" [dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 179 'getelementptr' 'y_L2_addr' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 180 [1/1] (3.25ns)   --->   "store float %select_ln110, float* %y_L2_addr, align 4" [dnn/dnn.cpp:144->dnn/dnn.cpp:212]   --->   Operation 180 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_42 : Operation 181 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecRegionEnd([8 x i8]* @p_str2, i32 %tmp_2_i)" [dnn/dnn.cpp:146->dnn/dnn.cpp:212]   --->   Operation 181 'specregionend' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 182 [1/1] (0.00ns)   --->   "br label %normalize_u.exit" [dnn/dnn.cpp:138->dnn/dnn.cpp:212]   --->   Operation 182 'br' <Predicate = true> <Delay = 0.00>
+
+State 43 <SV = 5> <Delay = 3.25>
+ST_43 : Operation 183 [1/1] (0.00ns)   --->   "%i_0_i14 = phi i7 [ %i_3, %layer_3_end ], [ 0, %L2_u.exit.preheader ]"   --->   Operation 183 'phi' 'i_0_i14' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 184 [1/1] (1.48ns)   --->   "%icmp_ln151 = icmp eq i7 %i_0_i14, -24" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 184 'icmp' 'icmp_ln151' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 185 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 104, i64 104, i64 104)"   --->   Operation 185 'speclooptripcount' 'empty_17' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 186 [1/1] (1.87ns)   --->   "%i_3 = add i7 %i_0_i14, 1" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 186 'add' 'i_3' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 187 [1/1] (0.00ns)   --->   "br i1 %icmp_ln151, label %L3_u.exit.preheader, label %layer_3_begin" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 187 'br' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 188 [1/1] (0.00ns)   --->   "%zext_ln153 = zext i7 %i_0_i14 to i64" [dnn/dnn.cpp:153->dnn/dnn.cpp:214]   --->   Operation 188 'zext' 'zext_ln153' <Predicate = (!icmp_ln151)> <Delay = 0.00>
+ST_43 : Operation 189 [1/1] (0.00ns)   --->   "%L2_BIAS_addr = getelementptr inbounds [104 x float]* @L2_BIAS, i64 0, i64 %zext_ln153" [dnn/dnn.cpp:153->dnn/dnn.cpp:214]   --->   Operation 189 'getelementptr' 'L2_BIAS_addr' <Predicate = (!icmp_ln151)> <Delay = 0.00>
+ST_43 : Operation 190 [2/2] (3.25ns)   --->   "%before_relu_1 = load float* %L2_BIAS_addr, align 4" [dnn/dnn.cpp:153->dnn/dnn.cpp:214]   --->   Operation 190 'load' 'before_relu_1' <Predicate = (!icmp_ln151)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_43 : Operation 191 [1/1] (1.76ns)   --->   "br label %L3_u.exit" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 191 'br' <Predicate = (icmp_ln151)> <Delay = 1.76>
+
+State 44 <SV = 6> <Delay = 3.25>
+ST_44 : Operation 192 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([8 x i8]* @p_str4) nounwind" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 192 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 193 [1/1] (0.00ns)   --->   "%tmp_1_i1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([8 x i8]* @p_str4)" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 193 'specregionbegin' 'tmp_1_i1' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 194 [1/1] (0.00ns)   --->   "%zext_ln153_1 = zext i7 %i_0_i14 to i13" [dnn/dnn.cpp:153->dnn/dnn.cpp:214]   --->   Operation 194 'zext' 'zext_ln153_1' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 195 [1/2] (3.25ns)   --->   "%before_relu_1 = load float* %L2_BIAS_addr, align 4" [dnn/dnn.cpp:153->dnn/dnn.cpp:214]   --->   Operation 195 'load' 'before_relu_1' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_44 : Operation 196 [1/1] (1.76ns)   --->   "br label %5" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 196 'br' <Predicate = true> <Delay = 1.76>
+
+State 45 <SV = 7> <Delay = 4.93>
+ST_45 : Operation 197 [1/1] (0.00ns)   --->   "%before_relu_0_i17 = phi float [ %before_relu_1, %layer_3_begin ], [ %before_relu_3, %6 ]"   --->   Operation 197 'phi' 'before_relu_0_i17' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 198 [1/1] (0.00ns)   --->   "%j_0_i18 = phi i6 [ 0, %layer_3_begin ], [ %j_1, %6 ]"   --->   Operation 198 'phi' 'j_0_i18' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 199 [1/1] (0.00ns)   --->   "%phi_mul1 = phi i13 [ 0, %layer_3_begin ], [ %add_ln155_1, %6 ]" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 199 'phi' 'phi_mul1' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 200 [1/1] (1.42ns)   --->   "%icmp_ln154 = icmp eq i6 %j_0_i18, -12" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 200 'icmp' 'icmp_ln154' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 201 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 201 'speclooptripcount' 'empty_18' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 202 [1/1] (1.82ns)   --->   "%j_1 = add i6 %j_0_i18, 1" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 202 'add' 'j_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 203 [1/1] (0.00ns)   --->   "br i1 %icmp_ln154, label %layer_3_end, label %6" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 203 'br' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 204 [1/1] (0.00ns)   --->   "%zext_ln155 = zext i6 %j_0_i18 to i64" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 204 'zext' 'zext_ln155' <Predicate = (!icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 205 [1/1] (1.67ns)   --->   "%add_ln155_1 = add i13 %phi_mul1, 104" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 205 'add' 'add_ln155_1' <Predicate = (!icmp_ln154)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 206 [1/1] (1.67ns)   --->   "%add_ln155 = add i13 %zext_ln153_1, %phi_mul1" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 206 'add' 'add_ln155' <Predicate = (!icmp_ln154)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 207 [1/1] (0.00ns)   --->   "%zext_ln155_1 = zext i13 %add_ln155 to i64" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 207 'zext' 'zext_ln155_1' <Predicate = (!icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 208 [1/1] (0.00ns)   --->   "%L2_WEIGHTS_addr = getelementptr [5408 x float]* @L2_WEIGHTS, i64 0, i64 %zext_ln155_1" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 208 'getelementptr' 'L2_WEIGHTS_addr' <Predicate = (!icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 209 [1/1] (0.00ns)   --->   "%y_L2_addr_1 = getelementptr [52 x float]* %y_L2, i64 0, i64 %zext_ln155" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 209 'getelementptr' 'y_L2_addr_1' <Predicate = (!icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 210 [2/2] (3.25ns)   --->   "%y_L2_load = load float* %y_L2_addr_1, align 4" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 210 'load' 'y_L2_load' <Predicate = (!icmp_ln154)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_45 : Operation 211 [2/2] (3.25ns)   --->   "%L2_WEIGHTS_load = load float* %L2_WEIGHTS_addr, align 4" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 211 'load' 'L2_WEIGHTS_load' <Predicate = (!icmp_ln154)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_45 : Operation 212 [1/1] (0.00ns)   --->   "%y_L3_addr_2 = getelementptr [104 x float]* %y_L3, i64 0, i64 %zext_ln153" [dnn/dnn.cpp:157->dnn/dnn.cpp:214]   --->   Operation 212 'getelementptr' 'y_L3_addr_2' <Predicate = (icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 213 [1/1] (3.25ns)   --->   "store float %before_relu_0_i17, float* %y_L3_addr_2, align 4" [dnn/dnn.cpp:157->dnn/dnn.cpp:214]   --->   Operation 213 'store' <Predicate = (icmp_ln154)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_45 : Operation 214 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([8 x i8]* @p_str4, i32 %tmp_1_i1)" [dnn/dnn.cpp:159->dnn/dnn.cpp:214]   --->   Operation 214 'specregionend' 'empty_19' <Predicate = (icmp_ln154)> <Delay = 0.00>
+ST_45 : Operation 215 [1/1] (0.00ns)   --->   "br label %L2_u.exit" [dnn/dnn.cpp:151->dnn/dnn.cpp:214]   --->   Operation 215 'br' <Predicate = (icmp_ln154)> <Delay = 0.00>
+
+State 46 <SV = 8> <Delay = 3.25>
+ST_46 : Operation 216 [1/2] (3.25ns)   --->   "%y_L2_load = load float* %y_L2_addr_1, align 4" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 216 'load' 'y_L2_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_46 : Operation 217 [1/2] (3.25ns)   --->   "%L2_WEIGHTS_load = load float* %L2_WEIGHTS_addr, align 4" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 217 'load' 'L2_WEIGHTS_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 47 <SV = 9> <Delay = 5.70>
+ST_47 : Operation 218 [4/4] (5.70ns)   --->   "%tmp_i2 = fmul float %y_L2_load, %L2_WEIGHTS_load" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 218 'fmul' 'tmp_i2' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 10> <Delay = 5.70>
+ST_48 : Operation 219 [3/4] (5.70ns)   --->   "%tmp_i2 = fmul float %y_L2_load, %L2_WEIGHTS_load" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 219 'fmul' 'tmp_i2' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 11> <Delay = 5.70>
+ST_49 : Operation 220 [2/4] (5.70ns)   --->   "%tmp_i2 = fmul float %y_L2_load, %L2_WEIGHTS_load" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 220 'fmul' 'tmp_i2' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 12> <Delay = 5.70>
+ST_50 : Operation 221 [1/4] (5.70ns)   --->   "%tmp_i2 = fmul float %y_L2_load, %L2_WEIGHTS_load" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 221 'fmul' 'tmp_i2' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 13> <Delay = 7.25>
+ST_51 : Operation 222 [5/5] (7.25ns)   --->   "%before_relu_3 = fadd float %before_relu_0_i17, %tmp_i2" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 222 'fadd' 'before_relu_3' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 14> <Delay = 7.25>
+ST_52 : Operation 223 [4/5] (7.25ns)   --->   "%before_relu_3 = fadd float %before_relu_0_i17, %tmp_i2" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 223 'fadd' 'before_relu_3' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 15> <Delay = 7.25>
+ST_53 : Operation 224 [3/5] (7.25ns)   --->   "%before_relu_3 = fadd float %before_relu_0_i17, %tmp_i2" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 224 'fadd' 'before_relu_3' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 54 <SV = 16> <Delay = 7.25>
+ST_54 : Operation 225 [2/5] (7.25ns)   --->   "%before_relu_3 = fadd float %before_relu_0_i17, %tmp_i2" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 225 'fadd' 'before_relu_3' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 55 <SV = 17> <Delay = 7.25>
+ST_55 : Operation 226 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str5) nounwind" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 226 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_55 : Operation 227 [1/5] (7.25ns)   --->   "%before_relu_3 = fadd float %before_relu_0_i17, %tmp_i2" [dnn/dnn.cpp:155->dnn/dnn.cpp:214]   --->   Operation 227 'fadd' 'before_relu_3' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 228 [1/1] (0.00ns)   --->   "br label %5" [dnn/dnn.cpp:154->dnn/dnn.cpp:214]   --->   Operation 228 'br' <Predicate = true> <Delay = 0.00>
+
+State 56 <SV = 6> <Delay = 3.25>
+ST_56 : Operation 229 [1/1] (0.00ns)   --->   "%i_0_i24 = phi i7 [ %i_2, %7 ], [ 0, %L3_u.exit.preheader ]"   --->   Operation 229 'phi' 'i_0_i24' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 230 [1/1] (1.48ns)   --->   "%icmp_ln164 = icmp eq i7 %i_0_i24, -24" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 230 'icmp' 'icmp_ln164' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 231 [1/1] (0.00ns)   --->   "%empty_20 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 104, i64 104, i64 104)"   --->   Operation 231 'speclooptripcount' 'empty_20' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 232 [1/1] (1.87ns)   --->   "%i_2 = add i7 %i_0_i24, 1" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 232 'add' 'i_2' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 233 [1/1] (0.00ns)   --->   "br i1 %icmp_ln164, label %denormalize_u.exit, label %7" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 233 'br' <Predicate = true> <Delay = 0.00>
+ST_56 : Operation 234 [1/1] (0.00ns)   --->   "%zext_ln165 = zext i7 %i_0_i24 to i64" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 234 'zext' 'zext_ln165' <Predicate = (!icmp_ln164)> <Delay = 0.00>
+ST_56 : Operation 235 [1/1] (0.00ns)   --->   "%y_L3_addr = getelementptr [104 x float]* %y_L3, i64 0, i64 %zext_ln165" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 235 'getelementptr' 'y_L3_addr' <Predicate = (!icmp_ln164)> <Delay = 0.00>
+ST_56 : Operation 236 [2/2] (3.25ns)   --->   "%y_L3_load = load float* %y_L3_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 236 'load' 'y_L3_load' <Predicate = (!icmp_ln164)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_56 : Operation 237 [1/1] (0.00ns)   --->   "%std_o_addr = getelementptr inbounds [104 x float]* @std_o, i64 0, i64 %zext_ln165" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 237 'getelementptr' 'std_o_addr' <Predicate = (!icmp_ln164)> <Delay = 0.00>
+ST_56 : Operation 238 [2/2] (3.25ns)   --->   "%std_o_load = load float* %std_o_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 238 'load' 'std_o_load' <Predicate = (!icmp_ln164)> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+ST_56 : Operation 239 [2/2] (0.00ns)   --->   "call fastcc void @reconstruct_complex_([104 x float]* %denorm_DNN, i64* %DNN_out_V_data, i1* %DNN_out_V_last_V)" [dnn/dnn.cpp:220]   --->   Operation 239 'call' <Predicate = (icmp_ln164)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 57 <SV = 7> <Delay = 3.25>
+ST_57 : Operation 240 [1/2] (3.25ns)   --->   "%y_L3_load = load float* %y_L3_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 240 'load' 'y_L3_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_57 : Operation 241 [1/2] (3.25ns)   --->   "%std_o_load = load float* %std_o_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 241 'load' 'std_o_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 58 <SV = 8> <Delay = 5.70>
+ST_58 : Operation 242 [4/4] (5.70ns)   --->   "%tmp_i1 = fmul float %y_L3_load, %std_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 242 'fmul' 'tmp_i1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 59 <SV = 9> <Delay = 5.70>
+ST_59 : Operation 243 [3/4] (5.70ns)   --->   "%tmp_i1 = fmul float %y_L3_load, %std_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 243 'fmul' 'tmp_i1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 60 <SV = 10> <Delay = 5.70>
+ST_60 : Operation 244 [2/4] (5.70ns)   --->   "%tmp_i1 = fmul float %y_L3_load, %std_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 244 'fmul' 'tmp_i1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_60 : Operation 245 [1/1] (0.00ns)   --->   "%mean_o_addr = getelementptr inbounds [104 x float]* @mean_o, i64 0, i64 %zext_ln165" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 245 'getelementptr' 'mean_o_addr' <Predicate = true> <Delay = 0.00>
+ST_60 : Operation 246 [2/2] (3.25ns)   --->   "%mean_o_load = load float* %mean_o_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 246 'load' 'mean_o_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 61 <SV = 11> <Delay = 5.70>
+ST_61 : Operation 247 [1/4] (5.70ns)   --->   "%tmp_i1 = fmul float %y_L3_load, %std_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 247 'fmul' 'tmp_i1' <Predicate = true> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_61 : Operation 248 [1/2] (3.25ns)   --->   "%mean_o_load = load float* %mean_o_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 248 'load' 'mean_o_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 104> <ROM>
+
+State 62 <SV = 12> <Delay = 7.25>
+ST_62 : Operation 249 [5/5] (7.25ns)   --->   "%tmp_2_i1 = fadd float %tmp_i1, %mean_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 249 'fadd' 'tmp_2_i1' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 13> <Delay = 7.25>
+ST_63 : Operation 250 [4/5] (7.25ns)   --->   "%tmp_2_i1 = fadd float %tmp_i1, %mean_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 250 'fadd' 'tmp_2_i1' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 14> <Delay = 7.25>
+ST_64 : Operation 251 [3/5] (7.25ns)   --->   "%tmp_2_i1 = fadd float %tmp_i1, %mean_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 251 'fadd' 'tmp_2_i1' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 15> <Delay = 7.25>
+ST_65 : Operation 252 [2/5] (7.25ns)   --->   "%tmp_2_i1 = fadd float %tmp_i1, %mean_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 252 'fadd' 'tmp_2_i1' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 16> <Delay = 7.25>
+ST_66 : Operation 253 [1/5] (7.25ns)   --->   "%tmp_2_i1 = fadd float %tmp_i1, %mean_o_load" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 253 'fadd' 'tmp_2_i1' <Predicate = true> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 17> <Delay = 3.25>
+ST_67 : Operation 254 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str6) nounwind" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 254 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 255 [1/1] (0.00ns)   --->   "%denorm_DNN_addr = getelementptr [104 x float]* %denorm_DNN, i64 0, i64 %zext_ln165" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 255 'getelementptr' 'denorm_DNN_addr' <Predicate = true> <Delay = 0.00>
+ST_67 : Operation 256 [1/1] (3.25ns)   --->   "store float %tmp_2_i1, float* %denorm_DNN_addr, align 4" [dnn/dnn.cpp:165->dnn/dnn.cpp:217]   --->   Operation 256 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_67 : Operation 257 [1/1] (0.00ns)   --->   "br label %L3_u.exit" [dnn/dnn.cpp:164->dnn/dnn.cpp:217]   --->   Operation 257 'br' <Predicate = true> <Delay = 0.00>
+
+State 68 <SV = 7> <Delay = 3.25>
+ST_68 : Operation 258 [1/2] (3.25ns)   --->   "call fastcc void @reconstruct_complex_([104 x float]* %denorm_DNN, i64* %DNN_out_V_data, i1* %DNN_out_V_last_V)" [dnn/dnn.cpp:220]   --->   Operation 258 'call' <Predicate = true> <Delay = 3.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 69 <SV = 8> <Delay = 0.00>
+ST_69 : Operation 259 [1/1] (0.00ns)   --->   "ret void" [dnn/dnn.cpp:222]   --->   Operation 259 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'call' operation ('call_ln206', dnn/dnn.cpp:206) to 'separate_complex_u' [26]  (3.25 ns)
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:131->dnn/dnn.cpp:209) [29]  (1.77 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:131->dnn/dnn.cpp:209) [29]  (0 ns)
+	'getelementptr' operation ('LS_data_addr', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [37]  (0 ns)
+	'load' operation ('LS_data_load', dnn/dnn.cpp:132->dnn/dnn.cpp:209) on array 'LS_data' [38]  (3.25 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('LS_data_load', dnn/dnn.cpp:132->dnn/dnn.cpp:209) on array 'LS_data' [38]  (3.25 ns)
+
+ <State 6>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [41]  (7.26 ns)
+
+ <State 7>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [41]  (7.26 ns)
+
+ <State 8>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [41]  (7.26 ns)
+
+ <State 9>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [41]  (7.26 ns)
+
+ <State 10>: 7.26ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [41]  (7.26 ns)
+
+ <State 11>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 12>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 13>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 14>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 15>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 16>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 17>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 18>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 19>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 20>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 21>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 22>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 23>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 24>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 25>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 26>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [44]  (6.08 ns)
+
+ <State 27>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('norm_LS_data_addr', dnn/dnn.cpp:132->dnn/dnn.cpp:209) [45]  (0 ns)
+	'store' operation ('store_ln132', dnn/dnn.cpp:132->dnn/dnn.cpp:209) of variable 'tmp_1_i', dnn/dnn.cpp:132->dnn/dnn.cpp:209 on array 'x', dnn/dnn.cpp:197 [46]  (3.25 ns)
+
+ <State 28>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:138->dnn/dnn.cpp:212) [51]  (0 ns)
+	'getelementptr' operation ('L1_BIAS_addr', dnn/dnn.cpp:140->dnn/dnn.cpp:212) [61]  (0 ns)
+	'load' operation ('before_relu', dnn/dnn.cpp:140->dnn/dnn.cpp:212) on array 'L1_BIAS' [62]  (3.25 ns)
+
+ <State 29>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('before_relu', dnn/dnn.cpp:140->dnn/dnn.cpp:212) on array 'L1_BIAS' [62]  (3.25 ns)
+
+ <State 30>: 5.43ns
+The critical path consists of the following:
+	'phi' operation ('before_relu') with incoming values : ('before_relu', dnn/dnn.cpp:140->dnn/dnn.cpp:212) ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [65]  (0 ns)
+	'fcmp' operation ('tmp_1', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [92]  (5.43 ns)
+
+ <State 31>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('norm_LS_data_load', dnn/dnn.cpp:142->dnn/dnn.cpp:212) on array 'x', dnn/dnn.cpp:197 [80]  (3.25 ns)
+
+ <State 32>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4_i', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [82]  (5.7 ns)
+
+ <State 33>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4_i', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [82]  (5.7 ns)
+
+ <State 34>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4_i', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [82]  (5.7 ns)
+
+ <State 35>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_4_i', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [82]  (5.7 ns)
+
+ <State 36>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [83]  (7.26 ns)
+
+ <State 37>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [83]  (7.26 ns)
+
+ <State 38>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [83]  (7.26 ns)
+
+ <State 39>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [83]  (7.26 ns)
+
+ <State 40>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:142->dnn/dnn.cpp:212) [83]  (7.26 ns)
+
+ <State 41>: 5.43ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_1', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [92]  (5.43 ns)
+
+ <State 42>: 6.68ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln110_1', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [90]  (2.45 ns)
+	'or' operation ('or_ln110', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [91]  (0 ns)
+	'and' operation ('and_ln110', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [93]  (0 ns)
+	'select' operation ('x', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212) [94]  (0.978 ns)
+	'store' operation ('store_ln144', dnn/dnn.cpp:144->dnn/dnn.cpp:212) of variable 'x', dnn/dnn.cpp:110->dnn/dnn.cpp:144->dnn/dnn.cpp:212 on array 'x', dnn/dnn.cpp:199 [96]  (3.25 ns)
+
+ <State 43>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:151->dnn/dnn.cpp:214) [102]  (0 ns)
+	'getelementptr' operation ('L2_BIAS_addr', dnn/dnn.cpp:153->dnn/dnn.cpp:214) [112]  (0 ns)
+	'load' operation ('before_relu', dnn/dnn.cpp:153->dnn/dnn.cpp:214) on array 'L2_BIAS' [113]  (3.25 ns)
+
+ <State 44>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('before_relu', dnn/dnn.cpp:153->dnn/dnn.cpp:214) on array 'L2_BIAS' [113]  (3.25 ns)
+
+ <State 45>: 4.93ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul1', dnn/dnn.cpp:155->dnn/dnn.cpp:214) with incoming values : ('add_ln155_1', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [118]  (0 ns)
+	'add' operation ('add_ln155', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [127]  (1.68 ns)
+	'getelementptr' operation ('L2_WEIGHTS_addr', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [129]  (0 ns)
+	'load' operation ('L2_WEIGHTS_load', dnn/dnn.cpp:155->dnn/dnn.cpp:214) on array 'L2_WEIGHTS' [132]  (3.25 ns)
+
+ <State 46>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('y_L2_load', dnn/dnn.cpp:155->dnn/dnn.cpp:214) on array 'x', dnn/dnn.cpp:199 [131]  (3.25 ns)
+
+ <State 47>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i2', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [133]  (5.7 ns)
+
+ <State 48>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i2', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [133]  (5.7 ns)
+
+ <State 49>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i2', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [133]  (5.7 ns)
+
+ <State 50>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i2', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [133]  (5.7 ns)
+
+ <State 51>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [134]  (7.26 ns)
+
+ <State 52>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [134]  (7.26 ns)
+
+ <State 53>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [134]  (7.26 ns)
+
+ <State 54>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [134]  (7.26 ns)
+
+ <State 55>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('before_relu', dnn/dnn.cpp:155->dnn/dnn.cpp:214) [134]  (7.26 ns)
+
+ <State 56>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:164->dnn/dnn.cpp:217) [144]  (0 ns)
+	'getelementptr' operation ('y_L3_addr', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [152]  (0 ns)
+	'load' operation ('y_L3_load', dnn/dnn.cpp:165->dnn/dnn.cpp:217) on array 'DNN_data', dnn/dnn.cpp:201 [153]  (3.25 ns)
+
+ <State 57>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('y_L3_load', dnn/dnn.cpp:165->dnn/dnn.cpp:217) on array 'DNN_data', dnn/dnn.cpp:201 [153]  (3.25 ns)
+
+ <State 58>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [156]  (5.7 ns)
+
+ <State 59>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [156]  (5.7 ns)
+
+ <State 60>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [156]  (5.7 ns)
+
+ <State 61>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [156]  (5.7 ns)
+
+ <State 62>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [159]  (7.26 ns)
+
+ <State 63>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [159]  (7.26 ns)
+
+ <State 64>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [159]  (7.26 ns)
+
+ <State 65>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [159]  (7.26 ns)
+
+ <State 66>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [159]  (7.26 ns)
+
+ <State 67>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('denorm_DNN_addr', dnn/dnn.cpp:165->dnn/dnn.cpp:217) [160]  (0 ns)
+	'store' operation ('store_ln165', dnn/dnn.cpp:165->dnn/dnn.cpp:217) of variable 'tmp_2_i1', dnn/dnn.cpp:165->dnn/dnn.cpp:217 on array 'denorm_data', dnn/dnn.cpp:203 [161]  (3.25 ns)
+
+ <State 68>: 3.25ns
+The critical path consists of the following:
+	'call' operation ('call_ln220', dnn/dnn.cpp:220) to 'reconstruct_complex_' [164]  (3.25 ns)
+
+ <State 69>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

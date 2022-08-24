@@ -1,0 +1,260 @@
+
+
+================================================================
+== Vivado HLS Report for 'LS_estimator'
+================================================================
+* Date:           Fri Jul 22 17:47:01 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        least_squares
+* Solution:       1__non_optimized
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.256|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1876|  1876|  1876|  1876|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+------+------+----------+-----------+-----------+------+----------+
+        |                    |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1            |    51|    51|         1|          -|          -|    52|    no    |
+        |- Loop 2            |    51|    51|         1|          -|          -|    52|    no    |
+        |- Loop 3            |    51|    51|         1|          -|          -|    52|    no    |
+        |- preamble_in       |    52|    52|         1|          -|          -|    52|    no    |
+        |- LTS_in            |    52|    52|         1|          -|          -|    52|    no    |
+        |- LS_estimation     |  1456|  1456|        28|          -|          -|    52|    no    |
+        |- out_stream_write  |   156|   156|         3|          -|          -|    52|    no    |
+        +--------------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    235|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     24|    2995|   5084|    -|
+|Memory           |        6|      -|       0|      0|    0|
+|Multiplexer      |        -|      -|       -|    553|    -|
+|Register         |        -|      -|     850|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        6|     24|    3845|   5872|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        2|     10|       3|     11|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |LS_estimator_faddhbi_U1   |LS_estimator_faddhbi  |        0|      2|  205|  390|    0|
+    |LS_estimator_faddhbi_U2   |LS_estimator_faddhbi  |        0|      2|  205|  390|    0|
+    |LS_estimator_fdivkbM_U10  |LS_estimator_fdivkbM  |        0|      0|  761|  994|    0|
+    |LS_estimator_fdivkbM_U11  |LS_estimator_fdivkbM  |        0|      0|  761|  994|    0|
+    |LS_estimator_fmuljbC_U4   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fmuljbC_U5   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fmuljbC_U6   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fmuljbC_U7   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fmuljbC_U8   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fmuljbC_U9   |LS_estimator_fmuljbC  |        0|      3|  143|  321|    0|
+    |LS_estimator_fsubibs_U3   |LS_estimator_fsubibs  |        0|      2|  205|  390|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                     |                      |        0|     24| 2995| 5084|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    +-----------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |         Memory        |        Module        | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-----------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |preamble_M_real_U      |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |preamble_M_imag_U      |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |training_sym_M_real_U  |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |training_sym_M_imag_U  |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |LS_out_M_real_U        |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    |LS_out_M_imag_U        |LS_estimator_preabkb  |        1|  0|   0|    0|    52|   32|     1|         1664|
+    +-----------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                  |                      |        6|  0|   0|    0|   312|  192|     6|         9984|
+    +-----------------------+----------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |             Variable Name            | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |add_ln10_1_fu_425_p2                  |     +    |      0|  0|  15|           6|           1|
+    |add_ln10_fu_407_p2                    |     +    |      0|  0|  15|           6|           1|
+    |add_ln12_fu_443_p2                    |     +    |      0|  0|  15|           6|           1|
+    |i_1_fu_499_p2                         |     +    |      0|  0|  15|           6|           1|
+    |i_2_fu_531_p2                         |     +    |      0|  0|  15|           6|           1|
+    |i_3_fu_551_p2                         |     +    |      0|  0|  15|           6|           1|
+    |i_fu_467_p2                           |     +    |      0|  0|  15|           6|           1|
+    |ap_block_state5                       |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state6                       |    and   |      0|  0|   2|           1|           1|
+    |in_stream_V_data_0_load_A             |    and   |      0|  0|   2|           1|           1|
+    |in_stream_V_data_0_load_B             |    and   |      0|  0|   2|           1|           1|
+    |out_stream_V_data_1_load_A            |    and   |      0|  0|   2|           1|           1|
+    |out_stream_V_data_1_load_B            |    and   |      0|  0|   2|           1|           1|
+    |out_stream_V_last_V_1_load_A          |    and   |      0|  0|   2|           1|           1|
+    |out_stream_V_last_V_1_load_B          |    and   |      0|  0|   2|           1|           1|
+    |icmp_ln10_1_fu_437_p2                 |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln10_fu_419_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln12_fu_455_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln15_fu_461_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln21_fu_493_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln28_fu_525_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |icmp_ln33_fu_545_p2                   |   icmp   |      0|  0|  11|           6|           5|
+    |in_stream_V_data_0_state_cmp_full     |   icmp   |      0|  0|   8|           2|           1|
+    |out_stream_V_data_1_state_cmp_full    |   icmp   |      0|  0|   8|           2|           1|
+    |out_stream_V_last_V_1_state_cmp_full  |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_last_V_fu_563_p2                  |   icmp   |      0|  0|  11|           6|           5|
+    |ap_block_state35                      |    or    |      0|  0|   2|           1|           1|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                 |          |      0|  0| 235|         105|          59|
+    +--------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------+-----+-----------+-----+-----------+
+    |              Name              | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------+-----+-----------+-----+-----------+
+    |LS_out_M_imag_address0          |   21|          4|    6|         24|
+    |LS_out_M_imag_d0                |   15|          3|   32|         96|
+    |LS_out_M_real_address0          |   21|          4|    6|         24|
+    |LS_out_M_real_d0                |   15|          3|   32|         96|
+    |ap_NS_fsm                       |  169|         38|    1|         38|
+    |i3_0_reg_316                    |    9|          2|    6|         12|
+    |i5_0_reg_327                    |    9|          2|    6|         12|
+    |i6_0_reg_338                    |    9|          2|    6|         12|
+    |i_0_reg_305                     |    9|          2|    6|         12|
+    |in_stream_TDATA_blk_n           |    9|          2|    1|          2|
+    |in_stream_V_data_0_data_out     |    9|          2|   64|        128|
+    |in_stream_V_data_0_state        |   15|          3|    2|          6|
+    |in_stream_V_last_V_0_state      |   15|          3|    2|          6|
+    |out_stream_TDATA_blk_n          |    9|          2|    1|          2|
+    |out_stream_V_data_1_data_out    |    9|          2|   64|        128|
+    |out_stream_V_data_1_state       |   15|          3|    2|          6|
+    |out_stream_V_last_V_1_data_out  |    9|          2|    1|          2|
+    |out_stream_V_last_V_1_state     |   15|          3|    2|          6|
+    |phi_ln10_1_reg_283              |    9|          2|    6|         12|
+    |phi_ln10_reg_272                |    9|          2|    6|         12|
+    |phi_ln12_reg_294                |    9|          2|    6|         12|
+    |preamble_M_imag_address0        |   21|          4|    6|         24|
+    |preamble_M_imag_d0              |   15|          3|   32|         96|
+    |preamble_M_real_address0        |   21|          4|    6|         24|
+    |preamble_M_real_d0              |   15|          3|   32|         96|
+    |training_sym_M_imag_address0    |   21|          4|    6|         24|
+    |training_sym_M_imag_d0          |   15|          3|   32|         96|
+    |training_sym_M_real_address0    |   21|          4|    6|         24|
+    |training_sym_M_real_d0          |   15|          3|   32|         96|
+    +--------------------------------+-----+-----------+-----+-----------+
+    |Total                           |  553|        116|  410|       1128|
+    +--------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                        |  37|   0|   37|          0|
+    |complex_M_imag_writ_reg_739      |  32|   0|   32|          0|
+    |complex_M_real_writ_reg_734      |  32|   0|   32|          0|
+    |i3_0_reg_316                     |   6|   0|    6|          0|
+    |i5_0_reg_327                     |   6|   0|    6|          0|
+    |i6_0_reg_338                     |   6|   0|    6|          0|
+    |i_0_reg_305                      |   6|   0|    6|          0|
+    |i_2_reg_629                      |   6|   0|    6|          0|
+    |i_3_reg_747                      |   6|   0|    6|          0|
+    |in_stream_V_data_0_payload_A     |  64|   0|   64|          0|
+    |in_stream_V_data_0_payload_B     |  64|   0|   64|          0|
+    |in_stream_V_data_0_sel_rd        |   1|   0|    1|          0|
+    |in_stream_V_data_0_sel_wr        |   1|   0|    1|          0|
+    |in_stream_V_data_0_state         |   2|   0|    2|          0|
+    |in_stream_V_last_V_0_state       |   2|   0|    2|          0|
+    |out_stream_V_data_1_payload_A    |  64|   0|   64|          0|
+    |out_stream_V_data_1_payload_B    |  64|   0|   64|          0|
+    |out_stream_V_data_1_sel_rd       |   1|   0|    1|          0|
+    |out_stream_V_data_1_sel_wr       |   1|   0|    1|          0|
+    |out_stream_V_data_1_state        |   2|   0|    2|          0|
+    |out_stream_V_last_V_1_payload_A  |   1|   0|    1|          0|
+    |out_stream_V_last_V_1_payload_B  |   1|   0|    1|          0|
+    |out_stream_V_last_V_1_sel_rd     |   1|   0|    1|          0|
+    |out_stream_V_last_V_1_sel_wr     |   1|   0|    1|          0|
+    |out_stream_V_last_V_1_state      |   2|   0|    2|          0|
+    |p_r_M_imag_reg_666               |  32|   0|   32|          0|
+    |p_r_M_real_reg_660               |  32|   0|   32|          0|
+    |p_t_imag_reg_680                 |  32|   0|   32|          0|
+    |p_t_real_reg_672                 |  32|   0|   32|          0|
+    |phi_ln10_1_reg_283               |   6|   0|    6|          0|
+    |phi_ln10_reg_272                 |   6|   0|    6|          0|
+    |phi_ln12_reg_294                 |   6|   0|    6|          0|
+    |tmp_1_i_i_reg_693                |  32|   0|   32|          0|
+    |tmp_2_i_i_reg_718                |  32|   0|   32|          0|
+    |tmp_3_i_i_reg_698                |  32|   0|   32|          0|
+    |tmp_4_i_i_reg_703                |  32|   0|   32|          0|
+    |tmp_5_i_i_reg_723                |  32|   0|   32|          0|
+    |tmp_6_i_i_reg_708                |  32|   0|   32|          0|
+    |tmp_7_i_i_reg_713                |  32|   0|   32|          0|
+    |tmp_8_i_i_reg_729                |  32|   0|   32|          0|
+    |tmp_i_i_reg_688                  |  32|   0|   32|          0|
+    |tmp_last_V_reg_762               |   1|   0|    1|          0|
+    |zext_ln29_reg_634                |   6|   0|   64|         58|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            | 850|   0|  908|         58|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+--------------+---------------------+--------------+
+|     RTL Ports     | Dir | Bits|   Protocol   |    Source Object    |    C Type    |
++-------------------+-----+-----+--------------+---------------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_none |     LS_estimator    | return value |
+|ap_rst_n           |  in |    1| ap_ctrl_none |     LS_estimator    | return value |
+|in_stream_TDATA    |  in |   64|     axis     |   in_stream_V_data  |    pointer   |
+|in_stream_TVALID   |  in |    1|     axis     |  in_stream_V_last_V |    pointer   |
+|in_stream_TREADY   | out |    1|     axis     |  in_stream_V_last_V |    pointer   |
+|in_stream_TLAST    |  in |    1|     axis     |  in_stream_V_last_V |    pointer   |
+|out_stream_TDATA   | out |   64|     axis     |  out_stream_V_data  |    pointer   |
+|out_stream_TREADY  |  in |    1|     axis     |  out_stream_V_data  |    pointer   |
+|out_stream_TVALID  | out |    1|     axis     | out_stream_V_last_V |    pointer   |
+|out_stream_TLAST   | out |    1|     axis     | out_stream_V_last_V |    pointer   |
++-------------------+-----+-----+--------------+---------------------+--------------+
+

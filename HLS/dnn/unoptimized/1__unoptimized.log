@@ -1,0 +1,296 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:45 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:45 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:00:49 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:86) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize' into 'DNN' (dnn/dnn.cpp:204) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2' into 'DNN' (dnn/dnn.cpp:207) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3' into 'DNN' (dnn/dnn.cpp:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:212) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:51 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:183) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:183) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:86) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize' into 'DNN' (dnn/dnn.cpp:204) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2' into 'DNN' (dnn/dnn.cpp:207) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3' into 'DNN' (dnn/dnn.cpp:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:212) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:53 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:55 . Memory (MB): peak = 184.211 ; gain = 92.711
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 55.727 seconds; current allocated memory: 130.691 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.269 seconds; current allocated memory: 130.924 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.221 seconds; current allocated memory: 131.010 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.143 seconds; current allocated memory: 131.107 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.308 seconds; current allocated memory: 131.539 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.293 seconds; current allocated memory: 132.113 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex'.
+INFO: [HLS 200-111]  Elapsed time: 0.405 seconds; current allocated memory: 132.300 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex'.
+INFO: [HLS 200-111]  Elapsed time: 0.268 seconds; current allocated memory: 132.546 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_faddfsub_32nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_fmul_32ns_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fdiv_32ns_32ns_32_16_1' to 'DNN_fdiv_32ns_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fcmp_32ns_32ns_1_2_1' to 'DNN_fcmp_32ns_32neOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_faddfsub_32nsbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fcmp_32ns_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fdiv_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN'.
+INFO: [HLS 200-111]  Elapsed time: 0.559 seconds; current allocated memory: 134.134 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:01:08 . Memory (MB): peak = 208.664 ; gain = 117.164
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN.
+INFO: [HLS 200-112] Total elapsed time: 68.449 seconds; peak allocated memory: 134.134 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 185.156 ; gain = 93.602
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 185.156 ; gain = 93.602
+INFO: [HLS 200-10] Starting code transformations ...
+ERROR: [SYNCHK 200-79] Cannot find the top function 'DNN' in the design. Possible causes are: (1) the top function name is misspelled; (2) the top function is nonexistent or declared as static.
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 184.477 ; gain = 92.828
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 184.477 ; gain = 92.828
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:43 . Memory (MB): peak = 184.477 ; gain = 92.828
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:111) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:114) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:119) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:06 ; elapsed = 00:00:45 . Memory (MB): peak = 184.477 ; gain = 92.828
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:90) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:90) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:111) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:114) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:116) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:119) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:47 . Memory (MB): peak = 184.477 ; gain = 92.828
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_u' to 'reconstruct_complex_' (dnn/dnn.cpp:71)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:49 . Memory (MB): peak = 184.477 ; gain = 92.828
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_u' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 49.697 seconds; current allocated memory: 130.755 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.246 seconds; current allocated memory: 130.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.216 seconds; current allocated memory: 131.074 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.141 seconds; current allocated memory: 131.171 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.244 seconds; current allocated memory: 131.603 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.278 seconds; current allocated memory: 132.177 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.366 seconds; current allocated memory: 132.363 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.244 seconds; current allocated memory: 132.610 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_u' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_u_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_u_faddfsub_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_u_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fdiv_32ns_32ns_32_16_1' to 'DNN_u_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fcmp_32ns_32ns_1_2_1' to 'DNN_u_fcmp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_faddfsub_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fcmp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fmul_32ns_3cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.574 seconds; current allocated memory: 134.214 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:01:02 . Memory (MB): peak = 208.293 ; gain = 116.645
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_u.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_u.
+INFO: [HLS 200-112] Total elapsed time: 62.139 seconds; peak allocated memory: 134.214 MB.

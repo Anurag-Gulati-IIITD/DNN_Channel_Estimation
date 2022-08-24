@@ -1,0 +1,1394 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 184.961 ; gain = 93.449
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 184.961 ; gain = 93.449
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:42 . Memory (MB): peak = 184.961 ; gain = 93.449
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:114) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:122) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:44 . Memory (MB): peak = 184.961 ; gain = 93.449
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:93) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:93) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:114) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:117) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:122) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 184.961 ; gain = 93.449
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_u' to 'reconstruct_complex_' (dnn/dnn.cpp:74)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:48 . Memory (MB): peak = 184.961 ; gain = 93.449
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_u' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 48.309 seconds; current allocated memory: 130.723 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.288 seconds; current allocated memory: 130.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.164 seconds; current allocated memory: 131.042 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.183 seconds; current allocated memory: 131.140 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.249 seconds; current allocated memory: 131.571 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.312 seconds; current allocated memory: 132.146 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.496 seconds; current allocated memory: 132.332 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.269 seconds; current allocated memory: 132.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_u' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_u_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_u_faddfsub_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_u_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fdiv_32ns_32ns_32_16_1' to 'DNN_u_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fcmp_32ns_32ns_1_2_1' to 'DNN_u_fcmp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_faddfsub_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fcmp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fmul_32ns_3cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 134.167 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:01:01 . Memory (MB): peak = 208.781 ; gain = 117.270
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_u.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_u.
+INFO: [HLS 200-112] Total elapsed time: 61.174 seconds; peak allocated memory: 134.167 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:58 . Memory (MB): peak = 185.355 ; gain = 93.840
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:58 . Memory (MB): peak = 185.355 ; gain = 93.840
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:01:02 . Memory (MB): peak = 185.355 ; gain = 93.840
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_wlo' (dnn/dnn.cpp:506) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_wlo' into 'DNN_wlo' (dnn/dnn.cpp:582) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_wlo' into 'DNN_wlo' (dnn/dnn.cpp:585) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_wlo' into 'DNN_wlo' (dnn/dnn.cpp:587) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_wlo' into 'DNN_wlo' (dnn/dnn.cpp:590) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:01:05 . Memory (MB): peak = 185.355 ; gain = 93.840
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:556) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:556) into a 64-bit variable.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'layer_3' (dnn/dnn.cpp:514) in function 'L3_wlo' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'layer_2' (dnn/dnn.cpp:498) in function 'L2_wlo' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'weighted_sum_L3' (dnn/dnn.cpp:519) in function 'L3_wlo' completely with a factor of 52.
+INFO: [HLS 200-489] Unrolling loop 'weighted_sum_L2' (dnn/dnn.cpp:503) in function 'L2_wlo' completely with a factor of 104.
+INFO: [XFORM 203-101] Partitioning array 'L1_WEIGHTS'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L2_WEIGHTS'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data' (dnn/dnn.cpp:568) in dimension 1 with a block factor 52.
+INFO: [XFORM 203-101] Partitioning array 'y_L2' (dnn/dnn.cpp:571) in dimension 1 with a block factor 26.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.0' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.1' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.2' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.3' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.4' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.5' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.6' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.7' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.8' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.9' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.10' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.11' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.12' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.13' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.14' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.15' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.16' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.17' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.18' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.19' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.20' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.21' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.22' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.23' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.24' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.25' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.26' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.27' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.28' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.29' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.30' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.31' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.32' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.33' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.34' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.35' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.36' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.37' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.38' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.39' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.40' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.41' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.42' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.43' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.44' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.45' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.46' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.47' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.48' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.49' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.50' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.51' (dnn/dnn.cpp:568) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.0' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.1' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.2' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.3' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.4' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.5' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.6' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.7' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.8' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.9' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.10' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.11' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.12' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.13' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.14' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.15' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.16' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.17' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.18' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.19' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.20' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.21' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.22' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.23' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.24' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.25' (dnn/dnn.cpp:571) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.0' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.1' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.2' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.3' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.4' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.5' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.6' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.7' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.8' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.9' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.10' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.11' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.12' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.13' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.14' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.15' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.16' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.17' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.18' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.19' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.20' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.21' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.22' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.23' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.24' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.25' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.26' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.27' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.28' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.29' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.30' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.31' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.32' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.33' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.34' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.35' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.36' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.37' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.38' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.39' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.40' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.41' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.42' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.43' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.44' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.45' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.46' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.47' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.48' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.49' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.50' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.51' (dnn/dnn.cpp:568) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.0' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.1' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.2' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.3' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.4' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.5' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.6' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.7' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.8' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.9' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.10' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.11' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.12' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.13' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.14' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.15' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.16' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.17' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.18' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.19' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.20' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.21' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.22' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.23' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.24' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.25' (dnn/dnn.cpp:571) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_wlo' (dnn/dnn.cpp:506) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_wlo' into 'DNN_wlo' (dnn/dnn.cpp:590) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 185.355 ; gain = 93.840
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_wlo' to 'reconstruct_complex_' (dnn/dnn.cpp:535)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:01:15 . Memory (MB): peak = 231.250 ; gain = 139.734
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_wlo' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'separation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 75.878 seconds; current allocated memory: 175.752 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.523 seconds; current allocated memory: 175.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'normalize_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'normalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 15.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.906 seconds; current allocated memory: 177.338 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.283 seconds; current allocated memory: 179.173 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'L2_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'layer_2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 4, Final II = 4, Depth = 528.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.322 seconds; current allocated memory: 182.527 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 11.2 seconds; current allocated memory: 189.592 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'L3_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'layer_3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 4, Final II = 4, Depth = 267.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 9.601 seconds; current allocated memory: 190.923 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 4.222 seconds; current allocated memory: 193.520 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'reconstruction'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.927 seconds; current allocated memory: 193.591 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.474 seconds; current allocated memory: 193.706 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'denormalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 194.150 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.268 seconds; current allocated memory: 195.588 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_sptohp_32ns_16_2_1' to 'DNN_wlo_sptohp_32bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_sptohp_32bkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_wlo'.
+INFO: [HLS 200-111]  Elapsed time: 2.638 seconds; current allocated memory: 196.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'normalize_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'normalize_wlo_mean_in' to 'normalize_wlo_meacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'normalize_wlo_std_in' to 'normalize_wlo_stddEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hsub_16ns_16ns_16_5_full_dsp_1' to 'DNN_wlo_hsub_16nseOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hdiv_16ns_16ns_16_7_1' to 'DNN_wlo_hdiv_16nsfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hdiv_16nsfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hsub_16nseOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize_wlo'.
+INFO: [HLS 200-111]  Elapsed time: 3.114 seconds; current allocated memory: 222.642 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'L2_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_10' to 'L2_wlo_L1_WEIGHTSg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_11' to 'L2_wlo_L1_WEIGHTShbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_12' to 'L2_wlo_L1_WEIGHTSibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_13' to 'L2_wlo_L1_WEIGHTSjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_14' to 'L2_wlo_L1_WEIGHTSkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_15' to 'L2_wlo_L1_WEIGHTSlbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_16' to 'L2_wlo_L1_WEIGHTSmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_17' to 'L2_wlo_L1_WEIGHTSncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_18' to 'L2_wlo_L1_WEIGHTSocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_19' to 'L2_wlo_L1_WEIGHTSpcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_20' to 'L2_wlo_L1_WEIGHTSqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_21' to 'L2_wlo_L1_WEIGHTSrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_22' to 'L2_wlo_L1_WEIGHTSsc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_23' to 'L2_wlo_L1_WEIGHTStde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_24' to 'L2_wlo_L1_WEIGHTSudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_25' to 'L2_wlo_L1_WEIGHTSvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_26' to 'L2_wlo_L1_WEIGHTSwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_27' to 'L2_wlo_L1_WEIGHTSxdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_28' to 'L2_wlo_L1_WEIGHTSyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_29' to 'L2_wlo_L1_WEIGHTSzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_30' to 'L2_wlo_L1_WEIGHTSAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_31' to 'L2_wlo_L1_WEIGHTSBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_32' to 'L2_wlo_L1_WEIGHTSCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_33' to 'L2_wlo_L1_WEIGHTSDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_34' to 'L2_wlo_L1_WEIGHTSEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_35' to 'L2_wlo_L1_WEIGHTSFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_36' to 'L2_wlo_L1_WEIGHTSGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_37' to 'L2_wlo_L1_WEIGHTSHfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_38' to 'L2_wlo_L1_WEIGHTSIfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_39' to 'L2_wlo_L1_WEIGHTSJfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_40' to 'L2_wlo_L1_WEIGHTSKfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_41' to 'L2_wlo_L1_WEIGHTSLf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_42' to 'L2_wlo_L1_WEIGHTSMgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_43' to 'L2_wlo_L1_WEIGHTSNgs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_44' to 'L2_wlo_L1_WEIGHTSOgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_45' to 'L2_wlo_L1_WEIGHTSPgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_46' to 'L2_wlo_L1_WEIGHTSQgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_47' to 'L2_wlo_L1_WEIGHTSRg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_48' to 'L2_wlo_L1_WEIGHTSShg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_49' to 'L2_wlo_L1_WEIGHTSThq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_50' to 'L2_wlo_L1_WEIGHTSUhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_51' to 'L2_wlo_L1_WEIGHTSVhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_52' to 'L2_wlo_L1_WEIGHTSWhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_53' to 'L2_wlo_L1_WEIGHTSXh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_54' to 'L2_wlo_L1_WEIGHTSYie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_55' to 'L2_wlo_L1_WEIGHTSZio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_56' to 'L2_wlo_L1_WEIGHTS0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_57' to 'L2_wlo_L1_WEIGHTS1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_58' to 'L2_wlo_L1_WEIGHTS2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_59' to 'L2_wlo_L1_WEIGHTS3i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_60' to 'L2_wlo_L1_WEIGHTS4jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_61' to 'L2_wlo_L1_WEIGHTS5jm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_62' to 'L2_wlo_L1_WEIGHTS6jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_63' to 'L2_wlo_L1_WEIGHTS7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_64' to 'L2_wlo_L1_WEIGHTS8jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_65' to 'L2_wlo_L1_WEIGHTS9j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_66' to 'L2_wlo_L1_WEIGHTSbak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_67' to 'L2_wlo_L1_WEIGHTSbbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_68' to 'L2_wlo_L1_WEIGHTSbck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_69' to 'L2_wlo_L1_WEIGHTSbdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_70' to 'L2_wlo_L1_WEIGHTSbek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_71' to 'L2_wlo_L1_WEIGHTSbfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_72' to 'L2_wlo_L1_WEIGHTSbgk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_73' to 'L2_wlo_L1_WEIGHTSbhl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_74' to 'L2_wlo_L1_WEIGHTSbil' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_75' to 'L2_wlo_L1_WEIGHTSbjl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_76' to 'L2_wlo_L1_WEIGHTSbkl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_77' to 'L2_wlo_L1_WEIGHTSbll' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_78' to 'L2_wlo_L1_WEIGHTSbml' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_79' to 'L2_wlo_L1_WEIGHTSbnm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_80' to 'L2_wlo_L1_WEIGHTSbom' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_81' to 'L2_wlo_L1_WEIGHTSbpm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_82' to 'L2_wlo_L1_WEIGHTSbqm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_83' to 'L2_wlo_L1_WEIGHTSbrm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_84' to 'L2_wlo_L1_WEIGHTSbsm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_85' to 'L2_wlo_L1_WEIGHTSbtn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_86' to 'L2_wlo_L1_WEIGHTSbun' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_87' to 'L2_wlo_L1_WEIGHTSbvn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_88' to 'L2_wlo_L1_WEIGHTSbwn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_89' to 'L2_wlo_L1_WEIGHTSbxn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_90' to 'L2_wlo_L1_WEIGHTSbyn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_91' to 'L2_wlo_L1_WEIGHTSbzo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_92' to 'L2_wlo_L1_WEIGHTSbAo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_93' to 'L2_wlo_L1_WEIGHTSbBo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_94' to 'L2_wlo_L1_WEIGHTSbCo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_95' to 'L2_wlo_L1_WEIGHTSbDo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_96' to 'L2_wlo_L1_WEIGHTSbEo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_97' to 'L2_wlo_L1_WEIGHTSbFp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_98' to 'L2_wlo_L1_WEIGHTSbGp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_99' to 'L2_wlo_L1_WEIGHTSbHp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_104' to 'L2_wlo_L1_WEIGHTSbIp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_103' to 'L2_wlo_L1_WEIGHTSbJp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L2_wlo_L1_WEIGHTS_102' to 'L2_wlo_L1_WEIGHTSbKp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hadd_16ns_16ns_16_5_full_dsp_1' to 'DNN_wlo_hadd_16nsbLp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hmul_16ns_16ns_16_4_max_dsp_1' to 'DNN_wlo_hmul_16nsbMq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hcmp_16ns_16ns_1_2_1' to 'DNN_wlo_hcmp_16nsbNq' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'L2_wlo' is 47379 from HDL expression: ((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hadd_16nsbLp': 26 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hcmp_16nsbNq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hmul_16nsbMq': 26 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'L2_wlo'.
+INFO: [HLS 200-111]  Elapsed time: 17.476 seconds; current allocated memory: 246.796 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'L3_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_10' to 'L3_wlo_L2_WEIGHTSbOq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_11' to 'L3_wlo_L2_WEIGHTSbPq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_12' to 'L3_wlo_L2_WEIGHTSbQq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_13' to 'L3_wlo_L2_WEIGHTSbRq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_14' to 'L3_wlo_L2_WEIGHTSbSr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_15' to 'L3_wlo_L2_WEIGHTSbTr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_16' to 'L3_wlo_L2_WEIGHTSbUr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_17' to 'L3_wlo_L2_WEIGHTSbVr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_18' to 'L3_wlo_L2_WEIGHTSbWr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_19' to 'L3_wlo_L2_WEIGHTSbXr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_20' to 'L3_wlo_L2_WEIGHTSbYs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_21' to 'L3_wlo_L2_WEIGHTSbZs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_22' to 'L3_wlo_L2_WEIGHTSb0s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_23' to 'L3_wlo_L2_WEIGHTSb1s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_24' to 'L3_wlo_L2_WEIGHTSb2s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_25' to 'L3_wlo_L2_WEIGHTSb3s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_26' to 'L3_wlo_L2_WEIGHTSb4t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_27' to 'L3_wlo_L2_WEIGHTSb5t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_28' to 'L3_wlo_L2_WEIGHTSb6t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_29' to 'L3_wlo_L2_WEIGHTSb7t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_30' to 'L3_wlo_L2_WEIGHTSb8t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_31' to 'L3_wlo_L2_WEIGHTSb9t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_32' to 'L3_wlo_L2_WEIGHTScau' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_33' to 'L3_wlo_L2_WEIGHTScbu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_34' to 'L3_wlo_L2_WEIGHTSccu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_35' to 'L3_wlo_L2_WEIGHTScdu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_36' to 'L3_wlo_L2_WEIGHTSceu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_37' to 'L3_wlo_L2_WEIGHTScfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_38' to 'L3_wlo_L2_WEIGHTScgu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_39' to 'L3_wlo_L2_WEIGHTSchv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_40' to 'L3_wlo_L2_WEIGHTSciv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_41' to 'L3_wlo_L2_WEIGHTScjv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_42' to 'L3_wlo_L2_WEIGHTSckv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_43' to 'L3_wlo_L2_WEIGHTSclv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_44' to 'L3_wlo_L2_WEIGHTScmv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_45' to 'L3_wlo_L2_WEIGHTScnw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_46' to 'L3_wlo_L2_WEIGHTScow' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_47' to 'L3_wlo_L2_WEIGHTScpw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_48' to 'L3_wlo_L2_WEIGHTScqw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_49' to 'L3_wlo_L2_WEIGHTScrw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_50' to 'L3_wlo_L2_WEIGHTScsw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'L3_wlo_L2_WEIGHTS_51' to 'L3_wlo_L2_WEIGHTSctx' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'L3_wlo' is 15763 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hadd_16nsbLp': 13 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hmul_16nsbMq': 13 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'L3_wlo'.
+INFO: [HLS 200-111]  Elapsed time: 19.822 seconds; current allocated memory: 252.747 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'DNN_wlo_hptosp_16ns_32_2_1' to 'DNN_wlo_hptosp_16cux' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hptosp_16cux': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 5.58 seconds; current allocated memory: 253.194 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_wlo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_wlo/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_wlo/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_wlo/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_wlo/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_wlo' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hadd_16nsbLp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_wlo_hmul_16nsbMq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_wlo'.
+INFO: [HLS 200-111]  Elapsed time: 3.578 seconds; current allocated memory: 273.116 MB.
+INFO: [RTMG 210-279] Implementing memory 'normalize_wlo_meacud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'normalize_wlo_stddEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_BIAS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_1_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_3_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_5_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_9_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTShbi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSjbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSlbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSncg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSocq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSpcA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSqcK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSrcU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSsc4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTStde_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSudo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSvdy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSwdI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSxdS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSyd2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSzec_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSAem_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSBew_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSCeG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSDeQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSEe0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSFfa_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSGfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSHfu_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSIfE_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSJfO_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSKfY_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSLf8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSMgi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSNgs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSOgC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSPgM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSQgW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSRg6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSShg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSThq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSUhA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSVhK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSWhU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSXh4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSYie_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSZio_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS0iy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS1iI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS2iS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS3i2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS4jc_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS5jm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS6jw_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS7jG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS8jQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS9j0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbak_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbbk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbck_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbdk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbek_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbgk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbhl_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbil_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbjl_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbkl_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbll_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbml_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbnm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbom_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbpm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbqm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbrm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbsm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbtn_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbun_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbvn_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbwn_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbxn_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbyn_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbzo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbAo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbBo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbCo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbDo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbEo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbFp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbGp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbHp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbIp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbJp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTSbKp_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_wlo_L1_WEIGHTS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTS_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbOq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbPq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbQq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbRq_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbSr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbTr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbUr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbVr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbWr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbXr_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbYs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSbZs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb0s_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb1s_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb2s_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb3s_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb4t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb5t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb6t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb7t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb8t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSb9t_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScau_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScbu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSccu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScdu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSceu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScfu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScgu_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSchv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSciv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScjv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSckv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSclv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScmv_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScnw_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScow_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScpw_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScqw_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScrw_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTScsw_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_wlo_L2_WEIGHTSctx_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_wlo_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_wlo_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_wlo_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_wlo_y_L3_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_wlo_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:01 ; elapsed = 00:04:16 . Memory (MB): peak = 402.641 ; gain = 311.125
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_wlo.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_wlo.
+INFO: [HLS 200-112] Total elapsed time: 256.3 seconds; peak allocated memory: 273.116 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from dnn/dnn.cpp:1:
+dnn/dnn.cpp:211:2: error: no matching function for call to 'normalize_u'
+ normalize_u(LS_data, norm_LS_data, mean_in, std_in);
+ ^~~~~~~~~~~
+dnn/dnn.cpp:129:6: note: candidate function not viable: no known conversion from 'const half [104]' to 'const float *' for 3rd argument; 
+void normalize_u(float LS_data[2*52], float norm_data[2*52], const float mean[2*52], const float std[2*52])
+     ^
+dnn/dnn.cpp:214:2: error: no matching function for call to 'L2_u'
+ L2_u(L1_BIAS, L1_WEIGHTS, norm_LS_data, y_L2);
+ ^~~~
+dnn/dnn.cpp:136:6: note: candidate function not viable: no known conversion from 'const half [52]' to 'const float *' for 1st argument; 
+void L2_u(const float bias[52], const float w[52*2][52], float x[52*2], float y_L2[52])
+     ^
+dnn/dnn.cpp:216:2: error: no matching function for call to 'L3_u'
+ L3_u(L2_BIAS, L2_WEIGHTS, y_L2, y_L3);
+ ^~~~
+dnn/dnn.cpp:150:6: note: candidate function not viable: no known conversion from 'const half [104]' to 'const float *' for 1st argument; 
+void L3_u(const float bias[2*52], const float w[52][2*52], float x[52], float y_L3[2*52])
+     ^
+dnn/dnn.cpp:219:2: error: no matching function for call to 'denormalize_u'
+ denormalize_u(y_L3, denorm_DNN, mean_o, std_o);
+ ^~~~~~~~~~~~~
+dnn/dnn.cpp:164:6: note: candidate function not viable: no known conversion from 'const half [104]' to 'const float *' for 3rd argument; 
+void denormalize_u(float DNN_data[2*52], float denorm_data[2*52], const float mean_o[2*52], const float std_o[2*52])
+     ^
+4 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:41 . Memory (MB): peak = 185.324 ; gain = 118.078
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:41 . Memory (MB): peak = 185.324 ; gain = 118.078
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:45 . Memory (MB): peak = 185.324 ; gain = 118.078
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:216) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:219) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:47 . Memory (MB): peak = 185.324 ; gain = 118.078
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:190) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:190) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:216) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:219) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:49 . Memory (MB): peak = 185.324 ; gain = 118.078
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_u' to 'reconstruct_complex_' (dnn/dnn.cpp:171)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:51 . Memory (MB): peak = 185.324 ; gain = 118.078
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_u' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 51.321 seconds; current allocated memory: 130.802 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.444 seconds; current allocated memory: 131.035 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.162 seconds; current allocated memory: 131.105 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.164 seconds; current allocated memory: 131.203 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.268 seconds; current allocated memory: 131.650 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.295 seconds; current allocated memory: 132.224 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.462 seconds; current allocated memory: 132.395 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.274 seconds; current allocated memory: 132.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_u' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_u_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_u_faddfsub_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_u_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fdiv_32ns_32ns_32_16_1' to 'DNN_u_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fcmp_32ns_32ns_1_2_1' to 'DNN_u_fcmp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_faddfsub_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fcmp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fmul_32ns_3cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.531 seconds; current allocated memory: 134.230 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:01:05 . Memory (MB): peak = 208.066 ; gain = 140.820
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_u.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_u.
+INFO: [HLS 200-112] Total elapsed time: 65.35 seconds; peak allocated memory: 134.230 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+ERROR: [COSIM 212-366] Cannot delete directory  'sim/report': it is being used by another program. Please close the program and try again.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+ERROR: [COSIM 212-366] Cannot delete directory  'sim/report': it is being used by another program. Please close the program and try again.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:46 . Memory (MB): peak = 184.602 ; gain = 93.074
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:46 . Memory (MB): peak = 184.602 ; gain = 93.074
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:49 . Memory (MB): peak = 184.602 ; gain = 93.074
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:216) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:219) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:06 ; elapsed = 00:00:51 . Memory (MB): peak = 184.602 ; gain = 93.074
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:190) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:190) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:216) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:219) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:54 . Memory (MB): peak = 184.602 ; gain = 93.074
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_u' to 'reconstruct_complex_' (dnn/dnn.cpp:171)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:10 ; elapsed = 00:00:56 . Memory (MB): peak = 184.602 ; gain = 93.074
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_u' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 56.306 seconds; current allocated memory: 130.770 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.277 seconds; current allocated memory: 131.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.258 seconds; current allocated memory: 131.089 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.182 seconds; current allocated memory: 131.187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.349 seconds; current allocated memory: 131.634 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.408 seconds; current allocated memory: 132.208 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.373 seconds; current allocated memory: 132.379 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.364 seconds; current allocated memory: 132.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_u' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_u_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_u_faddfsub_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_u_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fdiv_32ns_32ns_32_16_1' to 'DNN_u_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fcmp_32ns_32ns_1_2_1' to 'DNN_u_fcmp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_faddfsub_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fcmp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fmul_32ns_3cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.642 seconds; current allocated memory: 134.227 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:15 ; elapsed = 00:01:10 . Memory (MB): peak = 208.961 ; gain = 117.434
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_u.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_u.
+INFO: [HLS 200-112] Total elapsed time: 70.584 seconds; peak allocated memory: 134.227 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from dnn/dnn.cpp:1:
+dnn/dnn.cpp:187:77: error: expected ';' at end of declaration
+void DNN_u(hls::stream<axis_data>&LS_stream, hls::stream<axis_data>&DNN_out)
+                                                                            ^
+                                                                            ;
+dnn/dnn.cpp:221:2: error: expected '}'
+}
+ ^
+dnn/dnn.cpp:170:1: note: to match this '{'
+{
+^
+2 errors generated.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:38 . Memory (MB): peak = 184.516 ; gain = 115.773
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:38 . Memory (MB): peak = 184.516 ; gain = 115.773
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:41 . Memory (MB): peak = 184.516 ; gain = 115.773
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:212) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:217) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:06 ; elapsed = 00:00:43 . Memory (MB): peak = 184.516 ; gain = 115.773
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:188) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:188) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2_u' (dnn/dnn.cpp:144) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize_u' into 'DNN_u' (dnn/dnn.cpp:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2_u' into 'DNN_u' (dnn/dnn.cpp:212) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3_u' into 'DNN_u' (dnn/dnn.cpp:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize_u' into 'DNN_u' (dnn/dnn.cpp:217) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:00:45 . Memory (MB): peak = 184.516 ; gain = 115.773
+WARNING: [XFORM 203-631] Renaming function 'reconstruct_complex_u' to 'reconstruct_complex_' (dnn/dnn.cpp:169)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:47 . Memory (MB): peak = 184.516 ; gain = 115.773
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN_u' ...
+WARNING: [SYN 201-103] Legalizing function name 'reconstruct_complex_' to 'reconstruct_complex_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 47.671 seconds; current allocated memory: 130.786 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.261 seconds; current allocated memory: 131.019 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.201 seconds; current allocated memory: 131.089 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.158 seconds; current allocated memory: 131.187 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.264 seconds; current allocated memory: 131.634 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.302 seconds; current allocated memory: 132.208 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.416 seconds; current allocated memory: 132.395 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.274 seconds; current allocated memory: 132.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN_u' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN_u/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN_u' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_u_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_u_faddfsub_32bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_u_fmul_32ns_3cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fdiv_32ns_32ns_32_16_1' to 'DNN_u_fdiv_32ns_3dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_u_fcmp_32ns_32ns_1_2_1' to 'DNN_u_fcmp_32ns_3eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_faddfsub_32bkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fcmp_32ns_3eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fdiv_32ns_3dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_u_fmul_32ns_3cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN_u'.
+INFO: [HLS 200-111]  Elapsed time: 0.608 seconds; current allocated memory: 134.230 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_u_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_u_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:01:01 . Memory (MB): peak = 208.395 ; gain = 139.652
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN_u.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN_u.
+INFO: [HLS 200-112] Total elapsed time: 61.044 seconds; peak allocated memory: 134.230 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

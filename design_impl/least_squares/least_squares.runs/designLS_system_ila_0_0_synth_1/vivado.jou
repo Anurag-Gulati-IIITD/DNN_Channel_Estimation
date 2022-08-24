@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Aug 12 11:45:08 2022
+# Process ID: 6304
+# Current directory: D:/IIIT-D/Channel_Estimation/design_impl/least_squares/least_squares.runs/designLS_system_ila_0_0_synth_1
+# Command line: vivado.exe -log designLS_system_ila_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source designLS_system_ila_0_0.tcl
+# Log file: D:/IIIT-D/Channel_Estimation/design_impl/least_squares/least_squares.runs/designLS_system_ila_0_0_synth_1/designLS_system_ila_0_0.vds
+# Journal file: D:/IIIT-D/Channel_Estimation/design_impl/least_squares/least_squares.runs/designLS_system_ila_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source designLS_system_ila_0_0.tcl -notrace

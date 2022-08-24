@@ -1,0 +1,3397 @@
+<stg><name>DNN_wlo</name>
+
+
+<trans_list>
+
+<trans id="233" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="234" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="235" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="236" from="4" to="5">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="237" from="5" to="6">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="238" from="6" to="7">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="239" from="7" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="268" from="8" to="20">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="269" from="8" to="9">
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="257" from="9" to="10">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="258" from="10" to="11">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="259" from="11" to="12">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="260" from="12" to="13">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="261" from="13" to="14">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="262" from="14" to="15">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="263" from="15" to="16">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="264" from="16" to="17">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="265" from="17" to="18">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="266" from="18" to="19">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="267" from="19" to="8">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="254" from="20" to="21">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="255" from="21" to="22">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="23" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="172" bw="16" op_0_bw="64">
+<![CDATA[
+:5  %LS_data = alloca [104 x half], align 16
+
+]]></Node>
+<StgValue><ssdm name="LS_data"/></StgValue>
+</operation>
+
+<operation id="24" st_id="1" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="173" bw="16" op_0_bw="64">
+<![CDATA[
+:6  %y_L3 = alloca [104 x half], align 16
+
+]]></Node>
+<StgValue><ssdm name="y_L3"/></StgValue>
+</operation>
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="174" bw="16" op_0_bw="64">
+<![CDATA[
+:7  %denorm_DNN = alloca [104 x half], align 16
+
+]]></Node>
+<StgValue><ssdm name="denorm_DNN"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="26" st_id="2" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="178" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="1" op_3_bw="16">
+<![CDATA[
+:11  call fastcc void @separate_complex_wlo(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [104 x half]* %LS_data)
+
+]]></Node>
+<StgValue><ssdm name="call_ln579"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="27" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="178" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="1" op_3_bw="16">
+<![CDATA[
+:11  call fastcc void @separate_complex_wlo(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [104 x half]* %LS_data)
+
+]]></Node>
+<StgValue><ssdm name="call_ln579"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="28" st_id="4" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="179" bw="1664" op_0_bw="1664" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="0" op_5_bw="0">
+<![CDATA[
+:12  %call_ret = call fastcc { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } @normalize_wlo([104 x half]* %LS_data)
+
+]]></Node>
+<StgValue><ssdm name="call_ret"/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="29" st_id="5" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="179" bw="1664" op_0_bw="1664" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="0" op_5_bw="0">
+<![CDATA[
+:12  %call_ret = call fastcc { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } @normalize_wlo([104 x half]* %LS_data)
+
+]]></Node>
+<StgValue><ssdm name="call_ret"/></StgValue>
+</operation>
+
+<operation id="30" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="180" bw="16" op_0_bw="1664">
+<![CDATA[
+:13  %norm_LS_data_0_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 0
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_0_0"/></StgValue>
+</operation>
+
+<operation id="31" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="181" bw="16" op_0_bw="1664">
+<![CDATA[
+:14  %norm_LS_data_0_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 1
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_0_1"/></StgValue>
+</operation>
+
+<operation id="32" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="182" bw="16" op_0_bw="1664">
+<![CDATA[
+:15  %norm_LS_data_1_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 2
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_1_0"/></StgValue>
+</operation>
+
+<operation id="33" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="183" bw="16" op_0_bw="1664">
+<![CDATA[
+:16  %norm_LS_data_1_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 3
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_1_1"/></StgValue>
+</operation>
+
+<operation id="34" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="184" bw="16" op_0_bw="1664">
+<![CDATA[
+:17  %norm_LS_data_2_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 4
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_2_0"/></StgValue>
+</operation>
+
+<operation id="35" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="185" bw="16" op_0_bw="1664">
+<![CDATA[
+:18  %norm_LS_data_2_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 5
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_2_1"/></StgValue>
+</operation>
+
+<operation id="36" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="186" bw="16" op_0_bw="1664">
+<![CDATA[
+:19  %norm_LS_data_3_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 6
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_3_0"/></StgValue>
+</operation>
+
+<operation id="37" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="187" bw="16" op_0_bw="1664">
+<![CDATA[
+:20  %norm_LS_data_3_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 7
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_3_1"/></StgValue>
+</operation>
+
+<operation id="38" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="188" bw="16" op_0_bw="1664">
+<![CDATA[
+:21  %norm_LS_data_4_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 8
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_4_0"/></StgValue>
+</operation>
+
+<operation id="39" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="189" bw="16" op_0_bw="1664">
+<![CDATA[
+:22  %norm_LS_data_4_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 9
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_4_1"/></StgValue>
+</operation>
+
+<operation id="40" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="190" bw="16" op_0_bw="1664">
+<![CDATA[
+:23  %norm_LS_data_5_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 10
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_5_0"/></StgValue>
+</operation>
+
+<operation id="41" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="191" bw="16" op_0_bw="1664">
+<![CDATA[
+:24  %norm_LS_data_5_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 11
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_5_1"/></StgValue>
+</operation>
+
+<operation id="42" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="192" bw="16" op_0_bw="1664">
+<![CDATA[
+:25  %norm_LS_data_6_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 12
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_6_0"/></StgValue>
+</operation>
+
+<operation id="43" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="193" bw="16" op_0_bw="1664">
+<![CDATA[
+:26  %norm_LS_data_6_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 13
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_6_1"/></StgValue>
+</operation>
+
+<operation id="44" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="194" bw="16" op_0_bw="1664">
+<![CDATA[
+:27  %norm_LS_data_7_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 14
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_7_0"/></StgValue>
+</operation>
+
+<operation id="45" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="195" bw="16" op_0_bw="1664">
+<![CDATA[
+:28  %norm_LS_data_7_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 15
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_7_1"/></StgValue>
+</operation>
+
+<operation id="46" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="196" bw="16" op_0_bw="1664">
+<![CDATA[
+:29  %norm_LS_data_8_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 16
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_8_0"/></StgValue>
+</operation>
+
+<operation id="47" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="197" bw="16" op_0_bw="1664">
+<![CDATA[
+:30  %norm_LS_data_8_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 17
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_8_1"/></StgValue>
+</operation>
+
+<operation id="48" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="198" bw="16" op_0_bw="1664">
+<![CDATA[
+:31  %norm_LS_data_9_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 18
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_9_0"/></StgValue>
+</operation>
+
+<operation id="49" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="199" bw="16" op_0_bw="1664">
+<![CDATA[
+:32  %norm_LS_data_9_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 19
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_9_1"/></StgValue>
+</operation>
+
+<operation id="50" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="200" bw="16" op_0_bw="1664">
+<![CDATA[
+:33  %norm_LS_data_10_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 20
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_10_0"/></StgValue>
+</operation>
+
+<operation id="51" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="201" bw="16" op_0_bw="1664">
+<![CDATA[
+:34  %norm_LS_data_10_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 21
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_10_1"/></StgValue>
+</operation>
+
+<operation id="52" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="202" bw="16" op_0_bw="1664">
+<![CDATA[
+:35  %norm_LS_data_11_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 22
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_11_0"/></StgValue>
+</operation>
+
+<operation id="53" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="203" bw="16" op_0_bw="1664">
+<![CDATA[
+:36  %norm_LS_data_11_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 23
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_11_1"/></StgValue>
+</operation>
+
+<operation id="54" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="204" bw="16" op_0_bw="1664">
+<![CDATA[
+:37  %norm_LS_data_12_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 24
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_12_0"/></StgValue>
+</operation>
+
+<operation id="55" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="205" bw="16" op_0_bw="1664">
+<![CDATA[
+:38  %norm_LS_data_12_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 25
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_12_1"/></StgValue>
+</operation>
+
+<operation id="56" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="206" bw="16" op_0_bw="1664">
+<![CDATA[
+:39  %norm_LS_data_13_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 26
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_13_0"/></StgValue>
+</operation>
+
+<operation id="57" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="207" bw="16" op_0_bw="1664">
+<![CDATA[
+:40  %norm_LS_data_13_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 27
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_13_1"/></StgValue>
+</operation>
+
+<operation id="58" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="208" bw="16" op_0_bw="1664">
+<![CDATA[
+:41  %norm_LS_data_14_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 28
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_14_0"/></StgValue>
+</operation>
+
+<operation id="59" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="209" bw="16" op_0_bw="1664">
+<![CDATA[
+:42  %norm_LS_data_14_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 29
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_14_1"/></StgValue>
+</operation>
+
+<operation id="60" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="210" bw="16" op_0_bw="1664">
+<![CDATA[
+:43  %norm_LS_data_15_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 30
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_15_0"/></StgValue>
+</operation>
+
+<operation id="61" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="211" bw="16" op_0_bw="1664">
+<![CDATA[
+:44  %norm_LS_data_15_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 31
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_15_1"/></StgValue>
+</operation>
+
+<operation id="62" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="212" bw="16" op_0_bw="1664">
+<![CDATA[
+:45  %norm_LS_data_16_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 32
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_16_0"/></StgValue>
+</operation>
+
+<operation id="63" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="213" bw="16" op_0_bw="1664">
+<![CDATA[
+:46  %norm_LS_data_16_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 33
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_16_1"/></StgValue>
+</operation>
+
+<operation id="64" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="214" bw="16" op_0_bw="1664">
+<![CDATA[
+:47  %norm_LS_data_17_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 34
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_17_0"/></StgValue>
+</operation>
+
+<operation id="65" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="215" bw="16" op_0_bw="1664">
+<![CDATA[
+:48  %norm_LS_data_17_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 35
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_17_1"/></StgValue>
+</operation>
+
+<operation id="66" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="216" bw="16" op_0_bw="1664">
+<![CDATA[
+:49  %norm_LS_data_18_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 36
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_18_0"/></StgValue>
+</operation>
+
+<operation id="67" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="217" bw="16" op_0_bw="1664">
+<![CDATA[
+:50  %norm_LS_data_18_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 37
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_18_1"/></StgValue>
+</operation>
+
+<operation id="68" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="218" bw="16" op_0_bw="1664">
+<![CDATA[
+:51  %norm_LS_data_19_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 38
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_19_0"/></StgValue>
+</operation>
+
+<operation id="69" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="219" bw="16" op_0_bw="1664">
+<![CDATA[
+:52  %norm_LS_data_19_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 39
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_19_1"/></StgValue>
+</operation>
+
+<operation id="70" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="220" bw="16" op_0_bw="1664">
+<![CDATA[
+:53  %norm_LS_data_20_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 40
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_20_0"/></StgValue>
+</operation>
+
+<operation id="71" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="221" bw="16" op_0_bw="1664">
+<![CDATA[
+:54  %norm_LS_data_20_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 41
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_20_1"/></StgValue>
+</operation>
+
+<operation id="72" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="222" bw="16" op_0_bw="1664">
+<![CDATA[
+:55  %norm_LS_data_21_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 42
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_21_0"/></StgValue>
+</operation>
+
+<operation id="73" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="223" bw="16" op_0_bw="1664">
+<![CDATA[
+:56  %norm_LS_data_21_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 43
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_21_1"/></StgValue>
+</operation>
+
+<operation id="74" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="224" bw="16" op_0_bw="1664">
+<![CDATA[
+:57  %norm_LS_data_22_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 44
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_22_0"/></StgValue>
+</operation>
+
+<operation id="75" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="225" bw="16" op_0_bw="1664">
+<![CDATA[
+:58  %norm_LS_data_22_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 45
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_22_1"/></StgValue>
+</operation>
+
+<operation id="76" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="226" bw="16" op_0_bw="1664">
+<![CDATA[
+:59  %norm_LS_data_23_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 46
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_23_0"/></StgValue>
+</operation>
+
+<operation id="77" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="227" bw="16" op_0_bw="1664">
+<![CDATA[
+:60  %norm_LS_data_23_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 47
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_23_1"/></StgValue>
+</operation>
+
+<operation id="78" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="228" bw="16" op_0_bw="1664">
+<![CDATA[
+:61  %norm_LS_data_24_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 48
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_24_0"/></StgValue>
+</operation>
+
+<operation id="79" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="229" bw="16" op_0_bw="1664">
+<![CDATA[
+:62  %norm_LS_data_24_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 49
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_24_1"/></StgValue>
+</operation>
+
+<operation id="80" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="230" bw="16" op_0_bw="1664">
+<![CDATA[
+:63  %norm_LS_data_25_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 50
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_25_0"/></StgValue>
+</operation>
+
+<operation id="81" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="231" bw="16" op_0_bw="1664">
+<![CDATA[
+:64  %norm_LS_data_25_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 51
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_25_1"/></StgValue>
+</operation>
+
+<operation id="82" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="232" bw="16" op_0_bw="1664">
+<![CDATA[
+:65  %norm_LS_data_26_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 52
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_26_0"/></StgValue>
+</operation>
+
+<operation id="83" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="233" bw="16" op_0_bw="1664">
+<![CDATA[
+:66  %norm_LS_data_26_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 53
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_26_1"/></StgValue>
+</operation>
+
+<operation id="84" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="234" bw="16" op_0_bw="1664">
+<![CDATA[
+:67  %norm_LS_data_27_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 54
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_27_0"/></StgValue>
+</operation>
+
+<operation id="85" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="235" bw="16" op_0_bw="1664">
+<![CDATA[
+:68  %norm_LS_data_27_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 55
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_27_1"/></StgValue>
+</operation>
+
+<operation id="86" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="236" bw="16" op_0_bw="1664">
+<![CDATA[
+:69  %norm_LS_data_28_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 56
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_28_0"/></StgValue>
+</operation>
+
+<operation id="87" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="237" bw="16" op_0_bw="1664">
+<![CDATA[
+:70  %norm_LS_data_28_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 57
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_28_1"/></StgValue>
+</operation>
+
+<operation id="88" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="238" bw="16" op_0_bw="1664">
+<![CDATA[
+:71  %norm_LS_data_29_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 58
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_29_0"/></StgValue>
+</operation>
+
+<operation id="89" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="239" bw="16" op_0_bw="1664">
+<![CDATA[
+:72  %norm_LS_data_29_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 59
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_29_1"/></StgValue>
+</operation>
+
+<operation id="90" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="240" bw="16" op_0_bw="1664">
+<![CDATA[
+:73  %norm_LS_data_30_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 60
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_30_0"/></StgValue>
+</operation>
+
+<operation id="91" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="241" bw="16" op_0_bw="1664">
+<![CDATA[
+:74  %norm_LS_data_30_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 61
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_30_1"/></StgValue>
+</operation>
+
+<operation id="92" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="242" bw="16" op_0_bw="1664">
+<![CDATA[
+:75  %norm_LS_data_31_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 62
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_31_0"/></StgValue>
+</operation>
+
+<operation id="93" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="243" bw="16" op_0_bw="1664">
+<![CDATA[
+:76  %norm_LS_data_31_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 63
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_31_1"/></StgValue>
+</operation>
+
+<operation id="94" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="244" bw="16" op_0_bw="1664">
+<![CDATA[
+:77  %norm_LS_data_32_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 64
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_32_0"/></StgValue>
+</operation>
+
+<operation id="95" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="245" bw="16" op_0_bw="1664">
+<![CDATA[
+:78  %norm_LS_data_32_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 65
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_32_1"/></StgValue>
+</operation>
+
+<operation id="96" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="246" bw="16" op_0_bw="1664">
+<![CDATA[
+:79  %norm_LS_data_33_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 66
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_33_0"/></StgValue>
+</operation>
+
+<operation id="97" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="247" bw="16" op_0_bw="1664">
+<![CDATA[
+:80  %norm_LS_data_33_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 67
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_33_1"/></StgValue>
+</operation>
+
+<operation id="98" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="248" bw="16" op_0_bw="1664">
+<![CDATA[
+:81  %norm_LS_data_34_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 68
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_34_0"/></StgValue>
+</operation>
+
+<operation id="99" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="249" bw="16" op_0_bw="1664">
+<![CDATA[
+:82  %norm_LS_data_34_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 69
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_34_1"/></StgValue>
+</operation>
+
+<operation id="100" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="250" bw="16" op_0_bw="1664">
+<![CDATA[
+:83  %norm_LS_data_35_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 70
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_35_0"/></StgValue>
+</operation>
+
+<operation id="101" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="251" bw="16" op_0_bw="1664">
+<![CDATA[
+:84  %norm_LS_data_35_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 71
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_35_1"/></StgValue>
+</operation>
+
+<operation id="102" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="252" bw="16" op_0_bw="1664">
+<![CDATA[
+:85  %norm_LS_data_36_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 72
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_36_0"/></StgValue>
+</operation>
+
+<operation id="103" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="253" bw="16" op_0_bw="1664">
+<![CDATA[
+:86  %norm_LS_data_36_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 73
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_36_1"/></StgValue>
+</operation>
+
+<operation id="104" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="254" bw="16" op_0_bw="1664">
+<![CDATA[
+:87  %norm_LS_data_37_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 74
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_37_0"/></StgValue>
+</operation>
+
+<operation id="105" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="255" bw="16" op_0_bw="1664">
+<![CDATA[
+:88  %norm_LS_data_37_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 75
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_37_1"/></StgValue>
+</operation>
+
+<operation id="106" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="256" bw="16" op_0_bw="1664">
+<![CDATA[
+:89  %norm_LS_data_38_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 76
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_38_0"/></StgValue>
+</operation>
+
+<operation id="107" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="257" bw="16" op_0_bw="1664">
+<![CDATA[
+:90  %norm_LS_data_38_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 77
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_38_1"/></StgValue>
+</operation>
+
+<operation id="108" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="258" bw="16" op_0_bw="1664">
+<![CDATA[
+:91  %norm_LS_data_39_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 78
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_39_0"/></StgValue>
+</operation>
+
+<operation id="109" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="259" bw="16" op_0_bw="1664">
+<![CDATA[
+:92  %norm_LS_data_39_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 79
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_39_1"/></StgValue>
+</operation>
+
+<operation id="110" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="260" bw="16" op_0_bw="1664">
+<![CDATA[
+:93  %norm_LS_data_40_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 80
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_40_0"/></StgValue>
+</operation>
+
+<operation id="111" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="261" bw="16" op_0_bw="1664">
+<![CDATA[
+:94  %norm_LS_data_40_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 81
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_40_1"/></StgValue>
+</operation>
+
+<operation id="112" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="262" bw="16" op_0_bw="1664">
+<![CDATA[
+:95  %norm_LS_data_41_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 82
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_41_0"/></StgValue>
+</operation>
+
+<operation id="113" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="263" bw="16" op_0_bw="1664">
+<![CDATA[
+:96  %norm_LS_data_41_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 83
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_41_1"/></StgValue>
+</operation>
+
+<operation id="114" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="264" bw="16" op_0_bw="1664">
+<![CDATA[
+:97  %norm_LS_data_42_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 84
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_42_0"/></StgValue>
+</operation>
+
+<operation id="115" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="265" bw="16" op_0_bw="1664">
+<![CDATA[
+:98  %norm_LS_data_42_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 85
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_42_1"/></StgValue>
+</operation>
+
+<operation id="116" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="266" bw="16" op_0_bw="1664">
+<![CDATA[
+:99  %norm_LS_data_43_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 86
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_43_0"/></StgValue>
+</operation>
+
+<operation id="117" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="267" bw="16" op_0_bw="1664">
+<![CDATA[
+:100  %norm_LS_data_43_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 87
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_43_1"/></StgValue>
+</operation>
+
+<operation id="118" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="268" bw="16" op_0_bw="1664">
+<![CDATA[
+:101  %norm_LS_data_44_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 88
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_44_0"/></StgValue>
+</operation>
+
+<operation id="119" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="269" bw="16" op_0_bw="1664">
+<![CDATA[
+:102  %norm_LS_data_44_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 89
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_44_1"/></StgValue>
+</operation>
+
+<operation id="120" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="270" bw="16" op_0_bw="1664">
+<![CDATA[
+:103  %norm_LS_data_45_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 90
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_45_0"/></StgValue>
+</operation>
+
+<operation id="121" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="271" bw="16" op_0_bw="1664">
+<![CDATA[
+:104  %norm_LS_data_45_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 91
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_45_1"/></StgValue>
+</operation>
+
+<operation id="122" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="272" bw="16" op_0_bw="1664">
+<![CDATA[
+:105  %norm_LS_data_46_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 92
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_46_0"/></StgValue>
+</operation>
+
+<operation id="123" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="273" bw="16" op_0_bw="1664">
+<![CDATA[
+:106  %norm_LS_data_46_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 93
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_46_1"/></StgValue>
+</operation>
+
+<operation id="124" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="274" bw="16" op_0_bw="1664">
+<![CDATA[
+:107  %norm_LS_data_47_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 94
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_47_0"/></StgValue>
+</operation>
+
+<operation id="125" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="275" bw="16" op_0_bw="1664">
+<![CDATA[
+:108  %norm_LS_data_47_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 95
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_47_1"/></StgValue>
+</operation>
+
+<operation id="126" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="276" bw="16" op_0_bw="1664">
+<![CDATA[
+:109  %norm_LS_data_48_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 96
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_48_0"/></StgValue>
+</operation>
+
+<operation id="127" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="277" bw="16" op_0_bw="1664">
+<![CDATA[
+:110  %norm_LS_data_48_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 97
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_48_1"/></StgValue>
+</operation>
+
+<operation id="128" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="278" bw="16" op_0_bw="1664">
+<![CDATA[
+:111  %norm_LS_data_49_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 98
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_49_0"/></StgValue>
+</operation>
+
+<operation id="129" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="279" bw="16" op_0_bw="1664">
+<![CDATA[
+:112  %norm_LS_data_49_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 99
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_49_1"/></StgValue>
+</operation>
+
+<operation id="130" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="280" bw="16" op_0_bw="1664">
+<![CDATA[
+:113  %norm_LS_data_50_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 100
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_50_0"/></StgValue>
+</operation>
+
+<operation id="131" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="281" bw="16" op_0_bw="1664">
+<![CDATA[
+:114  %norm_LS_data_50_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 101
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_50_1"/></StgValue>
+</operation>
+
+<operation id="132" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="282" bw="16" op_0_bw="1664">
+<![CDATA[
+:115  %norm_LS_data_51_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 102
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_51_0"/></StgValue>
+</operation>
+
+<operation id="133" st_id="5" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="283" bw="16" op_0_bw="1664">
+<![CDATA[
+:116  %norm_LS_data_51_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %call_ret, 103
+
+]]></Node>
+<StgValue><ssdm name="norm_LS_data_51_1"/></StgValue>
+</operation>
+
+<operation id="134" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="284" bw="832" op_0_bw="832" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="16" op_167_bw="16" op_168_bw="16" op_169_bw="16" op_170_bw="16" op_171_bw="16" op_172_bw="16" op_173_bw="16" op_174_bw="16" op_175_bw="16" op_176_bw="16" op_177_bw="16" op_178_bw="16" op_179_bw="16" op_180_bw="16" op_181_bw="16" op_182_bw="16" op_183_bw="16" op_184_bw="16" op_185_bw="16" op_186_bw="16" op_187_bw="16" op_188_bw="16" op_189_bw="16" op_190_bw="16" op_191_bw="16" op_192_bw="16" op_193_bw="16" op_194_bw="16" op_195_bw="16" op_196_bw="16" op_197_bw="16" op_198_bw="16" op_199_bw="16" op_200_bw="16" op_201_bw="16" op_202_bw="16" op_203_bw="16" op_204_bw="16" op_205_bw="16" op_206_bw="16" op_207_bw="16" op_208_bw="16" op_209_bw="16">
+<![CDATA[
+:117  %L2_wlo_ret = call fastcc { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } @L2_wlo(half %norm_LS_data_0_0, half %norm_LS_data_0_1, half %norm_LS_data_1_0, half %norm_LS_data_1_1, half %norm_LS_data_2_0, half %norm_LS_data_2_1, half %norm_LS_data_3_0, half %norm_LS_data_3_1, half %norm_LS_data_4_0, half %norm_LS_data_4_1, half %norm_LS_data_5_0, half %norm_LS_data_5_1, half %norm_LS_data_6_0, half %norm_LS_data_6_1, half %norm_LS_data_7_0, half %norm_LS_data_7_1, half %norm_LS_data_8_0, half %norm_LS_data_8_1, half %norm_LS_data_9_0, half %norm_LS_data_9_1, half %norm_LS_data_10_0, half %norm_LS_data_10_1, half %norm_LS_data_11_0, half %norm_LS_data_11_1, half %norm_LS_data_12_0, half %norm_LS_data_12_1, half %norm_LS_data_13_0, half %norm_LS_data_13_1, half %norm_LS_data_14_0, half %norm_LS_data_14_1, half %norm_LS_data_15_0, half %norm_LS_data_15_1, half %norm_LS_data_16_0, half %norm_LS_data_16_1, half %norm_LS_data_17_0, half %norm_LS_data_17_1, half %norm_LS_data_18_0, half %norm_LS_data_18_1, half %norm_LS_data_19_0, half %norm_LS_data_19_1, half %norm_LS_data_20_0, half %norm_LS_data_20_1, half %norm_LS_data_21_0, half %norm_LS_data_21_1, half %norm_LS_data_22_0, half %norm_LS_data_22_1, half %norm_LS_data_23_0, half %norm_LS_data_23_1, half %norm_LS_data_24_0, half %norm_LS_data_24_1, half %norm_LS_data_25_0, half %norm_LS_data_25_1, half %norm_LS_data_26_0, half %norm_LS_data_26_1, half %norm_LS_data_27_0, half %norm_LS_data_27_1, half %norm_LS_data_28_0, half %norm_LS_data_28_1, half %norm_LS_data_29_0, half %norm_LS_data_29_1, half %norm_LS_data_30_0, half %norm_LS_data_30_1, half %norm_LS_data_31_0, half %norm_LS_data_31_1, half %norm_LS_data_32_0, half %norm_LS_data_32_1, half %norm_LS_data_33_0, half %norm_LS_data_33_1, half %norm_LS_data_34_0, half %norm_LS_data_34_1, half %norm_LS_data_35_0, half %norm_LS_data_35_1, half %norm_LS_data_36_0, half %norm_LS_data_36_1, half %norm_LS_data_37_0, half %norm_LS_data_37_1, half %norm_LS_data_38_0, half %norm_LS_data_38_1, half %norm_LS_data_39_0, half %norm_LS_data_39_1, half %norm_LS_data_40_0, half %norm_LS_data_40_1, half %norm_LS_data_41_0, half %norm_LS_data_41_1, half %norm_LS_data_42_0, half %norm_LS_data_42_1, half %norm_LS_data_43_0, half %norm_LS_data_43_1, half %norm_LS_data_44_0, half %norm_LS_data_44_1, half %norm_LS_data_45_0, half %norm_LS_data_45_1, half %norm_LS_data_46_0, half %norm_LS_data_46_1, half %norm_LS_data_47_0, half %norm_LS_data_47_1, half %norm_LS_data_48_0, half %norm_LS_data_48_1, half %norm_LS_data_49_0, half %norm_LS_data_49_1, half %norm_LS_data_50_0, half %norm_LS_data_50_1, half %norm_LS_data_51_0, half %norm_LS_data_51_1)
+
+]]></Node>
+<StgValue><ssdm name="L2_wlo_ret"/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="135" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="284" bw="832" op_0_bw="832" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="16" op_167_bw="16" op_168_bw="16" op_169_bw="16" op_170_bw="16" op_171_bw="16" op_172_bw="16" op_173_bw="16" op_174_bw="16" op_175_bw="16" op_176_bw="16" op_177_bw="16" op_178_bw="16" op_179_bw="16" op_180_bw="16" op_181_bw="16" op_182_bw="16" op_183_bw="16" op_184_bw="16" op_185_bw="16" op_186_bw="16" op_187_bw="16" op_188_bw="16" op_189_bw="16" op_190_bw="16" op_191_bw="16" op_192_bw="16" op_193_bw="16" op_194_bw="16" op_195_bw="16" op_196_bw="16" op_197_bw="16" op_198_bw="16" op_199_bw="16" op_200_bw="16" op_201_bw="16" op_202_bw="16" op_203_bw="16" op_204_bw="16" op_205_bw="16" op_206_bw="16" op_207_bw="16" op_208_bw="16" op_209_bw="16">
+<![CDATA[
+:117  %L2_wlo_ret = call fastcc { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } @L2_wlo(half %norm_LS_data_0_0, half %norm_LS_data_0_1, half %norm_LS_data_1_0, half %norm_LS_data_1_1, half %norm_LS_data_2_0, half %norm_LS_data_2_1, half %norm_LS_data_3_0, half %norm_LS_data_3_1, half %norm_LS_data_4_0, half %norm_LS_data_4_1, half %norm_LS_data_5_0, half %norm_LS_data_5_1, half %norm_LS_data_6_0, half %norm_LS_data_6_1, half %norm_LS_data_7_0, half %norm_LS_data_7_1, half %norm_LS_data_8_0, half %norm_LS_data_8_1, half %norm_LS_data_9_0, half %norm_LS_data_9_1, half %norm_LS_data_10_0, half %norm_LS_data_10_1, half %norm_LS_data_11_0, half %norm_LS_data_11_1, half %norm_LS_data_12_0, half %norm_LS_data_12_1, half %norm_LS_data_13_0, half %norm_LS_data_13_1, half %norm_LS_data_14_0, half %norm_LS_data_14_1, half %norm_LS_data_15_0, half %norm_LS_data_15_1, half %norm_LS_data_16_0, half %norm_LS_data_16_1, half %norm_LS_data_17_0, half %norm_LS_data_17_1, half %norm_LS_data_18_0, half %norm_LS_data_18_1, half %norm_LS_data_19_0, half %norm_LS_data_19_1, half %norm_LS_data_20_0, half %norm_LS_data_20_1, half %norm_LS_data_21_0, half %norm_LS_data_21_1, half %norm_LS_data_22_0, half %norm_LS_data_22_1, half %norm_LS_data_23_0, half %norm_LS_data_23_1, half %norm_LS_data_24_0, half %norm_LS_data_24_1, half %norm_LS_data_25_0, half %norm_LS_data_25_1, half %norm_LS_data_26_0, half %norm_LS_data_26_1, half %norm_LS_data_27_0, half %norm_LS_data_27_1, half %norm_LS_data_28_0, half %norm_LS_data_28_1, half %norm_LS_data_29_0, half %norm_LS_data_29_1, half %norm_LS_data_30_0, half %norm_LS_data_30_1, half %norm_LS_data_31_0, half %norm_LS_data_31_1, half %norm_LS_data_32_0, half %norm_LS_data_32_1, half %norm_LS_data_33_0, half %norm_LS_data_33_1, half %norm_LS_data_34_0, half %norm_LS_data_34_1, half %norm_LS_data_35_0, half %norm_LS_data_35_1, half %norm_LS_data_36_0, half %norm_LS_data_36_1, half %norm_LS_data_37_0, half %norm_LS_data_37_1, half %norm_LS_data_38_0, half %norm_LS_data_38_1, half %norm_LS_data_39_0, half %norm_LS_data_39_1, half %norm_LS_data_40_0, half %norm_LS_data_40_1, half %norm_LS_data_41_0, half %norm_LS_data_41_1, half %norm_LS_data_42_0, half %norm_LS_data_42_1, half %norm_LS_data_43_0, half %norm_LS_data_43_1, half %norm_LS_data_44_0, half %norm_LS_data_44_1, half %norm_LS_data_45_0, half %norm_LS_data_45_1, half %norm_LS_data_46_0, half %norm_LS_data_46_1, half %norm_LS_data_47_0, half %norm_LS_data_47_1, half %norm_LS_data_48_0, half %norm_LS_data_48_1, half %norm_LS_data_49_0, half %norm_LS_data_49_1, half %norm_LS_data_50_0, half %norm_LS_data_50_1, half %norm_LS_data_51_0, half %norm_LS_data_51_1)
+
+]]></Node>
+<StgValue><ssdm name="L2_wlo_ret"/></StgValue>
+</operation>
+
+<operation id="136" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="285" bw="16" op_0_bw="832">
+<![CDATA[
+:118  %y_L2_0_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 0
+
+]]></Node>
+<StgValue><ssdm name="y_L2_0_0"/></StgValue>
+</operation>
+
+<operation id="137" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="286" bw="16" op_0_bw="832">
+<![CDATA[
+:119  %y_L2_0_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 1
+
+]]></Node>
+<StgValue><ssdm name="y_L2_0_1"/></StgValue>
+</operation>
+
+<operation id="138" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="287" bw="16" op_0_bw="832">
+<![CDATA[
+:120  %y_L2_1_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 2
+
+]]></Node>
+<StgValue><ssdm name="y_L2_1_0"/></StgValue>
+</operation>
+
+<operation id="139" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="288" bw="16" op_0_bw="832">
+<![CDATA[
+:121  %y_L2_1_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 3
+
+]]></Node>
+<StgValue><ssdm name="y_L2_1_1"/></StgValue>
+</operation>
+
+<operation id="140" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="289" bw="16" op_0_bw="832">
+<![CDATA[
+:122  %y_L2_2_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 4
+
+]]></Node>
+<StgValue><ssdm name="y_L2_2_0"/></StgValue>
+</operation>
+
+<operation id="141" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="290" bw="16" op_0_bw="832">
+<![CDATA[
+:123  %y_L2_2_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 5
+
+]]></Node>
+<StgValue><ssdm name="y_L2_2_1"/></StgValue>
+</operation>
+
+<operation id="142" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="291" bw="16" op_0_bw="832">
+<![CDATA[
+:124  %y_L2_3_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 6
+
+]]></Node>
+<StgValue><ssdm name="y_L2_3_0"/></StgValue>
+</operation>
+
+<operation id="143" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="292" bw="16" op_0_bw="832">
+<![CDATA[
+:125  %y_L2_3_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 7
+
+]]></Node>
+<StgValue><ssdm name="y_L2_3_1"/></StgValue>
+</operation>
+
+<operation id="144" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="293" bw="16" op_0_bw="832">
+<![CDATA[
+:126  %y_L2_4_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 8
+
+]]></Node>
+<StgValue><ssdm name="y_L2_4_0"/></StgValue>
+</operation>
+
+<operation id="145" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="294" bw="16" op_0_bw="832">
+<![CDATA[
+:127  %y_L2_4_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 9
+
+]]></Node>
+<StgValue><ssdm name="y_L2_4_1"/></StgValue>
+</operation>
+
+<operation id="146" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="295" bw="16" op_0_bw="832">
+<![CDATA[
+:128  %y_L2_5_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 10
+
+]]></Node>
+<StgValue><ssdm name="y_L2_5_0"/></StgValue>
+</operation>
+
+<operation id="147" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="296" bw="16" op_0_bw="832">
+<![CDATA[
+:129  %y_L2_5_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 11
+
+]]></Node>
+<StgValue><ssdm name="y_L2_5_1"/></StgValue>
+</operation>
+
+<operation id="148" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="297" bw="16" op_0_bw="832">
+<![CDATA[
+:130  %y_L2_6_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 12
+
+]]></Node>
+<StgValue><ssdm name="y_L2_6_0"/></StgValue>
+</operation>
+
+<operation id="149" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="298" bw="16" op_0_bw="832">
+<![CDATA[
+:131  %y_L2_6_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 13
+
+]]></Node>
+<StgValue><ssdm name="y_L2_6_1"/></StgValue>
+</operation>
+
+<operation id="150" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="299" bw="16" op_0_bw="832">
+<![CDATA[
+:132  %y_L2_7_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 14
+
+]]></Node>
+<StgValue><ssdm name="y_L2_7_0"/></StgValue>
+</operation>
+
+<operation id="151" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="300" bw="16" op_0_bw="832">
+<![CDATA[
+:133  %y_L2_7_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 15
+
+]]></Node>
+<StgValue><ssdm name="y_L2_7_1"/></StgValue>
+</operation>
+
+<operation id="152" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="301" bw="16" op_0_bw="832">
+<![CDATA[
+:134  %y_L2_8_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 16
+
+]]></Node>
+<StgValue><ssdm name="y_L2_8_0"/></StgValue>
+</operation>
+
+<operation id="153" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="302" bw="16" op_0_bw="832">
+<![CDATA[
+:135  %y_L2_8_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 17
+
+]]></Node>
+<StgValue><ssdm name="y_L2_8_1"/></StgValue>
+</operation>
+
+<operation id="154" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="303" bw="16" op_0_bw="832">
+<![CDATA[
+:136  %y_L2_9_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 18
+
+]]></Node>
+<StgValue><ssdm name="y_L2_9_0"/></StgValue>
+</operation>
+
+<operation id="155" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="304" bw="16" op_0_bw="832">
+<![CDATA[
+:137  %y_L2_9_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 19
+
+]]></Node>
+<StgValue><ssdm name="y_L2_9_1"/></StgValue>
+</operation>
+
+<operation id="156" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="305" bw="16" op_0_bw="832">
+<![CDATA[
+:138  %y_L2_10_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 20
+
+]]></Node>
+<StgValue><ssdm name="y_L2_10_0"/></StgValue>
+</operation>
+
+<operation id="157" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="306" bw="16" op_0_bw="832">
+<![CDATA[
+:139  %y_L2_10_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 21
+
+]]></Node>
+<StgValue><ssdm name="y_L2_10_1"/></StgValue>
+</operation>
+
+<operation id="158" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="307" bw="16" op_0_bw="832">
+<![CDATA[
+:140  %y_L2_11_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 22
+
+]]></Node>
+<StgValue><ssdm name="y_L2_11_0"/></StgValue>
+</operation>
+
+<operation id="159" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="308" bw="16" op_0_bw="832">
+<![CDATA[
+:141  %y_L2_11_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 23
+
+]]></Node>
+<StgValue><ssdm name="y_L2_11_1"/></StgValue>
+</operation>
+
+<operation id="160" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="309" bw="16" op_0_bw="832">
+<![CDATA[
+:142  %y_L2_12_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 24
+
+]]></Node>
+<StgValue><ssdm name="y_L2_12_0"/></StgValue>
+</operation>
+
+<operation id="161" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="310" bw="16" op_0_bw="832">
+<![CDATA[
+:143  %y_L2_12_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 25
+
+]]></Node>
+<StgValue><ssdm name="y_L2_12_1"/></StgValue>
+</operation>
+
+<operation id="162" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="311" bw="16" op_0_bw="832">
+<![CDATA[
+:144  %y_L2_13_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 26
+
+]]></Node>
+<StgValue><ssdm name="y_L2_13_0"/></StgValue>
+</operation>
+
+<operation id="163" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="312" bw="16" op_0_bw="832">
+<![CDATA[
+:145  %y_L2_13_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 27
+
+]]></Node>
+<StgValue><ssdm name="y_L2_13_1"/></StgValue>
+</operation>
+
+<operation id="164" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="313" bw="16" op_0_bw="832">
+<![CDATA[
+:146  %y_L2_14_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 28
+
+]]></Node>
+<StgValue><ssdm name="y_L2_14_0"/></StgValue>
+</operation>
+
+<operation id="165" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="314" bw="16" op_0_bw="832">
+<![CDATA[
+:147  %y_L2_14_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 29
+
+]]></Node>
+<StgValue><ssdm name="y_L2_14_1"/></StgValue>
+</operation>
+
+<operation id="166" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="315" bw="16" op_0_bw="832">
+<![CDATA[
+:148  %y_L2_15_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 30
+
+]]></Node>
+<StgValue><ssdm name="y_L2_15_0"/></StgValue>
+</operation>
+
+<operation id="167" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="316" bw="16" op_0_bw="832">
+<![CDATA[
+:149  %y_L2_15_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 31
+
+]]></Node>
+<StgValue><ssdm name="y_L2_15_1"/></StgValue>
+</operation>
+
+<operation id="168" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="317" bw="16" op_0_bw="832">
+<![CDATA[
+:150  %y_L2_16_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 32
+
+]]></Node>
+<StgValue><ssdm name="y_L2_16_0"/></StgValue>
+</operation>
+
+<operation id="169" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="318" bw="16" op_0_bw="832">
+<![CDATA[
+:151  %y_L2_16_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 33
+
+]]></Node>
+<StgValue><ssdm name="y_L2_16_1"/></StgValue>
+</operation>
+
+<operation id="170" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="319" bw="16" op_0_bw="832">
+<![CDATA[
+:152  %y_L2_17_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 34
+
+]]></Node>
+<StgValue><ssdm name="y_L2_17_0"/></StgValue>
+</operation>
+
+<operation id="171" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="320" bw="16" op_0_bw="832">
+<![CDATA[
+:153  %y_L2_17_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 35
+
+]]></Node>
+<StgValue><ssdm name="y_L2_17_1"/></StgValue>
+</operation>
+
+<operation id="172" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="321" bw="16" op_0_bw="832">
+<![CDATA[
+:154  %y_L2_18_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 36
+
+]]></Node>
+<StgValue><ssdm name="y_L2_18_0"/></StgValue>
+</operation>
+
+<operation id="173" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="322" bw="16" op_0_bw="832">
+<![CDATA[
+:155  %y_L2_18_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 37
+
+]]></Node>
+<StgValue><ssdm name="y_L2_18_1"/></StgValue>
+</operation>
+
+<operation id="174" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="323" bw="16" op_0_bw="832">
+<![CDATA[
+:156  %y_L2_19_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 38
+
+]]></Node>
+<StgValue><ssdm name="y_L2_19_0"/></StgValue>
+</operation>
+
+<operation id="175" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="324" bw="16" op_0_bw="832">
+<![CDATA[
+:157  %y_L2_19_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 39
+
+]]></Node>
+<StgValue><ssdm name="y_L2_19_1"/></StgValue>
+</operation>
+
+<operation id="176" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="325" bw="16" op_0_bw="832">
+<![CDATA[
+:158  %y_L2_20_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 40
+
+]]></Node>
+<StgValue><ssdm name="y_L2_20_0"/></StgValue>
+</operation>
+
+<operation id="177" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="326" bw="16" op_0_bw="832">
+<![CDATA[
+:159  %y_L2_20_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 41
+
+]]></Node>
+<StgValue><ssdm name="y_L2_20_1"/></StgValue>
+</operation>
+
+<operation id="178" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="327" bw="16" op_0_bw="832">
+<![CDATA[
+:160  %y_L2_21_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 42
+
+]]></Node>
+<StgValue><ssdm name="y_L2_21_0"/></StgValue>
+</operation>
+
+<operation id="179" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="328" bw="16" op_0_bw="832">
+<![CDATA[
+:161  %y_L2_21_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 43
+
+]]></Node>
+<StgValue><ssdm name="y_L2_21_1"/></StgValue>
+</operation>
+
+<operation id="180" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="329" bw="16" op_0_bw="832">
+<![CDATA[
+:162  %y_L2_22_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 44
+
+]]></Node>
+<StgValue><ssdm name="y_L2_22_0"/></StgValue>
+</operation>
+
+<operation id="181" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="330" bw="16" op_0_bw="832">
+<![CDATA[
+:163  %y_L2_22_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 45
+
+]]></Node>
+<StgValue><ssdm name="y_L2_22_1"/></StgValue>
+</operation>
+
+<operation id="182" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="331" bw="16" op_0_bw="832">
+<![CDATA[
+:164  %y_L2_23_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 46
+
+]]></Node>
+<StgValue><ssdm name="y_L2_23_0"/></StgValue>
+</operation>
+
+<operation id="183" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="332" bw="16" op_0_bw="832">
+<![CDATA[
+:165  %y_L2_23_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 47
+
+]]></Node>
+<StgValue><ssdm name="y_L2_23_1"/></StgValue>
+</operation>
+
+<operation id="184" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="333" bw="16" op_0_bw="832">
+<![CDATA[
+:166  %y_L2_24_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 48
+
+]]></Node>
+<StgValue><ssdm name="y_L2_24_0"/></StgValue>
+</operation>
+
+<operation id="185" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="334" bw="16" op_0_bw="832">
+<![CDATA[
+:167  %y_L2_24_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 49
+
+]]></Node>
+<StgValue><ssdm name="y_L2_24_1"/></StgValue>
+</operation>
+
+<operation id="186" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="335" bw="16" op_0_bw="832">
+<![CDATA[
+:168  %y_L2_25_0 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 50
+
+]]></Node>
+<StgValue><ssdm name="y_L2_25_0"/></StgValue>
+</operation>
+
+<operation id="187" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="336" bw="16" op_0_bw="832">
+<![CDATA[
+:169  %y_L2_25_1 = extractvalue { half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half, half } %L2_wlo_ret, 51
+
+]]></Node>
+<StgValue><ssdm name="y_L2_25_1"/></StgValue>
+</operation>
+
+<operation id="188" st_id="6" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="337" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16">
+<![CDATA[
+:170  call fastcc void @L3_wlo(half %y_L2_0_0, half %y_L2_0_1, half %y_L2_1_0, half %y_L2_1_1, half %y_L2_2_0, half %y_L2_2_1, half %y_L2_3_0, half %y_L2_3_1, half %y_L2_4_0, half %y_L2_4_1, half %y_L2_5_0, half %y_L2_5_1, half %y_L2_6_0, half %y_L2_6_1, half %y_L2_7_0, half %y_L2_7_1, half %y_L2_8_0, half %y_L2_8_1, half %y_L2_9_0, half %y_L2_9_1, half %y_L2_10_0, half %y_L2_10_1, half %y_L2_11_0, half %y_L2_11_1, half %y_L2_12_0, half %y_L2_12_1, half %y_L2_13_0, half %y_L2_13_1, half %y_L2_14_0, half %y_L2_14_1, half %y_L2_15_0, half %y_L2_15_1, half %y_L2_16_0, half %y_L2_16_1, half %y_L2_17_0, half %y_L2_17_1, half %y_L2_18_0, half %y_L2_18_1, half %y_L2_19_0, half %y_L2_19_1, half %y_L2_20_0, half %y_L2_20_1, half %y_L2_21_0, half %y_L2_21_1, half %y_L2_22_0, half %y_L2_22_1, half %y_L2_23_0, half %y_L2_23_1, half %y_L2_24_0, half %y_L2_24_1, half %y_L2_25_0, half %y_L2_25_1, [104 x half]* %y_L3)
+
+]]></Node>
+<StgValue><ssdm name="call_ln587"/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="189" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="167" bw="0" op_0_bw="0" op_1_bw="64">
+<![CDATA[
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i64* %DNN_out_V_data), !map !73
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="190" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="168" bw="0" op_0_bw="0" op_1_bw="64">
+<![CDATA[
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i64* %LS_stream_V_data), !map !80
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="191" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="169" bw="0" op_0_bw="0" op_1_bw="1">
+<![CDATA[
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i1* %LS_stream_V_last_V), !map !87
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="192" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="170" bw="0" op_0_bw="0" op_1_bw="1">
+<![CDATA[
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i1* %DNN_out_V_last_V), !map !91
+
+]]></Node>
+<StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
+</operation>
+
+<operation id="193" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="171" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+:4  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @DNN_wlo_str) nounwind
+
+]]></Node>
+<StgValue><ssdm name="spectopmodule_ln0"/></StgValue>
+</operation>
+
+<operation id="194" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="175" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:8  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str9, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln558"/></StgValue>
+</operation>
+
+<operation id="195" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="176" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="1" op_3_bw="0" op_4_bw="32" op_5_bw="32" op_6_bw="0" op_7_bw="32" op_8_bw="32" op_9_bw="0" op_10_bw="0" op_11_bw="0" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="0" op_17_bw="0">
+<![CDATA[
+:9  call void (...)* @_ssdm_op_SpecInterface(i64* %DNN_out_V_data, i1* %DNN_out_V_last_V, [5 x i8]* @p_str10, i32 1, i32 1, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln559"/></StgValue>
+</operation>
+
+<operation id="196" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="177" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="1" op_3_bw="0" op_4_bw="32" op_5_bw="32" op_6_bw="0" op_7_bw="32" op_8_bw="32" op_9_bw="0" op_10_bw="0" op_11_bw="0" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="0" op_17_bw="0">
+<![CDATA[
+:10  call void (...)* @_ssdm_op_SpecInterface(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [5 x i8]* @p_str10, i32 1, i32 1, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specinterface_ln560"/></StgValue>
+</operation>
+
+<operation id="197" st_id="7" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="337" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16">
+<![CDATA[
+:170  call fastcc void @L3_wlo(half %y_L2_0_0, half %y_L2_0_1, half %y_L2_1_0, half %y_L2_1_1, half %y_L2_2_0, half %y_L2_2_1, half %y_L2_3_0, half %y_L2_3_1, half %y_L2_4_0, half %y_L2_4_1, half %y_L2_5_0, half %y_L2_5_1, half %y_L2_6_0, half %y_L2_6_1, half %y_L2_7_0, half %y_L2_7_1, half %y_L2_8_0, half %y_L2_8_1, half %y_L2_9_0, half %y_L2_9_1, half %y_L2_10_0, half %y_L2_10_1, half %y_L2_11_0, half %y_L2_11_1, half %y_L2_12_0, half %y_L2_12_1, half %y_L2_13_0, half %y_L2_13_1, half %y_L2_14_0, half %y_L2_14_1, half %y_L2_15_0, half %y_L2_15_1, half %y_L2_16_0, half %y_L2_16_1, half %y_L2_17_0, half %y_L2_17_1, half %y_L2_18_0, half %y_L2_18_1, half %y_L2_19_0, half %y_L2_19_1, half %y_L2_20_0, half %y_L2_20_1, half %y_L2_21_0, half %y_L2_21_1, half %y_L2_22_0, half %y_L2_22_1, half %y_L2_23_0, half %y_L2_23_1, half %y_L2_24_0, half %y_L2_24_1, half %y_L2_25_0, half %y_L2_25_1, [104 x half]* %y_L3)
+
+]]></Node>
+<StgValue><ssdm name="call_ln587"/></StgValue>
+</operation>
+
+<operation id="198" st_id="7" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="338" bw="0" op_0_bw="0">
+<![CDATA[
+:171  br label %1
+
+]]></Node>
+<StgValue><ssdm name="br_ln529"/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="199" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="340" bw="7" op_0_bw="7" op_1_bw="0" op_2_bw="7" op_3_bw="0">
+<![CDATA[
+:0  %i_0_i = phi i7 [ 0, %0 ], [ %i, %denormalization ]
+
+]]></Node>
+<StgValue><ssdm name="i_0_i"/></StgValue>
+</operation>
+
+<operation id="200" st_id="8" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="341" bw="1" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+:1  %icmp_ln529 = icmp eq i7 %i_0_i, -24
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln529"/></StgValue>
+</operation>
+
+<operation id="201" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="342" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<![CDATA[
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 104, i64 104, i64 104)
+
+]]></Node>
+<StgValue><ssdm name="empty"/></StgValue>
+</operation>
+
+<operation id="202" st_id="8" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="343" bw="7" op_0_bw="7" op_1_bw="7">
+<![CDATA[
+:3  %i = add i7 %i_0_i, 1
+
+]]></Node>
+<StgValue><ssdm name="i"/></StgValue>
+</operation>
+
+<operation id="203" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="344" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:4  br i1 %icmp_ln529, label %denormalize_wlo.exit, label %denormalization
+
+]]></Node>
+<StgValue><ssdm name="br_ln529"/></StgValue>
+</operation>
+
+<operation id="204" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="349" bw="64" op_0_bw="7">
+<![CDATA[
+denormalization:3  %zext_ln531 = zext i7 %i_0_i to i64
+
+]]></Node>
+<StgValue><ssdm name="zext_ln531"/></StgValue>
+</operation>
+
+<operation id="205" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="350" bw="7" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+denormalization:4  %y_L3_addr = getelementptr [104 x half]* %y_L3, i64 0, i64 %zext_ln531
+
+]]></Node>
+<StgValue><ssdm name="y_L3_addr"/></StgValue>
+</operation>
+
+<operation id="206" st_id="8" stage="2" lat="2">
+<core>RAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="351" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:5  %y_L3_load = load half* %y_L3_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="y_L3_load"/></StgValue>
+</operation>
+
+<operation id="207" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="352" bw="7" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+denormalization:6  %std_o_addr = getelementptr inbounds [104 x half]* @std_o, i64 0, i64 %zext_ln531
+
+]]></Node>
+<StgValue><ssdm name="std_o_addr"/></StgValue>
+</operation>
+
+<operation id="208" st_id="8" stage="2" lat="2">
+<core>ROM_nP</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="353" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:7  %std_o_load = load half* %std_o_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="std_o_load"/></StgValue>
+</operation>
+</state>
+
+<state id="9" st_id="9">
+
+<operation id="209" st_id="9" stage="1" lat="2">
+<core>RAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="351" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:5  %y_L3_load = load half* %y_L3_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="y_L3_load"/></StgValue>
+</operation>
+
+<operation id="210" st_id="9" stage="1" lat="2">
+<core>ROM_nP</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="353" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:7  %std_o_load = load half* %std_o_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="std_o_load"/></StgValue>
+</operation>
+</state>
+
+<state id="10" st_id="10">
+
+<operation id="211" st_id="10" stage="4" lat="4">
+<core>HMul</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="354" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:8  %tmp_i = fmul half %y_L3_load, %std_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_i"/></StgValue>
+</operation>
+</state>
+
+<state id="11" st_id="11">
+
+<operation id="212" st_id="11" stage="3" lat="4">
+<core>HMul</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="354" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:8  %tmp_i = fmul half %y_L3_load, %std_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_i"/></StgValue>
+</operation>
+</state>
+
+<state id="12" st_id="12">
+
+<operation id="213" st_id="12" stage="2" lat="4">
+<core>HMul</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="354" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:8  %tmp_i = fmul half %y_L3_load, %std_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_i"/></StgValue>
+</operation>
+
+<operation id="214" st_id="12" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="355" bw="7" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+denormalization:9  %mean_o_addr = getelementptr inbounds [104 x half]* @mean_o, i64 0, i64 %zext_ln531
+
+]]></Node>
+<StgValue><ssdm name="mean_o_addr"/></StgValue>
+</operation>
+
+<operation id="215" st_id="12" stage="2" lat="2">
+<core>ROM_nP</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="356" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:10  %mean_o_load = load half* %mean_o_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="mean_o_load"/></StgValue>
+</operation>
+</state>
+
+<state id="13" st_id="13">
+
+<operation id="216" st_id="13" stage="1" lat="4">
+<core>HMul</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="354" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:8  %tmp_i = fmul half %y_L3_load, %std_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_i"/></StgValue>
+</operation>
+
+<operation id="217" st_id="13" stage="1" lat="2">
+<core>ROM_nP</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="356" bw="16" op_0_bw="7">
+<![CDATA[
+denormalization:10  %mean_o_load = load half* %mean_o_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="mean_o_load"/></StgValue>
+</operation>
+</state>
+
+<state id="14" st_id="14">
+
+<operation id="218" st_id="14" stage="5" lat="5">
+<core>HAddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="357" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:11  %tmp_5_i = fadd half %tmp_i, %mean_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_5_i"/></StgValue>
+</operation>
+</state>
+
+<state id="15" st_id="15">
+
+<operation id="219" st_id="15" stage="4" lat="5">
+<core>HAddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="357" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:11  %tmp_5_i = fadd half %tmp_i, %mean_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_5_i"/></StgValue>
+</operation>
+</state>
+
+<state id="16" st_id="16">
+
+<operation id="220" st_id="16" stage="3" lat="5">
+<core>HAddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="357" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:11  %tmp_5_i = fadd half %tmp_i, %mean_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_5_i"/></StgValue>
+</operation>
+</state>
+
+<state id="17" st_id="17">
+
+<operation id="221" st_id="17" stage="2" lat="5">
+<core>HAddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="357" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:11  %tmp_5_i = fadd half %tmp_i, %mean_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_5_i"/></StgValue>
+</operation>
+</state>
+
+<state id="18" st_id="18">
+
+<operation id="222" st_id="18" stage="1" lat="5">
+<core>HAddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="357" bw="16" op_0_bw="16" op_1_bw="16">
+<![CDATA[
+denormalization:11  %tmp_5_i = fadd half %tmp_i, %mean_o_load
+
+]]></Node>
+<StgValue><ssdm name="tmp_5_i"/></StgValue>
+</operation>
+</state>
+
+<state id="19" st_id="19">
+
+<operation id="223" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="346" bw="0" op_0_bw="0" op_1_bw="0">
+<![CDATA[
+denormalization:0  call void (...)* @_ssdm_op_SpecLoopName([16 x i8]* @p_str7) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specloopname_ln529"/></StgValue>
+</operation>
+
+<operation id="224" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="347" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+denormalization:1  %tmp_4_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([16 x i8]* @p_str7)
+
+]]></Node>
+<StgValue><ssdm name="tmp_4_i"/></StgValue>
+</operation>
+
+<operation id="225" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="348" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+denormalization:2  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln530"/></StgValue>
+</operation>
+
+<operation id="226" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="358" bw="7" op_0_bw="16" op_1_bw="64" op_2_bw="64">
+<![CDATA[
+denormalization:12  %denorm_DNN_addr = getelementptr [104 x half]* %denorm_DNN, i64 0, i64 %zext_ln531
+
+]]></Node>
+<StgValue><ssdm name="denorm_DNN_addr"/></StgValue>
+</operation>
+
+<operation id="227" st_id="19" stage="1" lat="1">
+<core>RAM</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="359" bw="0" op_0_bw="16" op_1_bw="7">
+<![CDATA[
+denormalization:13  store half %tmp_5_i, half* %denorm_DNN_addr, align 2
+
+]]></Node>
+<StgValue><ssdm name="store_ln531"/></StgValue>
+</operation>
+
+<operation id="228" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="360" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
+<![CDATA[
+denormalization:14  %empty_22 = call i32 (...)* @_ssdm_op_SpecRegionEnd([16 x i8]* @p_str7, i32 %tmp_4_i)
+
+]]></Node>
+<StgValue><ssdm name="empty_22"/></StgValue>
+</operation>
+
+<operation id="229" st_id="19" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="icmp_ln529" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="361" bw="0" op_0_bw="0">
+<![CDATA[
+denormalization:15  br label %1
+
+]]></Node>
+<StgValue><ssdm name="br_ln529"/></StgValue>
+</operation>
+</state>
+
+<state id="20" st_id="20">
+
+<operation id="230" st_id="20" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="363" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="1">
+<![CDATA[
+denormalize_wlo.exit:0  call fastcc void @reconstruct_complex_([104 x half]* %denorm_DNN, i64* %DNN_out_V_data, i1* %DNN_out_V_last_V)
+
+]]></Node>
+<StgValue><ssdm name="call_ln593"/></StgValue>
+</operation>
+</state>
+
+<state id="21" st_id="21">
+
+<operation id="231" st_id="21" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="363" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="64" op_3_bw="1">
+<![CDATA[
+denormalize_wlo.exit:0  call fastcc void @reconstruct_complex_([104 x half]* %denorm_DNN, i64* %DNN_out_V_data, i1* %DNN_out_V_last_V)
+
+]]></Node>
+<StgValue><ssdm name="call_ln593"/></StgValue>
+</operation>
+</state>
+
+<state id="22" st_id="22">
+
+<operation id="232" st_id="22" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="364" bw="0">
+<![CDATA[
+denormalize_wlo.exit:1  ret void
+
+]]></Node>
+<StgValue><ssdm name="ret_ln595"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vivado HLS Report for 'reconstruct_complex_s'
+================================================================
+* Date:           Mon Aug  8 23:06:50 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dnn
+* Solution:       unoptimized
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.124|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  105|  105|  105|  105|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                  |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- reconstruction  |  104|  104|         2|          -|          -|    52|    no    |
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %DNN_out_V_data, i1* %DNN_out_V_last_V, [5 x i8]* @p_str10, i32 0, i32 0, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9) nounwind"   --->   Operation 4 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %1" [dnn/dnn.cpp:171]   --->   Operation 5 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 5.12>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%i_0 = phi i6 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 6 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%zext_ln171 = zext i6 %i_0 to i7" [dnn/dnn.cpp:171]   --->   Operation 7 'zext' 'zext_ln171' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (1.42ns)   --->   "%icmp_ln171 = icmp eq i6 %i_0, -12" [dnn/dnn.cpp:171]   --->   Operation 8 'icmp' 'icmp_ln171' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 9 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.82ns)   --->   "%i = add i6 %i_0, 1" [dnn/dnn.cpp:171]   --->   Operation 10 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "br i1 %icmp_ln171, label %3, label %2" [dnn/dnn.cpp:171]   --->   Operation 11 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln174 = zext i6 %i_0 to i64" [dnn/dnn.cpp:174]   --->   Operation 12 'zext' 'zext_ln174' <Predicate = (!icmp_ln171)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%y_L3_addr = getelementptr [104 x float]* %y_L3, i64 0, i64 %zext_ln174" [dnn/dnn.cpp:174]   --->   Operation 13 'getelementptr' 'y_L3_addr' <Predicate = (!icmp_ln171)> <Delay = 0.00>
+ST_2 : Operation 14 [2/2] (3.25ns)   --->   "%tmp_data_M_real = load float* %y_L3_addr, align 4" [dnn/dnn.cpp:174]   --->   Operation 14 'load' 'tmp_data_M_real' <Predicate = (!icmp_ln171)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_2 : Operation 15 [1/1] (1.87ns)   --->   "%add_ln174 = add i7 %zext_ln171, 52" [dnn/dnn.cpp:174]   --->   Operation 15 'add' 'add_ln174' <Predicate = (!icmp_ln171)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%zext_ln174_1 = zext i7 %add_ln174 to i64" [dnn/dnn.cpp:174]   --->   Operation 16 'zext' 'zext_ln174_1' <Predicate = (!icmp_ln171)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%y_L3_addr_1 = getelementptr [104 x float]* %y_L3, i64 0, i64 %zext_ln174_1" [dnn/dnn.cpp:174]   --->   Operation 17 'getelementptr' 'y_L3_addr_1' <Predicate = (!icmp_ln171)> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (3.25ns)   --->   "%tmp_data_M_imag = load float* %y_L3_addr_1, align 4" [dnn/dnn.cpp:174]   --->   Operation 18 'load' 'tmp_data_M_imag' <Predicate = (!icmp_ln171)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_2 : Operation 19 [1/1] (1.42ns)   --->   "%tmp_last_V = icmp eq i6 %i_0, -13" [dnn/dnn.cpp:180]   --->   Operation 19 'icmp' 'tmp_last_V' <Predicate = (!icmp_ln171)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "ret void" [dnn/dnn.cpp:186]   --->   Operation 20 'ret' <Predicate = (icmp_ln171)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([15 x i8]* @p_str7) nounwind" [dnn/dnn.cpp:171]   --->   Operation 21 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (3.25ns)   --->   "%tmp_data_M_real = load float* %y_L3_addr, align 4" [dnn/dnn.cpp:174]   --->   Operation 22 'load' 'tmp_data_M_real' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_3 : Operation 23 [1/2] (3.25ns)   --->   "%tmp_data_M_imag = load float* %y_L3_addr_1, align 4" [dnn/dnn.cpp:174]   --->   Operation 23 'load' 'tmp_data_M_imag' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%bitcast_ln162 = bitcast float %tmp_data_M_real to i32" [dnn/dnn.cpp:183]   --->   Operation 24 'bitcast' 'bitcast_ln162' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%bitcast_ln162_1 = bitcast float %tmp_data_M_imag to i32" [dnn/dnn.cpp:183]   --->   Operation 25 'bitcast' 'bitcast_ln162_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%tmp_data = call i64 @_ssdm_op_BitConcatenate.i64.i32.i32(i32 %bitcast_ln162_1, i32 %bitcast_ln162)" [dnn/dnn.cpp:183]   --->   Operation 26 'bitconcatenate' 'tmp_data' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i64P.i1P(i64* %DNN_out_V_data, i1* %DNN_out_V_last_V, i64 %tmp_data, i1 %tmp_last_V)" [dnn/dnn.cpp:183]   --->   Operation 27 'write' <Predicate = true> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "br label %1" [dnn/dnn.cpp:171]   --->   Operation 28 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:171) [7]  (1.77 ns)
+
+ <State 2>: 5.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:171) [7]  (0 ns)
+	'add' operation ('add_ln174', dnn/dnn.cpp:174) [18]  (1.87 ns)
+	'getelementptr' operation ('y_L3_addr_1', dnn/dnn.cpp:174) [20]  (0 ns)
+	'load' operation ('__i', dnn/dnn.cpp:174) on array 'y_L3' [21]  (3.25 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('__r', dnn/dnn.cpp:174) on array 'y_L3' [17]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

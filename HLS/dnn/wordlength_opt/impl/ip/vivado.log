@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Jul 31 14:42:57 2022
+# Process ID: 12940
+# Current directory: D:/IIIT-D/Channel_Estimation/HLS/dnn/wordlength_opt/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: D:/IIIT-D/Channel_Estimation/HLS/dnn/wordlength_opt/impl/ip/vivado.log
+# Journal file: D:/IIIT-D/Channel_Estimation/HLS/dnn/wordlength_opt/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 357.719 ; gain = 65.422
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hadd_3_full_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 400.293 ; gain = 42.574
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hadd_3_full_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hadd_3_full_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hcmp_0_no_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 411.391 ; gain = 0.055
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hcmp_0_no_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hcmp_0_no_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hdiv_5_no_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 415.367 ; gain = 3.977
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hdiv_5_no_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hdiv_5_no_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hmul_2_max_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 420.324 ; gain = 4.957
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hmul_2_max_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hmul_2_max_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hptosp_0_no_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 426.367 ; gain = 6.043
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hptosp_0_no_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hptosp_0_no_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_hsub_3_full_dsp_16' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 432.316 ; gain = 5.949
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_hsub_3_full_dsp_16'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_hsub_3_full_dsp_16'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_ap_sptohp_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 438.184 ; gain = 5.867
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_ap_sptohp_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_ap_sptohp_0_no_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+ipx::update_checksums: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 438.184 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 31 14:44:27 2022...

@@ -1,0 +1,6 @@
+set_property SRC_FILE_INFO {cfile:d:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP/LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/ip/design_LSDNN_DNN_up_0_0/constraints/DNN_up_ooc.xdc rfile:../../../../../LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/ip/design_LSDNN_DNN_up_0_0/constraints/DNN_up_ooc.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP/LSDNN_3__UP.runs/design_LSDNN_DNN_up_0_0_synth_1/dont_touch.xdc rfile:../../../dont_touch.xdc id:2} [current_design]
+set_property src_info {type:SCOPED_XDC file:1 line:5 export:INPUT save:INPUT read:FILTER_OUT_OF_CONTEXT} [current_design]
+create_clock -period 10.000 -name ap_clk [get_ports ap_clk]
+set_property src_info {type:XDC file:2 line:9 export:INPUT save:INPUT read:READ} [current_design]
+set_property DONT_TOUCH true [get_cells inst]

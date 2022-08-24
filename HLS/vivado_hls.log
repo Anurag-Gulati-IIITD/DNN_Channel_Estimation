@@ -1,0 +1,34 @@
+INFO: [HLS 200-10] Running 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Anurag' on host 'laptop-rioqp2dj' (Windows NT_amd64 version 6.2) on Wed Aug 17 17:25:18 +0530 2022
+INFO: [HLS 200-10] In directory 'D:/IIIT-D/Channel_Estimation/HLS'
+Sourcing Tcl script 'D:/IIIT-D/Channel_Estimation/HLS/dnn/wordlength_opt__16_6/export.tcl'
+INFO: [HLS 200-10] Opening project 'D:/IIIT-D/Channel_Estimation/HLS/dnn'.
+INFO: [HLS 200-10] Opening solution 'D:/IIIT-D/Channel_Estimation/HLS/dnn/wordlength_opt__16_6'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 358.977 ; gain = 67.918
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_166_ap_fcmp_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 399.684 ; gain = 40.707
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_166_ap_fcmp_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_166_ap_fcmp_0_no_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_166_ap_fpext_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 409.980 ; gain = 2.055
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_166_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_166_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+ipx::update_checksums: Time (s): cpu = 00:00:02 ; elapsed = 00:00:19 . Memory (MB): peak = 409.980 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 17 17:27:21 2022...

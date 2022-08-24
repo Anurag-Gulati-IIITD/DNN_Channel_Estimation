@@ -1,0 +1,647 @@
+
+
+================================================================
+== Vivado HLS Report for 'LS_estimator'
+================================================================
+* Date:           Sat Jul 23 01:02:43 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        least_squares
+* Solution:       2__pipelined
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.256|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  397|  397|  397|  397|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                    |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1            |   51|   51|         1|          -|          -|    52|    no    |
+        |- Loop 2            |   51|   51|         1|          -|          -|    52|    no    |
+        |- Loop 3            |   51|   51|         1|          -|          -|    52|    no    |
+        |- preamble_in       |   52|   52|         1|          -|          -|    52|    no    |
+        |- LTS_in            |   52|   52|         1|          -|          -|    52|    no    |
+        |- LS_estimation     |   78|   78|        28|          1|          1|    52|    yes   |
+        |- out_stream_write  |   53|   53|         3|          1|          1|    52|    yes   |
+        +--------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 28
+  * Pipeline-1: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 39
+* Pipeline : 2
+  Pipeline-0 : II = 1, D = 28, States = { 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 }
+  Pipeline-1 : II = 1, D = 3, States = { 36 37 38 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 3 4 
+4 --> 4 5 
+5 --> 5 6 
+6 --> 6 7 
+7 --> 35 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 7 
+35 --> 36 
+36 --> 39 37 
+37 --> 38 
+38 --> 36 
+39 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %out_stream_V_data), !map !48"   --->   Operation 40 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %in_stream_V_data), !map !55"   --->   Operation 41 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %in_stream_V_last_V), !map !62"   --->   Operation 42 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %out_stream_V_last_V), !map !66"   --->   Operation 43 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @LS_estimator_str) nounwind"   --->   Operation 44 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%preamble_M_real = alloca [52 x float], align 4" [least_squares/least_squares.cpp:25]   --->   Operation 45 'alloca' 'preamble_M_real' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%preamble_M_imag = alloca [52 x float], align 4" [least_squares/least_squares.cpp:25]   --->   Operation 46 'alloca' 'preamble_M_imag' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%training_sym_M_real = alloca [52 x float], align 4" [least_squares/least_squares.cpp:25]   --->   Operation 47 'alloca' 'training_sym_M_real' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%training_sym_M_imag = alloca [52 x float], align 4" [least_squares/least_squares.cpp:25]   --->   Operation 48 'alloca' 'training_sym_M_imag' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%LS_out_M_real = alloca [52 x float], align 4" [least_squares/least_squares.cpp:27]   --->   Operation 49 'alloca' 'LS_out_M_real' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%LS_out_M_imag = alloca [52 x float], align 4" [least_squares/least_squares.cpp:27]   --->   Operation 50 'alloca' 'LS_out_M_imag' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [least_squares/least_squares.cpp:20]   --->   Operation 51 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %in_stream_V_data, i1* %in_stream_V_last_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [least_squares/least_squares.cpp:21]   --->   Operation 52 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_stream_V_data, i1* %out_stream_V_last_V, [5 x i8]* @p_str3, i32 1, i32 1, [5 x i8]* @p_str4, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [least_squares/least_squares.cpp:22]   --->   Operation 53 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (1.76ns)   --->   "br label %arrayctor.loop"   --->   Operation 54 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%phi_ln25 = phi i6 [ 0, %0 ], [ %add_ln25, %arrayctor.loop ]" [least_squares/least_squares.cpp:25]   --->   Operation 55 'phi' 'phi_ln25' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (1.82ns)   --->   "%add_ln25 = add i6 %phi_ln25, 1" [least_squares/least_squares.cpp:25]   --->   Operation 56 'add' 'add_ln25' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%zext_ln25 = zext i6 %phi_ln25 to i64" [least_squares/least_squares.cpp:25]   --->   Operation 57 'zext' 'zext_ln25' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%preamble_M_real_add = getelementptr [52 x float]* %preamble_M_real, i64 0, i64 %zext_ln25" [least_squares/least_squares.cpp:25]   --->   Operation 58 'getelementptr' 'preamble_M_real_add' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %preamble_M_real_add, align 8" [least_squares/least_squares.cpp:25]   --->   Operation 59 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%preamble_M_imag_add = getelementptr [52 x float]* %preamble_M_imag, i64 0, i64 %zext_ln25" [least_squares/least_squares.cpp:25]   --->   Operation 60 'getelementptr' 'preamble_M_imag_add' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %preamble_M_imag_add, align 4" [least_squares/least_squares.cpp:25]   --->   Operation 61 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_2 : Operation 62 [1/1] (1.42ns)   --->   "%icmp_ln25 = icmp eq i6 %phi_ln25, -13" [least_squares/least_squares.cpp:25]   --->   Operation 62 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 63 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "br i1 %icmp_ln25, label %arrayctor.loop1.preheader, label %arrayctor.loop" [least_squares/least_squares.cpp:25]   --->   Operation 64 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (1.76ns)   --->   "br label %arrayctor.loop1" [least_squares/least_squares.cpp:25]   --->   Operation 65 'br' <Predicate = (icmp_ln25)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%phi_ln25_1 = phi i6 [ %add_ln25_1, %arrayctor.loop1 ], [ 0, %arrayctor.loop1.preheader ]" [least_squares/least_squares.cpp:25]   --->   Operation 66 'phi' 'phi_ln25_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (1.82ns)   --->   "%add_ln25_1 = add i6 %phi_ln25_1, 1" [least_squares/least_squares.cpp:25]   --->   Operation 67 'add' 'add_ln25_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%zext_ln25_1 = zext i6 %phi_ln25_1 to i64" [least_squares/least_squares.cpp:25]   --->   Operation 68 'zext' 'zext_ln25_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%training_sym_M_real_1 = getelementptr [52 x float]* %training_sym_M_real, i64 0, i64 %zext_ln25_1" [least_squares/least_squares.cpp:25]   --->   Operation 69 'getelementptr' 'training_sym_M_real_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %training_sym_M_real_1, align 8" [least_squares/least_squares.cpp:25]   --->   Operation 70 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%training_sym_M_imag_1 = getelementptr [52 x float]* %training_sym_M_imag, i64 0, i64 %zext_ln25_1" [least_squares/least_squares.cpp:25]   --->   Operation 71 'getelementptr' 'training_sym_M_imag_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %training_sym_M_imag_1, align 4" [least_squares/least_squares.cpp:25]   --->   Operation 72 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_3 : Operation 73 [1/1] (1.42ns)   --->   "%icmp_ln25_1 = icmp eq i6 %phi_ln25_1, -13" [least_squares/least_squares.cpp:25]   --->   Operation 73 'icmp' 'icmp_ln25_1' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 74 'speclooptripcount' 'empty_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %icmp_ln25_1, label %arrayctor.loop2.preheader, label %arrayctor.loop1" [least_squares/least_squares.cpp:25]   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (1.76ns)   --->   "br label %arrayctor.loop2" [least_squares/least_squares.cpp:27]   --->   Operation 76 'br' <Predicate = (icmp_ln25_1)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "%phi_ln27 = phi i6 [ %add_ln27, %arrayctor.loop2 ], [ 0, %arrayctor.loop2.preheader ]" [least_squares/least_squares.cpp:27]   --->   Operation 77 'phi' 'phi_ln27' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (1.82ns)   --->   "%add_ln27 = add i6 %phi_ln27, 1" [least_squares/least_squares.cpp:27]   --->   Operation 78 'add' 'add_ln27' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i6 %phi_ln27 to i64" [least_squares/least_squares.cpp:27]   --->   Operation 79 'zext' 'zext_ln27' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 80 [1/1] (0.00ns)   --->   "%LS_out_M_real_addr = getelementptr [52 x float]* %LS_out_M_real, i64 0, i64 %zext_ln27" [least_squares/least_squares.cpp:27]   --->   Operation 80 'getelementptr' 'LS_out_M_real_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 81 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %LS_out_M_real_addr, align 8" [least_squares/least_squares.cpp:27]   --->   Operation 81 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_4 : Operation 82 [1/1] (0.00ns)   --->   "%LS_out_M_imag_addr = getelementptr [52 x float]* %LS_out_M_imag, i64 0, i64 %zext_ln27" [least_squares/least_squares.cpp:27]   --->   Operation 82 'getelementptr' 'LS_out_M_imag_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 83 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %LS_out_M_imag_addr, align 4" [least_squares/least_squares.cpp:27]   --->   Operation 83 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_4 : Operation 84 [1/1] (1.42ns)   --->   "%icmp_ln27 = icmp eq i6 %phi_ln27, -13" [least_squares/least_squares.cpp:27]   --->   Operation 84 'icmp' 'icmp_ln27' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 85 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 86 [1/1] (0.00ns)   --->   "br i1 %icmp_ln27, label %.preheader22.preheader, label %arrayctor.loop2" [least_squares/least_squares.cpp:27]   --->   Operation 86 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 87 [1/1] (1.76ns)   --->   "br label %.preheader22" [least_squares/least_squares.cpp:30]   --->   Operation 87 'br' <Predicate = (icmp_ln27)> <Delay = 1.76>
+
+State 5 <SV = 4> <Delay = 3.25>
+ST_5 : Operation 88 [1/1] (0.00ns)   --->   "%i_0 = phi i6 [ %i, %1 ], [ 0, %.preheader22.preheader ]"   --->   Operation 88 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 89 [1/1] (1.42ns)   --->   "%icmp_ln30 = icmp eq i6 %i_0, -12" [least_squares/least_squares.cpp:30]   --->   Operation 89 'icmp' 'icmp_ln30' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 90 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [1/1] (1.82ns)   --->   "%i = add i6 %i_0, 1" [least_squares/least_squares.cpp:30]   --->   Operation 91 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 92 [1/1] (0.00ns)   --->   "br i1 %icmp_ln30, label %.preheader21.preheader, label %1" [least_squares/least_squares.cpp:30]   --->   Operation 92 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str5) nounwind" [least_squares/least_squares.cpp:30]   --->   Operation 93 'specloopname' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 94 [1/1] (0.00ns)   --->   "%empty_13 = call { i64, i1 } @_ssdm_op_Read.axis.volatile.i64P.i1P(i64* %in_stream_V_data, i1* %in_stream_V_last_V)" [least_squares/least_squares.cpp:32]   --->   Operation 94 'read' 'empty_13' <Predicate = (!icmp_ln30)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 95 [1/1] (0.00ns)   --->   "%in_stream_V_data_val = extractvalue { i64, i1 } %empty_13, 0" [least_squares/least_squares.cpp:32]   --->   Operation 95 'extractvalue' 'in_stream_V_data_val' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 96 [1/1] (0.00ns)   --->   "%trunc_ln9 = trunc i64 %in_stream_V_data_val to i32" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:32]   --->   Operation 96 'trunc' 'trunc_ln9' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 97 [1/1] (0.00ns)   --->   "%bitcast_ln9 = bitcast i32 %trunc_ln9 to float" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:32]   --->   Operation 97 'bitcast' 'bitcast_ln9' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 98 [1/1] (0.00ns)   --->   "%tmp_data_M_imag_loa = call i32 @_ssdm_op_PartSelect.i32.i64.i32.i32(i64 %in_stream_V_data_val, i32 32, i32 63)" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:32]   --->   Operation 98 'partselect' 'tmp_data_M_imag_loa' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 99 [1/1] (0.00ns)   --->   "%bitcast_ln9_1 = bitcast i32 %tmp_data_M_imag_loa to float" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:32]   --->   Operation 99 'bitcast' 'bitcast_ln9_1' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%zext_ln33 = zext i6 %i_0 to i64" [least_squares/least_squares.cpp:33]   --->   Operation 100 'zext' 'zext_ln33' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 101 [1/1] (0.00ns)   --->   "%preamble_M_real_add_1 = getelementptr [52 x float]* %preamble_M_real, i64 0, i64 %zext_ln33" [least_squares/least_squares.cpp:33]   --->   Operation 101 'getelementptr' 'preamble_M_real_add_1' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 102 [1/1] (3.25ns)   --->   "store float %bitcast_ln9, float* %preamble_M_real_add_1, align 8" [least_squares/least_squares.cpp:33]   --->   Operation 102 'store' <Predicate = (!icmp_ln30)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_5 : Operation 103 [1/1] (0.00ns)   --->   "%preamble_M_imag_add_1 = getelementptr [52 x float]* %preamble_M_imag, i64 0, i64 %zext_ln33" [least_squares/least_squares.cpp:33]   --->   Operation 103 'getelementptr' 'preamble_M_imag_add_1' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 104 [1/1] (3.25ns)   --->   "store float %bitcast_ln9_1, float* %preamble_M_imag_add_1, align 4" [least_squares/least_squares.cpp:33]   --->   Operation 104 'store' <Predicate = (!icmp_ln30)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_5 : Operation 105 [1/1] (0.00ns)   --->   "br label %.preheader22" [least_squares/least_squares.cpp:30]   --->   Operation 105 'br' <Predicate = (!icmp_ln30)> <Delay = 0.00>
+ST_5 : Operation 106 [1/1] (1.76ns)   --->   "br label %.preheader21" [least_squares/least_squares.cpp:36]   --->   Operation 106 'br' <Predicate = (icmp_ln30)> <Delay = 1.76>
+
+State 6 <SV = 5> <Delay = 3.25>
+ST_6 : Operation 107 [1/1] (0.00ns)   --->   "%i3_0 = phi i6 [ %i_1, %2 ], [ 0, %.preheader21.preheader ]"   --->   Operation 107 'phi' 'i3_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 108 [1/1] (1.42ns)   --->   "%icmp_ln36 = icmp eq i6 %i3_0, -12" [least_squares/least_squares.cpp:36]   --->   Operation 108 'icmp' 'icmp_ln36' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 109 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (1.82ns)   --->   "%i_1 = add i6 %i3_0, 1" [least_squares/least_squares.cpp:36]   --->   Operation 110 'add' 'i_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 111 [1/1] (0.00ns)   --->   "br i1 %icmp_ln36, label %.preheader20.preheader, label %2" [least_squares/least_squares.cpp:36]   --->   Operation 111 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str6) nounwind" [least_squares/least_squares.cpp:36]   --->   Operation 112 'specloopname' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 113 [1/1] (0.00ns)   --->   "%empty_15 = call { i64, i1 } @_ssdm_op_Read.axis.volatile.i64P.i1P(i64* %in_stream_V_data, i1* %in_stream_V_last_V)" [least_squares/least_squares.cpp:38]   --->   Operation 113 'read' 'empty_15' <Predicate = (!icmp_ln36)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_6 : Operation 114 [1/1] (0.00ns)   --->   "%in_stream_V_data_val_1 = extractvalue { i64, i1 } %empty_15, 0" [least_squares/least_squares.cpp:38]   --->   Operation 114 'extractvalue' 'in_stream_V_data_val_1' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 115 [1/1] (0.00ns)   --->   "%trunc_ln9_1 = trunc i64 %in_stream_V_data_val_1 to i32" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:38]   --->   Operation 115 'trunc' 'trunc_ln9_1' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 116 [1/1] (0.00ns)   --->   "%bitcast_ln9_2 = bitcast i32 %trunc_ln9_1 to float" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:38]   --->   Operation 116 'bitcast' 'bitcast_ln9_2' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 117 [1/1] (0.00ns)   --->   "%tmp_data_M_imag_1_l = call i32 @_ssdm_op_PartSelect.i32.i64.i32.i32(i64 %in_stream_V_data_val_1, i32 32, i32 63)" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:38]   --->   Operation 117 'partselect' 'tmp_data_M_imag_1_l' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%bitcast_ln9_3 = bitcast i32 %tmp_data_M_imag_1_l to float" [least_squares/least_squares.h:9->least_squares/least_squares.cpp:38]   --->   Operation 118 'bitcast' 'bitcast_ln9_3' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 119 [1/1] (0.00ns)   --->   "%zext_ln39 = zext i6 %i3_0 to i64" [least_squares/least_squares.cpp:39]   --->   Operation 119 'zext' 'zext_ln39' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%training_sym_M_real_2 = getelementptr [52 x float]* %training_sym_M_real, i64 0, i64 %zext_ln39" [least_squares/least_squares.cpp:39]   --->   Operation 120 'getelementptr' 'training_sym_M_real_2' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] (3.25ns)   --->   "store float %bitcast_ln9_2, float* %training_sym_M_real_2, align 8" [least_squares/least_squares.cpp:39]   --->   Operation 121 'store' <Predicate = (!icmp_ln36)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_6 : Operation 122 [1/1] (0.00ns)   --->   "%training_sym_M_imag_2 = getelementptr [52 x float]* %training_sym_M_imag, i64 0, i64 %zext_ln39" [least_squares/least_squares.cpp:39]   --->   Operation 122 'getelementptr' 'training_sym_M_imag_2' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 123 [1/1] (3.25ns)   --->   "store float %bitcast_ln9_3, float* %training_sym_M_imag_2, align 4" [least_squares/least_squares.cpp:39]   --->   Operation 123 'store' <Predicate = (!icmp_ln36)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_6 : Operation 124 [1/1] (0.00ns)   --->   "br label %.preheader21" [least_squares/least_squares.cpp:36]   --->   Operation 124 'br' <Predicate = (!icmp_ln36)> <Delay = 0.00>
+ST_6 : Operation 125 [1/1] (1.76ns)   --->   "br label %.preheader20" [least_squares/least_squares.cpp:43]   --->   Operation 125 'br' <Predicate = (icmp_ln36)> <Delay = 1.76>
+
+State 7 <SV = 6> <Delay = 3.25>
+ST_7 : Operation 126 [1/1] (0.00ns)   --->   "%i5_0 = phi i6 [ %i_2, %LS_estimation ], [ 0, %.preheader20.preheader ]"   --->   Operation 126 'phi' 'i5_0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 127 [1/1] (1.42ns)   --->   "%icmp_ln43 = icmp eq i6 %i5_0, -12" [least_squares/least_squares.cpp:43]   --->   Operation 127 'icmp' 'icmp_ln43' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 128 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 128 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 129 [1/1] (1.82ns)   --->   "%i_2 = add i6 %i5_0, 1" [least_squares/least_squares.cpp:43]   --->   Operation 129 'add' 'i_2' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 130 [1/1] (0.00ns)   --->   "br i1 %icmp_ln43, label %.preheader.preheader, label %LS_estimation" [least_squares/least_squares.cpp:43]   --->   Operation 130 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 131 [1/1] (0.00ns)   --->   "%zext_ln45 = zext i6 %i5_0 to i64" [least_squares/least_squares.cpp:45]   --->   Operation 131 'zext' 'zext_ln45' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_7 : Operation 132 [1/1] (0.00ns)   --->   "%preamble_M_real_add_2 = getelementptr [52 x float]* %preamble_M_real, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 132 'getelementptr' 'preamble_M_real_add_2' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_7 : Operation 133 [1/1] (0.00ns)   --->   "%preamble_M_imag_add_2 = getelementptr [52 x float]* %preamble_M_imag, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 133 'getelementptr' 'preamble_M_imag_add_2' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_7 : Operation 134 [1/1] (0.00ns)   --->   "%training_sym_M_real_3 = getelementptr [52 x float]* %training_sym_M_real, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 134 'getelementptr' 'training_sym_M_real_3' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_7 : Operation 135 [1/1] (0.00ns)   --->   "%training_sym_M_imag_3 = getelementptr [52 x float]* %training_sym_M_imag, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 135 'getelementptr' 'training_sym_M_imag_3' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_7 : Operation 136 [2/2] (3.25ns)   --->   "%p_r_M_real = load float* %preamble_M_real_add_2, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 136 'load' 'p_r_M_real' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_7 : Operation 137 [2/2] (3.25ns)   --->   "%p_r_M_imag = load float* %preamble_M_imag_add_2, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 137 'load' 'p_r_M_imag' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_7 : Operation 138 [2/2] (3.25ns)   --->   "%p_t_real = load float* %training_sym_M_real_3, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 138 'load' 'p_t_real' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_7 : Operation 139 [2/2] (3.25ns)   --->   "%p_t_imag = load float* %training_sym_M_imag_3, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 139 'load' 'p_t_imag' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+
+State 8 <SV = 7> <Delay = 3.25>
+ST_8 : Operation 140 [1/2] (3.25ns)   --->   "%p_r_M_real = load float* %preamble_M_real_add_2, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 140 'load' 'p_r_M_real' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_8 : Operation 141 [1/2] (3.25ns)   --->   "%p_r_M_imag = load float* %preamble_M_imag_add_2, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 141 'load' 'p_r_M_imag' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_8 : Operation 142 [1/2] (3.25ns)   --->   "%p_t_real = load float* %training_sym_M_real_3, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 142 'load' 'p_t_real' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_8 : Operation 143 [1/2] (3.25ns)   --->   "%p_t_imag = load float* %training_sym_M_imag_3, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 143 'load' 'p_t_imag' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+
+State 9 <SV = 8> <Delay = 5.70>
+ST_9 : Operation 144 [4/4] (5.70ns)   --->   "%tmp_i_i = fmul float %p_r_M_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 144 'fmul' 'tmp_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 145 [4/4] (5.70ns)   --->   "%tmp_1_i_i = fmul float %p_r_M_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 145 'fmul' 'tmp_1_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 146 [4/4] (5.70ns)   --->   "%tmp_3_i_i = fmul float %p_t_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 146 'fmul' 'tmp_3_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 147 [4/4] (5.70ns)   --->   "%tmp_4_i_i = fmul float %p_t_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 147 'fmul' 'tmp_4_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 148 [4/4] (5.70ns)   --->   "%tmp_6_i_i = fmul float %p_r_M_imag, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 148 'fmul' 'tmp_6_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 149 [4/4] (5.70ns)   --->   "%tmp_7_i_i = fmul float %p_r_M_real, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 149 'fmul' 'tmp_7_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 5.70>
+ST_10 : Operation 150 [3/4] (5.70ns)   --->   "%tmp_i_i = fmul float %p_r_M_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 150 'fmul' 'tmp_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [3/4] (5.70ns)   --->   "%tmp_1_i_i = fmul float %p_r_M_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 151 'fmul' 'tmp_1_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 152 [3/4] (5.70ns)   --->   "%tmp_3_i_i = fmul float %p_t_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 152 'fmul' 'tmp_3_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 153 [3/4] (5.70ns)   --->   "%tmp_4_i_i = fmul float %p_t_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 153 'fmul' 'tmp_4_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 154 [3/4] (5.70ns)   --->   "%tmp_6_i_i = fmul float %p_r_M_imag, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 154 'fmul' 'tmp_6_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 155 [3/4] (5.70ns)   --->   "%tmp_7_i_i = fmul float %p_r_M_real, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 155 'fmul' 'tmp_7_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 5.70>
+ST_11 : Operation 156 [2/4] (5.70ns)   --->   "%tmp_i_i = fmul float %p_r_M_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 156 'fmul' 'tmp_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 157 [2/4] (5.70ns)   --->   "%tmp_1_i_i = fmul float %p_r_M_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 157 'fmul' 'tmp_1_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 158 [2/4] (5.70ns)   --->   "%tmp_3_i_i = fmul float %p_t_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 158 'fmul' 'tmp_3_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 159 [2/4] (5.70ns)   --->   "%tmp_4_i_i = fmul float %p_t_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 159 'fmul' 'tmp_4_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 160 [2/4] (5.70ns)   --->   "%tmp_6_i_i = fmul float %p_r_M_imag, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 160 'fmul' 'tmp_6_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 161 [2/4] (5.70ns)   --->   "%tmp_7_i_i = fmul float %p_r_M_real, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 161 'fmul' 'tmp_7_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 5.70>
+ST_12 : Operation 162 [1/4] (5.70ns)   --->   "%tmp_i_i = fmul float %p_r_M_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 162 'fmul' 'tmp_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 163 [1/4] (5.70ns)   --->   "%tmp_1_i_i = fmul float %p_r_M_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 163 'fmul' 'tmp_1_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 164 [1/4] (5.70ns)   --->   "%tmp_3_i_i = fmul float %p_t_real, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 164 'fmul' 'tmp_3_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 165 [1/4] (5.70ns)   --->   "%tmp_4_i_i = fmul float %p_t_imag, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 165 'fmul' 'tmp_4_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 166 [1/4] (5.70ns)   --->   "%tmp_6_i_i = fmul float %p_r_M_imag, %p_t_real" [least_squares/least_squares.cpp:45]   --->   Operation 166 'fmul' 'tmp_6_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 167 [1/4] (5.70ns)   --->   "%tmp_7_i_i = fmul float %p_r_M_real, %p_t_imag" [least_squares/least_squares.cpp:45]   --->   Operation 167 'fmul' 'tmp_7_i_i' <Predicate = (!icmp_ln43)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.25>
+ST_13 : Operation 168 [5/5] (7.25ns)   --->   "%tmp_2_i_i = fadd float %tmp_i_i, %tmp_1_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 168 'fadd' 'tmp_2_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 169 [5/5] (7.25ns)   --->   "%tmp_5_i_i = fadd float %tmp_3_i_i, %tmp_4_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 169 'fadd' 'tmp_5_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 170 [5/5] (7.25ns)   --->   "%tmp_8_i_i = fsub float %tmp_6_i_i, %tmp_7_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 170 'fsub' 'tmp_8_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.25>
+ST_14 : Operation 171 [4/5] (7.25ns)   --->   "%tmp_2_i_i = fadd float %tmp_i_i, %tmp_1_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 171 'fadd' 'tmp_2_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 172 [4/5] (7.25ns)   --->   "%tmp_5_i_i = fadd float %tmp_3_i_i, %tmp_4_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 172 'fadd' 'tmp_5_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 173 [4/5] (7.25ns)   --->   "%tmp_8_i_i = fsub float %tmp_6_i_i, %tmp_7_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 173 'fsub' 'tmp_8_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 7.25>
+ST_15 : Operation 174 [3/5] (7.25ns)   --->   "%tmp_2_i_i = fadd float %tmp_i_i, %tmp_1_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 174 'fadd' 'tmp_2_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 175 [3/5] (7.25ns)   --->   "%tmp_5_i_i = fadd float %tmp_3_i_i, %tmp_4_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 175 'fadd' 'tmp_5_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 176 [3/5] (7.25ns)   --->   "%tmp_8_i_i = fsub float %tmp_6_i_i, %tmp_7_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 176 'fsub' 'tmp_8_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 7.25>
+ST_16 : Operation 177 [2/5] (7.25ns)   --->   "%tmp_2_i_i = fadd float %tmp_i_i, %tmp_1_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 177 'fadd' 'tmp_2_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 178 [2/5] (7.25ns)   --->   "%tmp_5_i_i = fadd float %tmp_3_i_i, %tmp_4_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 178 'fadd' 'tmp_5_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 179 [2/5] (7.25ns)   --->   "%tmp_8_i_i = fsub float %tmp_6_i_i, %tmp_7_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 179 'fsub' 'tmp_8_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 7.25>
+ST_17 : Operation 180 [1/5] (7.25ns)   --->   "%tmp_2_i_i = fadd float %tmp_i_i, %tmp_1_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 180 'fadd' 'tmp_2_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 181 [1/5] (7.25ns)   --->   "%tmp_5_i_i = fadd float %tmp_3_i_i, %tmp_4_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 181 'fadd' 'tmp_5_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 182 [1/5] (7.25ns)   --->   "%tmp_8_i_i = fsub float %tmp_6_i_i, %tmp_7_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 182 'fsub' 'tmp_8_i_i' <Predicate = (!icmp_ln43)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.07>
+ST_18 : Operation 183 [16/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 183 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 184 [16/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 184 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.07>
+ST_19 : Operation 185 [15/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 185 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 186 [15/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 186 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.07>
+ST_20 : Operation 187 [14/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 187 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 188 [14/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 188 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.07>
+ST_21 : Operation 189 [13/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 189 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 190 [13/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 190 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 6.07>
+ST_22 : Operation 191 [12/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 191 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 192 [12/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 192 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 6.07>
+ST_23 : Operation 193 [11/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 193 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 194 [11/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 194 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 6.07>
+ST_24 : Operation 195 [10/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 195 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 196 [10/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 196 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 6.07>
+ST_25 : Operation 197 [9/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 197 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 198 [9/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 198 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 6.07>
+ST_26 : Operation 199 [8/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 199 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 200 [8/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 200 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 6.07>
+ST_27 : Operation 201 [7/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 201 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 202 [7/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 202 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 6.07>
+ST_28 : Operation 203 [6/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 203 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 204 [6/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 204 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 6.07>
+ST_29 : Operation 205 [5/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 205 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 206 [5/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 206 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 6.07>
+ST_30 : Operation 207 [4/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 207 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 208 [4/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 208 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 6.07>
+ST_31 : Operation 209 [3/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 209 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 210 [3/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 210 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 6.07>
+ST_32 : Operation 211 [2/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 211 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 212 [2/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 212 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 6.07>
+ST_33 : Operation 213 [1/16] (6.07ns)   --->   "%complex_M_real_writ = fdiv float %tmp_2_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 213 'fdiv' 'complex_M_real_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 214 [1/16] (6.07ns)   --->   "%complex_M_imag_writ = fdiv float %tmp_8_i_i, %tmp_5_i_i" [least_squares/least_squares.cpp:45]   --->   Operation 214 'fdiv' 'complex_M_imag_writ' <Predicate = (!icmp_ln43)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 3.25>
+ST_34 : Operation 215 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str7) nounwind" [least_squares/least_squares.cpp:43]   --->   Operation 215 'specloopname' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 216 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str7)" [least_squares/least_squares.cpp:43]   --->   Operation 216 'specregionbegin' 'tmp' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 217 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [least_squares/least_squares.cpp:44]   --->   Operation 217 'specpipeline' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 218 [1/1] (0.00ns)   --->   "%LS_out_M_real_addr_1 = getelementptr [52 x float]* %LS_out_M_real, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 218 'getelementptr' 'LS_out_M_real_addr_1' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 219 [1/1] (3.25ns)   --->   "store float %complex_M_real_writ, float* %LS_out_M_real_addr_1, align 8" [least_squares/least_squares.cpp:45]   --->   Operation 219 'store' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_34 : Operation 220 [1/1] (0.00ns)   --->   "%LS_out_M_imag_addr_1 = getelementptr [52 x float]* %LS_out_M_imag, i64 0, i64 %zext_ln45" [least_squares/least_squares.cpp:45]   --->   Operation 220 'getelementptr' 'LS_out_M_imag_addr_1' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 221 [1/1] (3.25ns)   --->   "store float %complex_M_imag_writ, float* %LS_out_M_imag_addr_1, align 4" [least_squares/least_squares.cpp:45]   --->   Operation 221 'store' <Predicate = (!icmp_ln43)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_34 : Operation 222 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str7, i32 %tmp)" [least_squares/least_squares.cpp:46]   --->   Operation 222 'specregionend' 'empty_17' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+ST_34 : Operation 223 [1/1] (0.00ns)   --->   "br label %.preheader20" [least_squares/least_squares.cpp:43]   --->   Operation 223 'br' <Predicate = (!icmp_ln43)> <Delay = 0.00>
+
+State 35 <SV = 7> <Delay = 1.76>
+ST_35 : Operation 224 [1/1] (1.76ns)   --->   "br label %.preheader" [least_squares/least_squares.cpp:49]   --->   Operation 224 'br' <Predicate = true> <Delay = 1.76>
+
+State 36 <SV = 8> <Delay = 3.25>
+ST_36 : Operation 225 [1/1] (0.00ns)   --->   "%i6_0 = phi i6 [ %i_3, %out_stream_write ], [ 0, %.preheader.preheader ]"   --->   Operation 225 'phi' 'i6_0' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 226 [1/1] (1.42ns)   --->   "%icmp_ln49 = icmp eq i6 %i6_0, -12" [least_squares/least_squares.cpp:49]   --->   Operation 226 'icmp' 'icmp_ln49' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 227 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 227 'speclooptripcount' 'empty_18' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 228 [1/1] (1.82ns)   --->   "%i_3 = add i6 %i6_0, 1" [least_squares/least_squares.cpp:49]   --->   Operation 228 'add' 'i_3' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 229 [1/1] (0.00ns)   --->   "br i1 %icmp_ln49, label %3, label %out_stream_write" [least_squares/least_squares.cpp:49]   --->   Operation 229 'br' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 230 [1/1] (0.00ns)   --->   "%zext_ln53 = zext i6 %i6_0 to i64" [least_squares/least_squares.cpp:53]   --->   Operation 230 'zext' 'zext_ln53' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_36 : Operation 231 [1/1] (0.00ns)   --->   "%LS_out_M_real_addr_2 = getelementptr [52 x float]* %LS_out_M_real, i64 0, i64 %zext_ln53" [least_squares/least_squares.cpp:53]   --->   Operation 231 'getelementptr' 'LS_out_M_real_addr_2' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_36 : Operation 232 [2/2] (3.25ns)   --->   "%tmp_data_M_real = load float* %LS_out_M_real_addr_2, align 8" [least_squares/least_squares.cpp:53]   --->   Operation 232 'load' 'tmp_data_M_real' <Predicate = (!icmp_ln49)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_36 : Operation 233 [1/1] (0.00ns)   --->   "%LS_out_M_imag_addr_2 = getelementptr [52 x float]* %LS_out_M_imag, i64 0, i64 %zext_ln53" [least_squares/least_squares.cpp:53]   --->   Operation 233 'getelementptr' 'LS_out_M_imag_addr_2' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_36 : Operation 234 [2/2] (3.25ns)   --->   "%tmp_data_M_imag = load float* %LS_out_M_imag_addr_2, align 4" [least_squares/least_squares.cpp:53]   --->   Operation 234 'load' 'tmp_data_M_imag' <Predicate = (!icmp_ln49)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_36 : Operation 235 [1/1] (1.42ns)   --->   "%tmp_last_V = icmp eq i6 %i6_0, -13" [least_squares/least_squares.cpp:56]   --->   Operation 235 'icmp' 'tmp_last_V' <Predicate = (!icmp_ln49)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 9> <Delay = 3.25>
+ST_37 : Operation 236 [1/2] (3.25ns)   --->   "%tmp_data_M_real = load float* %LS_out_M_real_addr_2, align 8" [least_squares/least_squares.cpp:53]   --->   Operation 236 'load' 'tmp_data_M_real' <Predicate = (!icmp_ln49)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_37 : Operation 237 [1/2] (3.25ns)   --->   "%tmp_data_M_imag = load float* %LS_out_M_imag_addr_2, align 4" [least_squares/least_squares.cpp:53]   --->   Operation 237 'load' 'tmp_data_M_imag' <Predicate = (!icmp_ln49)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 52> <RAM>
+ST_37 : Operation 238 [1/1] (0.00ns)   --->   "%bitcast_ln162 = bitcast float %tmp_data_M_real to i32" [least_squares/least_squares.cpp:62]   --->   Operation 238 'bitcast' 'bitcast_ln162' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_37 : Operation 239 [1/1] (0.00ns)   --->   "%bitcast_ln162_1 = bitcast float %tmp_data_M_imag to i32" [least_squares/least_squares.cpp:62]   --->   Operation 239 'bitcast' 'bitcast_ln162_1' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_37 : Operation 240 [1/1] (0.00ns)   --->   "%tmp_data_2 = call i64 @_ssdm_op_BitConcatenate.i64.i32.i32(i32 %bitcast_ln162_1, i32 %bitcast_ln162)" [least_squares/least_squares.cpp:62]   --->   Operation 240 'bitconcatenate' 'tmp_data_2' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_37 : Operation 241 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i64P.i1P(i64* %out_stream_V_data, i1* %out_stream_V_last_V, i64 %tmp_data_2, i1 %tmp_last_V)" [least_squares/least_squares.cpp:62]   --->   Operation 241 'write' <Predicate = (!icmp_ln49)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 38 <SV = 10> <Delay = 0.00>
+ST_38 : Operation 242 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str8) nounwind" [least_squares/least_squares.cpp:49]   --->   Operation 242 'specloopname' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_38 : Operation 243 [1/1] (0.00ns)   --->   "%tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str8)" [least_squares/least_squares.cpp:49]   --->   Operation 243 'specregionbegin' 'tmp_1' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_38 : Operation 244 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [least_squares/least_squares.cpp:50]   --->   Operation 244 'specpipeline' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_38 : Operation 245 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i64P.i1P(i64* %out_stream_V_data, i1* %out_stream_V_last_V, i64 %tmp_data_2, i1 %tmp_last_V)" [least_squares/least_squares.cpp:62]   --->   Operation 245 'write' <Predicate = (!icmp_ln49)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_38 : Operation 246 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str8, i32 %tmp_1)" [least_squares/least_squares.cpp:63]   --->   Operation 246 'specregionend' 'empty_19' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_38 : Operation 247 [1/1] (0.00ns)   --->   "br label %.preheader" [least_squares/least_squares.cpp:49]   --->   Operation 247 'br' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+
+State 39 <SV = 9> <Delay = 0.00>
+ST_39 : Operation 248 [1/1] (0.00ns)   --->   "ret void" [least_squares/least_squares.cpp:65]   --->   Operation 248 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('phi_ln25', least_squares/least_squares.cpp:25) with incoming values : ('add_ln25', least_squares/least_squares.cpp:25) [21]  (1.77 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln25', least_squares/least_squares.cpp:25) with incoming values : ('add_ln25', least_squares/least_squares.cpp:25) [21]  (0 ns)
+	'getelementptr' operation ('preamble_M_real_add', least_squares/least_squares.cpp:25) [24]  (0 ns)
+	'store' operation ('store_ln25', least_squares/least_squares.cpp:25) of constant 0 on array 'preamble._M_real', least_squares/least_squares.cpp:25 [25]  (3.25 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln25_1', least_squares/least_squares.cpp:25) with incoming values : ('add_ln25_1', least_squares/least_squares.cpp:25) [34]  (0 ns)
+	'getelementptr' operation ('training_sym_M_real_1', least_squares/least_squares.cpp:25) [37]  (0 ns)
+	'store' operation ('store_ln25', least_squares/least_squares.cpp:25) of constant 0 on array 'training_sym._M_real', least_squares/least_squares.cpp:25 [38]  (3.25 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('phi_ln27', least_squares/least_squares.cpp:27) with incoming values : ('add_ln27', least_squares/least_squares.cpp:27) [47]  (0 ns)
+	'getelementptr' operation ('LS_out_M_real_addr', least_squares/least_squares.cpp:27) [50]  (0 ns)
+	'store' operation ('store_ln27', least_squares/least_squares.cpp:27) of constant 0 on array 'LS_out._M_real', least_squares/least_squares.cpp:27 [51]  (3.25 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', least_squares/least_squares.cpp:30) [60]  (0 ns)
+	'getelementptr' operation ('preamble_M_real_add_1', least_squares/least_squares.cpp:33) [74]  (0 ns)
+	'store' operation ('store_ln33', least_squares/least_squares.cpp:33) of variable 'bitcast_ln9', least_squares/least_squares.h:9->least_squares/least_squares.cpp:32 on array 'preamble._M_real', least_squares/least_squares.cpp:25 [75]  (3.25 ns)
+
+ <State 6>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', least_squares/least_squares.cpp:36) [82]  (0 ns)
+	'getelementptr' operation ('training_sym_M_real_2', least_squares/least_squares.cpp:39) [96]  (0 ns)
+	'store' operation ('store_ln39', least_squares/least_squares.cpp:39) of variable 'bitcast_ln9_2', least_squares/least_squares.h:9->least_squares/least_squares.cpp:38 on array 'training_sym._M_real', least_squares/least_squares.cpp:25 [97]  (3.25 ns)
+
+ <State 7>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', least_squares/least_squares.cpp:43) [104]  (0 ns)
+	'getelementptr' operation ('preamble_M_real_add_2', least_squares/least_squares.cpp:45) [114]  (0 ns)
+	'load' operation ('__x._M_real', least_squares/least_squares.cpp:45) on array 'preamble._M_real', least_squares/least_squares.cpp:25 [118]  (3.25 ns)
+
+ <State 8>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('__x._M_real', least_squares/least_squares.cpp:45) on array 'preamble._M_real', least_squares/least_squares.cpp:25 [118]  (3.25 ns)
+
+ <State 9>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', least_squares/least_squares.cpp:45) [122]  (5.7 ns)
+
+ <State 10>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', least_squares/least_squares.cpp:45) [122]  (5.7 ns)
+
+ <State 11>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', least_squares/least_squares.cpp:45) [122]  (5.7 ns)
+
+ <State 12>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i_i', least_squares/least_squares.cpp:45) [122]  (5.7 ns)
+
+ <State 13>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i_i', least_squares/least_squares.cpp:45) [124]  (7.26 ns)
+
+ <State 14>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i_i', least_squares/least_squares.cpp:45) [124]  (7.26 ns)
+
+ <State 15>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i_i', least_squares/least_squares.cpp:45) [124]  (7.26 ns)
+
+ <State 16>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i_i', least_squares/least_squares.cpp:45) [124]  (7.26 ns)
+
+ <State 17>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_2_i_i', least_squares/least_squares.cpp:45) [124]  (7.26 ns)
+
+ <State 18>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 19>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 20>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 21>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 22>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 23>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 24>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 25>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 26>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 27>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 28>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 29>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 30>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 31>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 32>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 33>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('complex<float>._M_real', least_squares/least_squares.cpp:45) [131]  (6.08 ns)
+
+ <State 34>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('LS_out_M_real_addr_1', least_squares/least_squares.cpp:45) [133]  (0 ns)
+	'store' operation ('store_ln45', least_squares/least_squares.cpp:45) of variable 'complex<float>._M_real', least_squares/least_squares.cpp:45 on array 'LS_out._M_real', least_squares/least_squares.cpp:27 [134]  (3.25 ns)
+
+ <State 35>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', least_squares/least_squares.cpp:49) [142]  (1.77 ns)
+
+ <State 36>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', least_squares/least_squares.cpp:49) [142]  (0 ns)
+	'getelementptr' operation ('LS_out_M_real_addr_2', least_squares/least_squares.cpp:53) [152]  (0 ns)
+	'load' operation ('tmp.data._M_real', least_squares/least_squares.cpp:53) on array 'LS_out._M_real', least_squares/least_squares.cpp:27 [153]  (3.25 ns)
+
+ <State 37>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('tmp.data._M_real', least_squares/least_squares.cpp:53) on array 'LS_out._M_real', least_squares/least_squares.cpp:27 [153]  (3.25 ns)
+
+ <State 38>: 0ns
+The critical path consists of the following:
+
+ <State 39>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

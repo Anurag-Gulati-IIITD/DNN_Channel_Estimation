@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file D:\IIIT-D\Independent_Project\design_impl\LSDNN_3__UP\LSDNN_3__UP.runs\design_LSDNN_DNN_up_0_0_synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permission denied

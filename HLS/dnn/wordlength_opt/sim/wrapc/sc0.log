@@ -1,0 +1,5 @@
+   Build using "D:/Softwares/Xilinx/Vivado/Vivado/2019.1/msys64/mingw64/bin/g++"
+   Compiling dnn_tb.cpp_pre.cpp.tb.cpp
+   Compiling apatb_DNN_wlo.cpp
+   Compiling dnn.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

@@ -1,0 +1,337 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'least_squares/least_squares.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:47 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:47 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:00:49 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:30) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:50 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [XFORM 203-1101] Packing variable 'out_stream.V.data' (least_squares/least_squares.cpp:3) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'in_stream.V.data' (least_squares/least_squares.cpp:3) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:30) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:51 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:51 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LS_estimator' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LS_estimation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 28.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 51.663 seconds; current allocated memory: 107.846 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 7 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.551 seconds; current allocated memory: 108.631 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'LS_estimator' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_real' to 'LS_estimator_preabkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_imag' to 'LS_estimator_preacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_real' to 'LS_estimator_traidEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_imag' to 'LS_estimator_traieOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_real' to 'LS_estimator_LS_ofYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_imag' to 'LS_estimator_LS_og8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fadd_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_faddhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fsub_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_fsubibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fmul_32ns_32ns_32_4_max_dsp_1' to 'LS_estimator_fmuljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fdiv_32ns_32ns_32_16_1' to 'LS_estimator_fdivkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_faddhbi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fdivkbM': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fmuljbC': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fsubibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LS_estimator'.
+INFO: [HLS 200-111]  Elapsed time: 0.804 seconds; current allocated memory: 110.116 MB.
+INFO: [RTMG 210-278] Implementing memory 'LS_estimator_preabkb_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:01:00 . Memory (MB): peak = 185.441 ; gain = 116.355
+INFO: [VHDL 208-304] Generating VHDL RTL for LS_estimator.
+INFO: [VLOG 209-307] Generating Verilog RTL for LS_estimator.
+INFO: [HLS 200-112] Total elapsed time: 59.787 seconds; peak allocated memory: 110.116 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'least_squares/least_squares.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:47) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:40 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [XFORM 203-1101] Packing variable 'out_stream.V.data' (least_squares/least_squares.cpp:18) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'in_stream.V.data' (least_squares/least_squares.cpp:18) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:47) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:40 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:41 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LS_estimator' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'preamble_in'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'LTS_in'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'LS_estimation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 28.
+INFO: [SCHED 204-61] Pipelining loop 'out_stream_write'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 41.466 seconds; current allocated memory: 107.924 MB.
+INFO: [HLS 200-434] Only 4 loops out of a total 7 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.626 seconds; current allocated memory: 108.713 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'LS_estimator' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_real' to 'LS_estimator_preabkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_imag' to 'LS_estimator_preacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_real' to 'LS_estimator_traidEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_imag' to 'LS_estimator_traieOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_real' to 'LS_estimator_LS_ofYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_imag' to 'LS_estimator_LS_og8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fadd_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_faddhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fsub_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_fsubibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fmul_32ns_32ns_32_4_max_dsp_1' to 'LS_estimator_fmuljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fdiv_32ns_32ns_32_16_1' to 'LS_estimator_fdivkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_faddhbi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fdivkbM': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fmuljbC': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fsubibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LS_estimator'.
+INFO: [HLS 200-111]  Elapsed time: 0.658 seconds; current allocated memory: 110.269 MB.
+INFO: [RTMG 210-278] Implementing memory 'LS_estimator_preabkb_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:48 . Memory (MB): peak = 184.797 ; gain = 93.246
+INFO: [VHDL 208-304] Generating VHDL RTL for LS_estimator.
+INFO: [VLOG 209-307] Generating Verilog RTL for LS_estimator.
+INFO: [HLS 200-112] Total elapsed time: 48.231 seconds; peak allocated memory: 110.269 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'least_squares/least_squares.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:45) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:39 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [XFORM 203-1101] Packing variable 'out_stream.V.data' (least_squares/least_squares.cpp:18) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'in_stream.V.data' (least_squares/least_squares.cpp:18) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'std::complex<float>::operator/=<float>' into 'std::operator/<float>' () automatically.
+INFO: [XFORM 203-602] Inlining function 'std::operator/<float>' into 'LS_estimator' (least_squares/least_squares.cpp:45) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:40 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:40 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LS_estimator' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LS_estimation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 28.
+INFO: [SCHED 204-61] Pipelining loop 'out_stream_write'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 40.61 seconds; current allocated memory: 107.881 MB.
+INFO: [HLS 200-434] Only 2 loops out of a total 7 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.518 seconds; current allocated memory: 108.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LS_estimator' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/in_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LS_estimator/out_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'LS_estimator' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_real' to 'LS_estimator_preabkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_preamble_M_imag' to 'LS_estimator_preacud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_real' to 'LS_estimator_traidEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_training_sym_M_imag' to 'LS_estimator_traieOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_real' to 'LS_estimator_LS_ofYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_LS_out_M_imag' to 'LS_estimator_LS_og8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fadd_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_faddhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fsub_32ns_32ns_32_5_full_dsp_1' to 'LS_estimator_fsubibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fmul_32ns_32ns_32_4_max_dsp_1' to 'LS_estimator_fmuljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LS_estimator_fdiv_32ns_32ns_32_16_1' to 'LS_estimator_fdivkbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_faddhbi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fdivkbM': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fmuljbC': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LS_estimator_fsubibs': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LS_estimator'.
+INFO: [HLS 200-111]  Elapsed time: 0.727 seconds; current allocated memory: 110.225 MB.
+INFO: [RTMG 210-278] Implementing memory 'LS_estimator_preabkb_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:07 ; elapsed = 00:00:47 . Memory (MB): peak = 185.254 ; gain = 93.594
+INFO: [VHDL 208-304] Generating VHDL RTL for LS_estimator.
+INFO: [VLOG 209-307] Generating Verilog RTL for LS_estimator.
+INFO: [HLS 200-112] Total elapsed time: 47.21 seconds; peak allocated memory: 110.225 MB.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

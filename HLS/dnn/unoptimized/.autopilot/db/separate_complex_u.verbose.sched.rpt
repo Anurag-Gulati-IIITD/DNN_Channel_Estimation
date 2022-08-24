@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vivado HLS Report for 'separate_complex_u'
+================================================================
+* Date:           Mon Aug  8 23:06:50 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        dnn
+* Solution:       unoptimized
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.124|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   53|   53|   53|   53|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |              |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- separation  |   52|   52|         1|          -|          -|    52|    no    |
+        +--------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V, [5 x i8]* @p_str10, i32 0, i32 0, [5 x i8]* @p_str11, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str9, [1 x i8]* @p_str9) nounwind"   --->   Operation 3 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (1.76ns)   --->   "br label %1" [dnn/dnn.cpp:121]   --->   Operation 4 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 5.12>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%i_0 = phi i6 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 5 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%zext_ln121 = zext i6 %i_0 to i7" [dnn/dnn.cpp:121]   --->   Operation 6 'zext' 'zext_ln121' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (1.42ns)   --->   "%icmp_ln121 = icmp eq i6 %i_0, -12" [dnn/dnn.cpp:121]   --->   Operation 7 'icmp' 'icmp_ln121' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 52, i64 52, i64 52)"   --->   Operation 8 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.82ns)   --->   "%i = add i6 %i_0, 1" [dnn/dnn.cpp:121]   --->   Operation 9 'add' 'i' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %icmp_ln121, label %3, label %2" [dnn/dnn.cpp:121]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str) nounwind" [dnn/dnn.cpp:121]   --->   Operation 11 'specloopname' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%empty_7 = call { i64, i1 } @_ssdm_op_Read.axis.volatile.i64P.i1P(i64* %LS_stream_V_data, i1* %LS_stream_V_last_V)" [dnn/dnn.cpp:122]   --->   Operation 12 'read' 'empty_7' <Predicate = (!icmp_ln121)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%LS_stream_V_data_val = extractvalue { i64, i1 } %empty_7, 0" [dnn/dnn.cpp:122]   --->   Operation 13 'extractvalue' 'LS_stream_V_data_val' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%trunc_ln18 = trunc i64 %LS_stream_V_data_val to i32" [dnn/dnn.h:18->dnn/dnn.cpp:122]   --->   Operation 14 'trunc' 'trunc_ln18' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%bitcast_ln18 = bitcast i32 %trunc_ln18 to float" [dnn/dnn.h:18->dnn/dnn.cpp:122]   --->   Operation 15 'bitcast' 'bitcast_ln18' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_data_M_imag_loa = call i32 @_ssdm_op_PartSelect.i32.i64.i32.i32(i64 %LS_stream_V_data_val, i32 32, i32 63)" [dnn/dnn.h:18->dnn/dnn.cpp:122]   --->   Operation 16 'partselect' 'tmp_data_M_imag_loa' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%bitcast_ln18_1 = bitcast i32 %tmp_data_M_imag_loa to float" [dnn/dnn.h:18->dnn/dnn.cpp:122]   --->   Operation 17 'bitcast' 'bitcast_ln18_1' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln123 = zext i6 %i_0 to i64" [dnn/dnn.cpp:123]   --->   Operation 18 'zext' 'zext_ln123' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%sep_addr = getelementptr [104 x float]* %sep, i64 0, i64 %zext_ln123" [dnn/dnn.cpp:123]   --->   Operation 19 'getelementptr' 'sep_addr' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (3.25ns)   --->   "store float %bitcast_ln18, float* %sep_addr, align 4" [dnn/dnn.cpp:123]   --->   Operation 20 'store' <Predicate = (!icmp_ln121)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_2 : Operation 21 [1/1] (1.87ns)   --->   "%add_ln124 = add i7 52, %zext_ln121" [dnn/dnn.cpp:124]   --->   Operation 21 'add' 'add_ln124' <Predicate = (!icmp_ln121)> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln124 = zext i7 %add_ln124 to i64" [dnn/dnn.cpp:124]   --->   Operation 22 'zext' 'zext_ln124' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%sep_addr_1 = getelementptr [104 x float]* %sep, i64 0, i64 %zext_ln124" [dnn/dnn.cpp:124]   --->   Operation 23 'getelementptr' 'sep_addr_1' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (3.25ns)   --->   "store float %bitcast_ln18_1, float* %sep_addr_1, align 4" [dnn/dnn.cpp:124]   --->   Operation 24 'store' <Predicate = (!icmp_ln121)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 104> <RAM>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "br label %1" [dnn/dnn.cpp:121]   --->   Operation 25 'br' <Predicate = (!icmp_ln121)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "ret void" [dnn/dnn.cpp:127]   --->   Operation 26 'ret' <Predicate = (icmp_ln121)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:121) [7]  (1.77 ns)
+
+ <State 2>: 5.12ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', dnn/dnn.cpp:121) [7]  (0 ns)
+	'add' operation ('add_ln124', dnn/dnn.cpp:124) [24]  (1.87 ns)
+	'getelementptr' operation ('sep_addr_1', dnn/dnn.cpp:124) [26]  (0 ns)
+	'store' operation ('store_ln124', dnn/dnn.cpp:124) of variable 'bitcast_ln18_1', dnn/dnn.h:18->dnn/dnn.cpp:122 on array 'sep' [27]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

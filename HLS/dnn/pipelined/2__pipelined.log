@@ -1,0 +1,146 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:44 . Memory (MB): peak = 184.156 ; gain = 92.609
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:00:44 . Memory (MB): peak = 184.156 ; gain = 92.609
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:00:48 . Memory (MB): peak = 184.156 ; gain = 92.609
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:86) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize' into 'DNN' (dnn/dnn.cpp:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2' into 'DNN' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3' into 'DNN' (dnn/dnn.cpp:213) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:216) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:07 ; elapsed = 00:00:50 . Memory (MB): peak = 184.156 ; gain = 92.609
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:187) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:187) into a 64-bit variable.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:86) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize' into 'DNN' (dnn/dnn.cpp:208) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2' into 'DNN' (dnn/dnn.cpp:211) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3' into 'DNN' (dnn/dnn.cpp:213) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:216) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:09 ; elapsed = 00:00:53 . Memory (MB): peak = 184.156 ; gain = 92.609
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'layer_2' (dnn/dnn.cpp:77:36) in function 'DNN' : 
+
+the outer loop is not a perfect loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'layer_3' (dnn/dnn.cpp:109:38) in function 'DNN' : 
+
+the outer loop is not a perfect loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:56 . Memory (MB): peak = 184.156 ; gain = 92.609
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'separation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 56.595 seconds; current allocated memory: 130.978 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.241 seconds; current allocated memory: 131.087 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'reconstruction'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.171 seconds; current allocated memory: 131.197 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.161 seconds; current allocated memory: 131.304 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'normalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 24.
+INFO: [SCHED 204-61] Pipelining loop 'weighted_sum_L2'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211) and 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211) and 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211) and 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211) and 'fadd' operation ('before_relu', dnn/dnn.cpp:83->dnn/dnn.cpp:211).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 14.
+INFO: [SCHED 204-61] Pipelining loop 'weighted_sum_L3'.
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 1)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213) and 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 2)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213) and 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 3)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213) and 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213).
+WARNING: [SCHED 204-68] Unable to enforce a carried constraint (II = 4)
+   between 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213) and 'fadd' operation ('before_relu', dnn/dnn.cpp:115->dnn/dnn.cpp:213).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 12.
+INFO: [SCHED 204-61] Pipelining loop 'denormalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.814 seconds; current allocated memory: 131.870 MB.
+INFO: [HLS 200-434] Only 4 loops out of a total 6 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.501 seconds; current allocated memory: 132.731 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex'.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 132.975 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex'.
+INFO: [HLS 200-111]  Elapsed time: 0.256 seconds; current allocated memory: 133.235 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'DNN_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_faddfsub_32nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_fmul_32ns_32ncud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fdiv_32ns_32ns_32_16_1' to 'DNN_fdiv_32ns_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fcmp_32ns_32ns_1_2_1' to 'DNN_fcmp_32ns_32neOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_faddfsub_32nsbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fcmp_32ns_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fdiv_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fmul_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN'.
+INFO: [HLS 200-111]  Elapsed time: 0.622 seconds; current allocated memory: 135.274 MB.
+INFO: [RTMG 210-279] Implementing memory 'DNN_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_L2_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_norm_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_y_L2_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:01:10 . Memory (MB): peak = 209.574 ; gain = 118.027
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN.
+INFO: [HLS 200-112] Total elapsed time: 69.74 seconds; peak allocated memory: 135.274 MB.

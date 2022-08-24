@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jul 29 03:35:43 2022
+# Process ID: 16336
+# Current directory: D:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP/LSDNN_3__UP.runs/synth_1
+# Command line: vivado.exe -log design_LSDNN_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_LSDNN_wrapper.tcl
+# Log file: D:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP/LSDNN_3__UP.runs/synth_1/design_LSDNN_wrapper.vds
+# Journal file: D:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP/LSDNN_3__UP.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_LSDNN_wrapper.tcl -notrace

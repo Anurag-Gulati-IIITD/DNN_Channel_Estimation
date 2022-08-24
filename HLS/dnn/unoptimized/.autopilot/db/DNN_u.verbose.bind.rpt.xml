@@ -1,0 +1,53 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'DNN_u'" level="0">
+<item name = "Date">Mon Aug  8 23:06:51 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">dnn</item>
+<item name = "Solution">unoptimized</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 7.256, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">123458, 123458, 123458, 123458, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_reconstruct_complex_s_fu_422">reconstruct_complex_s, 105, 105, 105, 105, none</column>
+<column name="grp_separate_complex_u_fu_431">separate_complex_u, 53, 53, 53, 53, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- normalization">2496, 2496, 24, -, -, 104, no</column>
+<column name="- layer_2">59748, 59748, 1149, -, -, 52, no</column>
+<column name=" + weighted_sum_L2">1144, 1144, 11, -, -, 104, no</column>
+<column name="- layer_3">59800, 59800, 575, -, -, 104, no</column>
+<column name=" + weighted_sum_L3">572, 572, 11, -, -, 52, no</column>
+<column name="- denormalization">1248, 1248, 12, -, -, 104, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

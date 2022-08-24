@@ -1,0 +1,4 @@
+design_LSDNN_DNN_up_0_0: DNN_up, 
+DNN_up: DNN_up__GC0, L3_up, L2_up, 
+L3_up: L3_up__GB4, L3_up__GB3, L3_up__GB2, L3_up__GB1, L3_up__GB0, 
+L2_up: L2_up__GB10, L2_up__GB6, L2_up__GB1, L2_up__GB0, L2_up__GB7, L2_up__GB5, L2_up__GB2, L2_up__GB4, L2_up__GB9, L2_up__GB8, L2_up__GB3, 

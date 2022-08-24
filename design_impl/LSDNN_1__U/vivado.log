@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug  9 11:23:20 2022
+# Process ID: 14168
+# Current directory: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10380 D:\IIIT-D\Channel_Estimation\design_impl\LSDNN_1__U\LSDNN_1__U.xpr
+# Log file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/vivado.log
+# Journal file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.xpr
+INFO: [Project 1-313] Project file moved from 'D:/IIIT-D/Independent_Project/design_impl/LSDNN_1__U' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/IIIT-D/Channel_Estimation/HLS/least_squares'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/IIIT-D/Channel_Estimation/HLS/dnn'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_LSDNN.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_LSDNN_DNN_u_0_0
+
+open_project: Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 992.805 ; gain = 379.730
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_1__U/LSDNN_1__U.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  9 14:58:57 2022...

@@ -1,0 +1,4 @@
+Running: xsim.dir/DNN_u/xsimk.exe -simmode gui -wdb DNN_u.wdb -simrunnum 0 -socket 50853
+Design successfully loaded
+Design Loading Memory Usage: 9928 KB (Peak: 9928 KB)
+Design Loading CPU Usage: 171 ms

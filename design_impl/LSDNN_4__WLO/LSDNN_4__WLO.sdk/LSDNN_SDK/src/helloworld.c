@@ -1,0 +1,509 @@
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
+
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+
+#include "data.h"
+
+
+int main()
+{
+    init_platform();
+
+    print("\nHello World...\n");
+
+/*
+	 ----------------------------------------
+	 | DMA CONFIGURATION AND INITIALIZATION |
+	 ----------------------------------------
+*/
+
+    XAxiDma axidma;
+	XAxiDma_Config* dma_cfgptr;
+
+	dma_cfgptr = XAxiDma_LookupConfig(XPAR_AXI_DMA_0_DEVICE_ID);
+
+	int status = XAxiDma_CfgInitialize(&axidma, dma_cfgptr);
+	if(status != XST_SUCCESS) {
+		printf("\nDMA initialization failed\n");
+		return XST_FAILURE;
+	}
+
+	float NMSE_0dB = 0, mse_0dB = 0, phf_0dB = 0;
+	float NMSE_5dB = 0, mse_5dB = 0, phf_5dB = 0;
+	float NMSE_10dB = 0, mse_10dB = 0, phf_10dB = 0;
+	float NMSE_15dB = 0, mse_15dB = 0, phf_15dB = 0;
+	float NMSE_20dB = 0, mse_20dB = 0, phf_20dB = 0;
+	float NMSE_25dB = 0, mse_25dB = 0, phf_25dB = 0;
+	float NMSE_30dB = 0, mse_30dB = 0, phf_30dB = 0;
+
+/*
+	--------------
+	| SNR = 0 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_0dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_0dB[i][j];
+			mse_0dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_0dB += creal(act_0dB[i][j])*creal(act_0dB[i][j]) + cimag(act_0dB[i][j])*cimag(act_0dB[i][j]);
+		}
+
+    }
+
+//	mse_0dB = sqrt(mse_0dB)/((float)nCH);
+//	phf_0dB = sqrt(phf_0dB)/((float)nCH);
+	NMSE_0dB = mse_0dB/phf_0dB;
+	printf("NMSE (0 dB) = %lf\n", NMSE_0dB);
+
+/*
+	--------------
+	| SNR = 5 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_5dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_5dB[i][j];
+			mse_5dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_5dB += creal(act_5dB[i][j])*creal(act_5dB[i][j]) + cimag(act_5dB[i][j])*cimag(act_5dB[i][j]);
+		}
+
+	}
+
+//	mse_5dB = sqrt(mse_5dB)/((float)nCH);
+//	phf_5dB = sqrt(phf_5dB)/((float)nCH);
+	NMSE_5dB = mse_5dB/phf_5dB;
+	printf("NMSE (5 dB) = %lf\n", NMSE_5dB);
+
+/*
+	--------------
+	| SNR = 10 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_10dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_10dB[i][j];
+			mse_10dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_10dB += creal(act_10dB[i][j])*creal(act_10dB[i][j]) + cimag(act_10dB[i][j])*cimag(act_10dB[i][j]);
+		}
+
+	}
+
+//	mse_10dB = sqrt(mse_10dB)/((float)nCH);
+//	phf_10dB = sqrt(phf_10dB)/((float)nCH);
+	NMSE_10dB = mse_10dB/phf_10dB;
+	printf("NMSE (10 dB) = %lf\n", NMSE_10dB);
+
+/*
+	--------------
+	| SNR = 15 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_15dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=0; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_15dB[i][j];
+			mse_15dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_15dB += creal(act_15dB[i][j])*creal(act_15dB[i][j]) + cimag(act_15dB[i][j])*cimag(act_15dB[i][j]);
+		}
+
+	}
+
+//	mse_15dB = sqrt(mse_15dB)/((float)nCH);
+//	phf_15dB = sqrt(phf_15dB)/((float)nCH);
+	NMSE_15dB = mse_15dB/phf_15dB;
+	printf("NMSE (15 dB) = %lf\n", NMSE_15dB);
+
+/*
+	--------------
+	| SNR = 20 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_20dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_20dB[i][j];
+			mse_20dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_20dB += creal(act_20dB[i][j])*creal(act_20dB[i][j]) + cimag(act_20dB[i][j])*cimag(act_20dB[i][j]);
+		}
+
+	}
+
+//	mse_20dB = sqrt(mse_20dB)/((float)nCH);
+//	phf_20dB = sqrt(phf_20dB)/((float)nCH);
+	NMSE_20dB = mse_20dB/phf_20dB;
+	printf("NMSE (20 dB) = %lf\n", NMSE_20dB);
+
+/*
+	--------------
+	| SNR = 25 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_25dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_25dB[i][j];
+			mse_25dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_25dB += creal(act_25dB[i][j])*creal(act_25dB[i][j]) + cimag(act_25dB[i][j])*cimag(act_25dB[i][j]);
+		}
+
+	}
+
+//		mse_25dB = sqrt(mse_25dB)/((float)nCH);
+//		phf_25dB = sqrt(phf_25dB)/((float)nCH);
+		NMSE_25dB = mse_25dB/phf_25dB;
+		printf("NMSE (25 dB) = %lf\n", NMSE_25dB);
+
+/*
+	--------------
+	| SNR = 30 dB |
+	--------------
+*/
+	for(int i=0; i<nCH; i++) {	// for the i-th channel realization
+
+		// input and output streams
+		COMPLEXD in_stream[2*nUSC], out_stream[nUSC];
+		// indexing variable for input stream
+		int k = 0;
+
+		// embedding preamble on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = Yin_30dB[i][j];
+		// embedding 0 dB training symbols on the input stream
+		for(int j=0; j<nUSC; j++)
+			in_stream[k++] = training_sym[j];
+
+ /*
+		-------------------------------------------------------------------------------------------
+		| CACHE FLUSHING, DATA TRANSFER, CACHE INVALIDATION and WAITING TO TRANSACTION COMPLETION |
+		-------------------------------------------------------------------------------------------
+*/
+//		Xil_DCacheFlushRange((UINTPTR)in_stream, 2*nUSC*sizeof(COMPLEXD));
+		Xil_DCacheFlush();
+
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC, XAXIDMA_DEVICE_TO_DMA);
+		XAxiDma_SimpleTransfer(&axidma, (UINTPTR)in_stream, sizeof(COMPLEXD)*nUSC*2, XAXIDMA_DMA_TO_DEVICE);
+
+		Xil_DCacheInvalidateRange((UINTPTR)out_stream, sizeof(COMPLEXD)*nUSC);
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x04) & XAXIDMA_IDLE_MASK;
+
+		status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+		while(status != XAXIDMA_IDLE_MASK)
+			status = XAxiDma_ReadReg(XPAR_AXI_DMA_0_BASEADDR, 0x34) & XAXIDMA_IDLE_MASK;
+
+		Xil_DCacheFlush();
+
+//		for(int j=0; j<nUSC; j++) {
+//			printf("%f+%fi,",creal(out_stream[j]), cimag(out_stream[j]));
+//		}printf("\n");
+
+/*
+		---------------------------------------
+		| NORMALIZED ERROR COMPUTATION (NMSE) |
+		---------------------------------------
+*/
+		for(int j=1; j<nUSC; j++) {
+			COMPLEXD e = out_stream[j] - act_30dB[i][j];
+			mse_30dB += creal(e)*creal(e) + cimag(e)*cimag(e);
+			phf_30dB += creal(act_30dB[i][j])*creal(act_30dB[i][j]) + cimag(act_30dB[i][j])*cimag(act_30dB[i][j]);
+		}
+
+	}
+
+//		mse_30dB = sqrt(mse_30dB)/((float)nCH);
+//		phf_30dB = sqrt(phf_30dB)/((float)nCH);
+		NMSE_30dB = mse_30dB/phf_30dB;
+		printf("NMSE (30 dB) = %lf\n", NMSE_30dB);
+
+
+    cleanup_platform();
+    return 0;
+}

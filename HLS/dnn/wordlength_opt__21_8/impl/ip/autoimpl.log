@@ -1,0 +1,25 @@
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 356.949 ; gain = 66.633
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_218_ap_fcmp_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 399.430 ; gain = 42.480
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_218_ap_fcmp_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_218_ap_fcmp_0_no_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'DNN_wlo_218_ap_fpext_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+create_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 408.672 ; gain = 1.020
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DNN_wlo_218_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'DNN_wlo_218_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+ipx::update_checksums: Time (s): cpu = 00:00:03 ; elapsed = 00:00:25 . Memory (MB): peak = 408.672 ; gain = 0.000
+ipx::archive_core: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 408.672 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 17 15:46:39 2022...

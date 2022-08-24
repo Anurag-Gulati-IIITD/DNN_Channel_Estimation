@@ -1,0 +1,363 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'DNN_wlo_218'" level="0">
+<item name = "Date">Wed Aug 17 15:00:17 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">dnn</item>
+<item name = "Solution">wordlength_opt__21_8</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.634, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1085, 1085, 1085, 1085, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_L2_wlo_218_fu_471">L2_wlo_218, 269, 269, 269, 269, none</column>
+<column name="grp_normalize_wlo_218_fu_789">normalize_wlo_218, 145, 145, 145, 145, none</column>
+<column name="grp_L3_wlo_218_fu_798">L3_wlo_218, 443, 443, 443, 443, none</column>
+<column name="grp_separate_complex_wlo_fu_961">separate_complex_wlo, 56, 56, 56, 56, none</column>
+<column name="grp_reconstruct_complex_s_fu_970">reconstruct_complex_s, 57, 57, 57, 57, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- denormalization">105, 105, 3, 1, 1, 104, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, 1, -, -, -</column>
+<column name="Expression">-, -, 0, 82, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">39, 156, 18953, 12520, -</column>
+<column name="Memory">6, -, 7, 12, 0</column>
+<column name="Multiplexer">-, -, -, 329, -</column>
+<column name="Register">-, -, 3635, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">16, 71, 21, 24, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="grp_L2_wlo_218_fu_471">L2_wlo_218, 0, 104, 9038, 4155, 0</column>
+<column name="grp_L3_wlo_218_fu_798">L3_wlo_218, 36, 52, 3072, 389, 0</column>
+<column name="grp_normalize_wlo_218_fu_789">normalize_wlo_218, 1, 0, 5148, 4517, 0</column>
+<column name="grp_reconstruct_complex_s_fu_970">reconstruct_complex_s, 0, 0, 948, 1849, 0</column>
+<column name="grp_separate_complex_wlo_fu_961">separate_complex_wlo, 2, 0, 747, 1610, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="DNN_wlo_218_mac_mc4D_U502">DNN_wlo_218_mac_mc4D, i0 * i1 + i2</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="LS_data_V_U">DNN_wlo_218_LS_dac2C, 2, 0, 0, 0, 104, 21, 1, 2184</column>
+<column name="denorm_DNN_V_U">DNN_wlo_218_denorc3C, 2, 0, 0, 0, 104, 21, 1, 2184</column>
+<column name="mean_o_V_U">DNN_wlo_218_mean_c1C, 0, 7, 12, 0, 104, 7, 1, 728</column>
+<column name="std_o_V_U">DNN_wlo_218_std_o_V, 1, 0, 0, 0, 104, 13, 1, 1352</column>
+<column name="y_L3_V_U">DNN_wlo_218_y_L3_V, 1, 0, 0, 0, 104, 21, 1, 2184</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_fu_1765_p2">+, 0, 0, 15, 7, 1</column>
+<column name="DNN_out_V_data_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="DNN_out_V_data_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="DNN_out_V_last_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="DNN_out_V_last_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="LS_stream_V_data_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="LS_stream_V_data_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="LS_stream_V_last_V_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="LS_stream_V_last_V_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="DNN_out_V_data_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="DNN_out_V_last_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="LS_stream_V_data_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="LS_stream_V_last_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="icmp_ln779_fu_1759_p2">icmp, 0, 0, 11, 7, 6</column>
+<column name="ap_block_state13">or, 0, 0, 2, 1, 1</column>
+<column name="grp_reconstruct_complex_s_fu_970_DNN_out_TREADY">or, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="DNN_out_V_data_1_data_out">9, 2, 64, 128</column>
+<column name="DNN_out_V_data_1_state">15, 3, 2, 6</column>
+<column name="DNN_out_V_last_V_1_data_out">9, 2, 1, 2</column>
+<column name="DNN_out_V_last_V_1_state">15, 3, 2, 6</column>
+<column name="LS_data_V_address0">15, 3, 7, 21</column>
+<column name="LS_data_V_ce0">15, 3, 1, 3</column>
+<column name="LS_data_V_ce1">9, 2, 1, 2</column>
+<column name="LS_data_V_we0">9, 2, 1, 2</column>
+<column name="LS_data_V_we1">9, 2, 1, 2</column>
+<column name="LS_stream_V_data_0_ack_out">9, 2, 1, 2</column>
+<column name="LS_stream_V_data_0_data_out">9, 2, 64, 128</column>
+<column name="LS_stream_V_data_0_state">15, 3, 2, 6</column>
+<column name="LS_stream_V_last_V_0_ack_out">9, 2, 1, 2</column>
+<column name="LS_stream_V_last_V_0_data_out">9, 2, 1, 2</column>
+<column name="LS_stream_V_last_V_0_state">15, 3, 2, 6</column>
+<column name="ap_NS_fsm">53, 12, 1, 12</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
+<column name="denorm_DNN_V_address0">15, 3, 7, 21</column>
+<column name="denorm_DNN_V_ce0">15, 3, 1, 3</column>
+<column name="denorm_DNN_V_ce1">9, 2, 1, 2</column>
+<column name="i_0_i_reg_460">9, 2, 7, 14</column>
+<column name="y_L3_V_address0">15, 3, 7, 21</column>
+<column name="y_L3_V_ce0">15, 3, 1, 3</column>
+<column name="y_L3_V_we0">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="DNN_out_V_data_1_payload_A">64, 0, 64, 0</column>
+<column name="DNN_out_V_data_1_payload_B">64, 0, 64, 0</column>
+<column name="DNN_out_V_data_1_sel_rd">1, 0, 1, 0</column>
+<column name="DNN_out_V_data_1_sel_wr">1, 0, 1, 0</column>
+<column name="DNN_out_V_data_1_state">2, 0, 2, 0</column>
+<column name="DNN_out_V_last_V_1_payload_A">1, 0, 1, 0</column>
+<column name="DNN_out_V_last_V_1_payload_B">1, 0, 1, 0</column>
+<column name="DNN_out_V_last_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="DNN_out_V_last_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="DNN_out_V_last_V_1_state">2, 0, 2, 0</column>
+<column name="LS_stream_V_data_0_payload_A">64, 0, 64, 0</column>
+<column name="LS_stream_V_data_0_payload_B">64, 0, 64, 0</column>
+<column name="LS_stream_V_data_0_sel_rd">1, 0, 1, 0</column>
+<column name="LS_stream_V_data_0_sel_wr">1, 0, 1, 0</column>
+<column name="LS_stream_V_data_0_state">2, 0, 2, 0</column>
+<column name="LS_stream_V_last_V_0_payload_A">1, 0, 1, 0</column>
+<column name="LS_stream_V_last_V_0_payload_B">1, 0, 1, 0</column>
+<column name="LS_stream_V_last_V_0_sel_rd">1, 0, 1, 0</column>
+<column name="LS_stream_V_last_V_0_sel_wr">1, 0, 1, 0</column>
+<column name="LS_stream_V_last_V_0_state">2, 0, 2, 0</column>
+<column name="ap_CS_fsm">11, 0, 11, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="grp_L2_wlo_218_fu_471_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_L3_wlo_218_fu_798_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_normalize_wlo_218_fu_789_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_reconstruct_complex_s_fu_970_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_separate_complex_wlo_fu_961_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_0_i_reg_460">7, 0, 7, 0</column>
+<column name="icmp_ln779_reg_2594">1, 0, 1, 0</column>
+<column name="icmp_ln779_reg_2594_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="norm_LS_data_0_0_V_reg_1814">21, 0, 21, 0</column>
+<column name="norm_LS_data_0_1_V_reg_1819">21, 0, 21, 0</column>
+<column name="norm_LS_data_10_0_s_reg_1914">21, 0, 21, 0</column>
+<column name="norm_LS_data_10_1_s_reg_1919">21, 0, 21, 0</column>
+<column name="norm_LS_data_11_0_s_reg_1924">21, 0, 21, 0</column>
+<column name="norm_LS_data_11_1_s_reg_1929">21, 0, 21, 0</column>
+<column name="norm_LS_data_12_0_s_reg_1934">21, 0, 21, 0</column>
+<column name="norm_LS_data_12_1_s_reg_1939">21, 0, 21, 0</column>
+<column name="norm_LS_data_13_0_s_reg_1944">21, 0, 21, 0</column>
+<column name="norm_LS_data_13_1_s_reg_1949">21, 0, 21, 0</column>
+<column name="norm_LS_data_14_0_s_reg_1954">21, 0, 21, 0</column>
+<column name="norm_LS_data_14_1_s_reg_1959">21, 0, 21, 0</column>
+<column name="norm_LS_data_15_0_s_reg_1964">21, 0, 21, 0</column>
+<column name="norm_LS_data_15_1_s_reg_1969">21, 0, 21, 0</column>
+<column name="norm_LS_data_16_0_s_reg_1974">21, 0, 21, 0</column>
+<column name="norm_LS_data_16_1_s_reg_1979">21, 0, 21, 0</column>
+<column name="norm_LS_data_17_0_s_reg_1984">21, 0, 21, 0</column>
+<column name="norm_LS_data_17_1_s_reg_1989">21, 0, 21, 0</column>
+<column name="norm_LS_data_18_0_s_reg_1994">21, 0, 21, 0</column>
+<column name="norm_LS_data_18_1_s_reg_1999">21, 0, 21, 0</column>
+<column name="norm_LS_data_19_0_s_reg_2004">21, 0, 21, 0</column>
+<column name="norm_LS_data_19_1_s_reg_2009">21, 0, 21, 0</column>
+<column name="norm_LS_data_1_0_V_reg_1824">21, 0, 21, 0</column>
+<column name="norm_LS_data_1_1_V_reg_1829">21, 0, 21, 0</column>
+<column name="norm_LS_data_20_0_s_reg_2014">21, 0, 21, 0</column>
+<column name="norm_LS_data_20_1_s_reg_2019">21, 0, 21, 0</column>
+<column name="norm_LS_data_21_0_s_reg_2024">21, 0, 21, 0</column>
+<column name="norm_LS_data_21_1_s_reg_2029">21, 0, 21, 0</column>
+<column name="norm_LS_data_22_0_s_reg_2034">21, 0, 21, 0</column>
+<column name="norm_LS_data_22_1_s_reg_2039">21, 0, 21, 0</column>
+<column name="norm_LS_data_23_0_s_reg_2044">21, 0, 21, 0</column>
+<column name="norm_LS_data_23_1_s_reg_2049">21, 0, 21, 0</column>
+<column name="norm_LS_data_24_0_s_reg_2054">21, 0, 21, 0</column>
+<column name="norm_LS_data_24_1_s_reg_2059">21, 0, 21, 0</column>
+<column name="norm_LS_data_25_0_s_reg_2064">21, 0, 21, 0</column>
+<column name="norm_LS_data_25_1_s_reg_2069">21, 0, 21, 0</column>
+<column name="norm_LS_data_26_0_s_reg_2074">21, 0, 21, 0</column>
+<column name="norm_LS_data_26_1_s_reg_2079">21, 0, 21, 0</column>
+<column name="norm_LS_data_27_0_s_reg_2084">21, 0, 21, 0</column>
+<column name="norm_LS_data_27_1_s_reg_2089">21, 0, 21, 0</column>
+<column name="norm_LS_data_28_0_s_reg_2094">21, 0, 21, 0</column>
+<column name="norm_LS_data_28_1_s_reg_2099">21, 0, 21, 0</column>
+<column name="norm_LS_data_29_0_s_reg_2104">21, 0, 21, 0</column>
+<column name="norm_LS_data_29_1_s_reg_2109">21, 0, 21, 0</column>
+<column name="norm_LS_data_2_0_V_reg_1834">21, 0, 21, 0</column>
+<column name="norm_LS_data_2_1_V_reg_1839">21, 0, 21, 0</column>
+<column name="norm_LS_data_30_0_s_reg_2114">21, 0, 21, 0</column>
+<column name="norm_LS_data_30_1_s_reg_2119">21, 0, 21, 0</column>
+<column name="norm_LS_data_31_0_s_reg_2124">21, 0, 21, 0</column>
+<column name="norm_LS_data_31_1_s_reg_2129">21, 0, 21, 0</column>
+<column name="norm_LS_data_32_0_s_reg_2134">21, 0, 21, 0</column>
+<column name="norm_LS_data_32_1_s_reg_2139">21, 0, 21, 0</column>
+<column name="norm_LS_data_33_0_s_reg_2144">21, 0, 21, 0</column>
+<column name="norm_LS_data_33_1_s_reg_2149">21, 0, 21, 0</column>
+<column name="norm_LS_data_34_0_s_reg_2154">21, 0, 21, 0</column>
+<column name="norm_LS_data_34_1_s_reg_2159">21, 0, 21, 0</column>
+<column name="norm_LS_data_35_0_s_reg_2164">21, 0, 21, 0</column>
+<column name="norm_LS_data_35_1_s_reg_2169">21, 0, 21, 0</column>
+<column name="norm_LS_data_36_0_s_reg_2174">21, 0, 21, 0</column>
+<column name="norm_LS_data_36_1_s_reg_2179">21, 0, 21, 0</column>
+<column name="norm_LS_data_37_0_s_reg_2184">21, 0, 21, 0</column>
+<column name="norm_LS_data_37_1_s_reg_2189">21, 0, 21, 0</column>
+<column name="norm_LS_data_38_0_s_reg_2194">21, 0, 21, 0</column>
+<column name="norm_LS_data_38_1_s_reg_2199">21, 0, 21, 0</column>
+<column name="norm_LS_data_39_0_s_reg_2204">21, 0, 21, 0</column>
+<column name="norm_LS_data_39_1_s_reg_2209">21, 0, 21, 0</column>
+<column name="norm_LS_data_3_0_V_reg_1844">21, 0, 21, 0</column>
+<column name="norm_LS_data_3_1_V_reg_1849">21, 0, 21, 0</column>
+<column name="norm_LS_data_40_0_s_reg_2214">21, 0, 21, 0</column>
+<column name="norm_LS_data_40_1_s_reg_2219">21, 0, 21, 0</column>
+<column name="norm_LS_data_41_0_s_reg_2224">21, 0, 21, 0</column>
+<column name="norm_LS_data_41_1_s_reg_2229">21, 0, 21, 0</column>
+<column name="norm_LS_data_42_0_s_reg_2234">21, 0, 21, 0</column>
+<column name="norm_LS_data_42_1_s_reg_2239">21, 0, 21, 0</column>
+<column name="norm_LS_data_43_0_s_reg_2244">21, 0, 21, 0</column>
+<column name="norm_LS_data_43_1_s_reg_2249">21, 0, 21, 0</column>
+<column name="norm_LS_data_44_0_s_reg_2254">21, 0, 21, 0</column>
+<column name="norm_LS_data_44_1_s_reg_2259">21, 0, 21, 0</column>
+<column name="norm_LS_data_45_0_s_reg_2264">21, 0, 21, 0</column>
+<column name="norm_LS_data_45_1_s_reg_2269">21, 0, 21, 0</column>
+<column name="norm_LS_data_46_0_s_reg_2274">21, 0, 21, 0</column>
+<column name="norm_LS_data_46_1_s_reg_2279">21, 0, 21, 0</column>
+<column name="norm_LS_data_47_0_s_reg_2284">21, 0, 21, 0</column>
+<column name="norm_LS_data_47_1_s_reg_2289">21, 0, 21, 0</column>
+<column name="norm_LS_data_48_0_s_reg_2294">21, 0, 21, 0</column>
+<column name="norm_LS_data_48_1_s_reg_2299">21, 0, 21, 0</column>
+<column name="norm_LS_data_49_0_s_reg_2304">21, 0, 21, 0</column>
+<column name="norm_LS_data_49_1_s_reg_2309">21, 0, 21, 0</column>
+<column name="norm_LS_data_4_0_V_reg_1854">21, 0, 21, 0</column>
+<column name="norm_LS_data_4_1_V_reg_1859">21, 0, 21, 0</column>
+<column name="norm_LS_data_50_0_s_reg_2314">21, 0, 21, 0</column>
+<column name="norm_LS_data_50_1_s_reg_2319">21, 0, 21, 0</column>
+<column name="norm_LS_data_51_0_s_reg_2324">21, 0, 21, 0</column>
+<column name="norm_LS_data_51_1_s_reg_2329">21, 0, 21, 0</column>
+<column name="norm_LS_data_5_0_V_reg_1864">21, 0, 21, 0</column>
+<column name="norm_LS_data_5_1_V_reg_1869">21, 0, 21, 0</column>
+<column name="norm_LS_data_6_0_V_reg_1874">21, 0, 21, 0</column>
+<column name="norm_LS_data_6_1_V_reg_1879">21, 0, 21, 0</column>
+<column name="norm_LS_data_7_0_V_reg_1884">21, 0, 21, 0</column>
+<column name="norm_LS_data_7_1_V_reg_1889">21, 0, 21, 0</column>
+<column name="norm_LS_data_8_0_V_reg_1894">21, 0, 21, 0</column>
+<column name="norm_LS_data_8_1_V_reg_1899">21, 0, 21, 0</column>
+<column name="norm_LS_data_9_0_V_reg_1904">21, 0, 21, 0</column>
+<column name="norm_LS_data_9_1_V_reg_1909">21, 0, 21, 0</column>
+<column name="p_Val2_12_reg_2633">7, 0, 7, 0</column>
+<column name="std_o_V_load_reg_2628">13, 0, 13, 0</column>
+<column name="y_L2_0_0_V_reg_2334">21, 0, 21, 0</column>
+<column name="y_L2_0_1_V_reg_2339">21, 0, 21, 0</column>
+<column name="y_L2_10_0_V_reg_2434">21, 0, 21, 0</column>
+<column name="y_L2_10_1_V_reg_2439">21, 0, 21, 0</column>
+<column name="y_L2_11_0_V_reg_2444">21, 0, 21, 0</column>
+<column name="y_L2_11_1_V_reg_2449">21, 0, 21, 0</column>
+<column name="y_L2_12_0_V_reg_2454">21, 0, 21, 0</column>
+<column name="y_L2_12_1_V_reg_2459">21, 0, 21, 0</column>
+<column name="y_L2_13_0_V_reg_2464">21, 0, 21, 0</column>
+<column name="y_L2_13_1_V_reg_2469">21, 0, 21, 0</column>
+<column name="y_L2_14_0_V_reg_2474">21, 0, 21, 0</column>
+<column name="y_L2_14_1_V_reg_2479">21, 0, 21, 0</column>
+<column name="y_L2_15_0_V_reg_2484">21, 0, 21, 0</column>
+<column name="y_L2_15_1_V_reg_2489">21, 0, 21, 0</column>
+<column name="y_L2_16_0_V_reg_2494">21, 0, 21, 0</column>
+<column name="y_L2_16_1_V_reg_2499">21, 0, 21, 0</column>
+<column name="y_L2_17_0_V_reg_2504">21, 0, 21, 0</column>
+<column name="y_L2_17_1_V_reg_2509">21, 0, 21, 0</column>
+<column name="y_L2_18_0_V_reg_2514">21, 0, 21, 0</column>
+<column name="y_L2_18_1_V_reg_2519">21, 0, 21, 0</column>
+<column name="y_L2_19_0_V_reg_2524">21, 0, 21, 0</column>
+<column name="y_L2_19_1_V_reg_2529">21, 0, 21, 0</column>
+<column name="y_L2_1_0_V_reg_2344">21, 0, 21, 0</column>
+<column name="y_L2_1_1_V_reg_2349">21, 0, 21, 0</column>
+<column name="y_L2_20_0_V_reg_2534">21, 0, 21, 0</column>
+<column name="y_L2_20_1_V_reg_2539">21, 0, 21, 0</column>
+<column name="y_L2_21_0_V_reg_2544">21, 0, 21, 0</column>
+<column name="y_L2_21_1_V_reg_2549">21, 0, 21, 0</column>
+<column name="y_L2_22_0_V_reg_2554">21, 0, 21, 0</column>
+<column name="y_L2_22_1_V_reg_2559">21, 0, 21, 0</column>
+<column name="y_L2_23_0_V_reg_2564">21, 0, 21, 0</column>
+<column name="y_L2_23_1_V_reg_2569">21, 0, 21, 0</column>
+<column name="y_L2_24_0_V_reg_2574">21, 0, 21, 0</column>
+<column name="y_L2_24_1_V_reg_2579">21, 0, 21, 0</column>
+<column name="y_L2_25_0_V_reg_2584">21, 0, 21, 0</column>
+<column name="y_L2_25_1_V_reg_2589">21, 0, 21, 0</column>
+<column name="y_L2_2_0_V_reg_2354">21, 0, 21, 0</column>
+<column name="y_L2_2_1_V_reg_2359">21, 0, 21, 0</column>
+<column name="y_L2_3_0_V_reg_2364">21, 0, 21, 0</column>
+<column name="y_L2_3_1_V_reg_2369">21, 0, 21, 0</column>
+<column name="y_L2_4_0_V_reg_2374">21, 0, 21, 0</column>
+<column name="y_L2_4_1_V_reg_2379">21, 0, 21, 0</column>
+<column name="y_L2_5_0_V_reg_2384">21, 0, 21, 0</column>
+<column name="y_L2_5_1_V_reg_2389">21, 0, 21, 0</column>
+<column name="y_L2_6_0_V_reg_2394">21, 0, 21, 0</column>
+<column name="y_L2_6_1_V_reg_2399">21, 0, 21, 0</column>
+<column name="y_L2_7_0_V_reg_2404">21, 0, 21, 0</column>
+<column name="y_L2_7_1_V_reg_2409">21, 0, 21, 0</column>
+<column name="y_L2_8_0_V_reg_2414">21, 0, 21, 0</column>
+<column name="y_L2_8_1_V_reg_2419">21, 0, 21, 0</column>
+<column name="y_L2_9_0_V_reg_2424">21, 0, 21, 0</column>
+<column name="y_L2_9_1_V_reg_2429">21, 0, 21, 0</column>
+<column name="y_L3_V_load_reg_2623">21, 0, 21, 0</column>
+<column name="zext_ln781_reg_2603">7, 0, 64, 57</column>
+<column name="zext_ln781_reg_2603_pp0_iter1_reg">7, 0, 64, 57</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_none, DNN_wlo_218, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, DNN_wlo_218, return value</column>
+<column name="LS_stream_TDATA">in, 64, axis, LS_stream_V_data, pointer</column>
+<column name="LS_stream_TVALID">in, 1, axis, LS_stream_V_last_V, pointer</column>
+<column name="LS_stream_TREADY">out, 1, axis, LS_stream_V_last_V, pointer</column>
+<column name="LS_stream_TLAST">in, 1, axis, LS_stream_V_last_V, pointer</column>
+<column name="DNN_out_TDATA">out, 64, axis, DNN_out_V_data, pointer</column>
+<column name="DNN_out_TVALID">out, 1, axis, DNN_out_V_last_V, pointer</column>
+<column name="DNN_out_TREADY">in, 1, axis, DNN_out_V_last_V, pointer</column>
+<column name="DNN_out_TLAST">out, 1, axis, DNN_out_V_last_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="dnn.cpp" path="D:\IIIT-D\Channel_Estimation\HLS\dnn\dnn.cpp"/>
+    <originFiles name="dnn.h" path="D:\IIIT-D\Channel_Estimation\HLS\dnn\dnn.h"/>
+  </source>
+  <testbench>
+    <originFiles name="dnn_tb.cpp" path="D:\IIIT-D\Channel_Estimation\HLS\dnn\dnn_tb.cpp"/>
+    <originFiles name="dnn_tb.h" path="D:\IIIT-D\Channel_Estimation\HLS\dnn\dnn_tb.h"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

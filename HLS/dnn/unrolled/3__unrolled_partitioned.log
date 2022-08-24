@@ -1,0 +1,518 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'dnn/dnn.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:01:02 . Memory (MB): peak = 185.180 ; gain = 93.500
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:01:02 . Memory (MB): peak = 185.180 ; gain = 93.500
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:06 ; elapsed = 00:01:07 . Memory (MB): peak = 185.180 ; gain = 93.500
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'normalize' into 'DNN' (dnn/dnn.cpp:213) automatically.
+INFO: [XFORM 203-602] Inlining function 'L2' into 'DNN' (dnn/dnn.cpp:216) automatically.
+INFO: [XFORM 203-602] Inlining function 'L3' into 'DNN' (dnn/dnn.cpp:218) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:221) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:09 ; elapsed = 00:01:09 . Memory (MB): peak = 185.180 ; gain = 93.500
+INFO: [XFORM 203-1101] Packing variable 'DNN_out.V.data' (dnn/dnn.cpp:187) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'LS_stream.V.data' (dnn/dnn.cpp:187) into a 64-bit variable.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'layer_3' (dnn/dnn.cpp:109) in function 'L3' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'layer_2' (dnn/dnn.cpp:77) in function 'L2' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'weighted_sum_L3' (dnn/dnn.cpp:114) in function 'L3' completely with a factor of 52.
+INFO: [HLS 200-489] Unrolling loop 'weighted_sum_L2' (dnn/dnn.cpp:82) in function 'L2' completely with a factor of 104.
+INFO: [XFORM 203-101] Partitioning array 'L1_WEIGHTS'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'L2_WEIGHTS'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data' (dnn/dnn.cpp:199) in dimension 1 with a block factor 52.
+INFO: [XFORM 203-101] Partitioning array 'y_L2' (dnn/dnn.cpp:202) in dimension 1 with a block factor 26.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.0' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.1' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.2' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.3' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.4' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.5' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.6' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.7' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.8' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.9' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.10' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.11' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.12' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.13' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.14' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.15' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.16' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.17' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.18' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.19' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.20' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.21' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.22' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.23' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.24' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.25' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.26' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.27' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.28' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.29' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.30' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.31' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.32' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.33' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.34' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.35' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.36' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.37' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.38' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.39' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.40' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.41' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.42' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.43' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.44' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.45' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.46' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.47' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.48' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.49' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.50' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'norm_LS_data.51' (dnn/dnn.cpp:199) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.0' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.1' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.2' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.3' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.4' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.5' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.6' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.7' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.8' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.9' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.10' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.11' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.12' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.13' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.14' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.15' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.16' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.17' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.18' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.19' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.20' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.21' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.22' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.23' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.24' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'y_L2.25' (dnn/dnn.cpp:202) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.0' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.1' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.2' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.3' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.4' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.5' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.6' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.7' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.8' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.9' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.10' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.11' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.12' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.13' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.14' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.15' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.16' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.17' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.18' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.19' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.20' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.21' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.22' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.23' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.24' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.25' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.26' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.27' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.28' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.29' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.30' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.31' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.32' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.33' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.34' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.35' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.36' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.37' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.38' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.39' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.40' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.41' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.42' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.43' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.44' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.45' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.46' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.47' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.48' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.49' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.50' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'norm_LS_data.51' (dnn/dnn.cpp:199) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.0' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.1' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.2' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.3' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.4' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.5' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.6' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.7' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.8' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.9' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.10' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.11' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.12' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.13' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.14' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.15' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.16' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.17' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.18' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.19' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.20' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.21' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.22' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.23' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.24' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'y_L2.25' (dnn/dnn.cpp:202) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'ReLU' into 'L2' (dnn/dnn.cpp:85) automatically.
+INFO: [XFORM 203-602] Inlining function 'denormalize' into 'DNN' (dnn/dnn.cpp:221) automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:15 ; elapsed = 00:01:18 . Memory (MB): peak = 185.180 ; gain = 93.500
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:01:20 . Memory (MB): peak = 232.328 ; gain = 140.648
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'DNN' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'separation'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 80.752 seconds; current allocated memory: 176.166 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.273 seconds; current allocated memory: 176.275 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'normalize' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'normalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 23.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.721 seconds; current allocated memory: 177.776 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.22 seconds; current allocated memory: 179.629 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'L2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'layer_2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 5, Final II = 5, Depth = 532.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.576 seconds; current allocated memory: 182.988 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 5.916 seconds; current allocated memory: 190.075 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'L3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'layer_3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 5, Final II = 5, Depth = 271.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.355 seconds; current allocated memory: 191.426 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.084 seconds; current allocated memory: 194.026 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'reconstruction'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.448 seconds; current allocated memory: 194.090 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.321 seconds; current allocated memory: 194.197 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'denormalization'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.53 seconds; current allocated memory: 194.677 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.336 seconds; current allocated memory: 196.131 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'separate_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'separate_complex'.
+INFO: [HLS 200-111]  Elapsed time: 1.767 seconds; current allocated memory: 196.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'normalize' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'DNN_fsub_32ns_32ns_32_5_full_dsp_1' to 'DNN_fsub_32ns_32nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fdiv_32ns_32ns_32_16_1' to 'DNN_fdiv_32ns_32ncud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'DNN_fdiv_32ns_32ncud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fsub_32ns_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize'.
+INFO: [HLS 200-111]  Elapsed time: 3.784 seconds; current allocated memory: 223.206 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'L2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'DNN_fadd_32ns_32ns_32_5_full_dsp_1' to 'DNN_fadd_32ns_32ndEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fmul_32ns_32ns_32_4_max_dsp_1' to 'DNN_fmul_32ns_32neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'DNN_fcmp_32ns_32ns_1_2_1' to 'DNN_fcmp_32ns_32nfYi' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'L2' is 59840 from HDL expression: ((1'b0 == ap_block_pp0_stage4_11001) & (1'b1 == ap_CS_fsm_pp0_stage4))
+INFO: [RTGEN 206-100] Generating core module 'DNN_fadd_32ns_32ndEe': 21 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fcmp_32ns_32nfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fmul_32ns_32neOg': 21 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'L2'.
+INFO: [HLS 200-111]  Elapsed time: 12.152 seconds; current allocated memory: 245.009 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'L3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'L3' is 13376 from HDL expression: ((1'b1 == ap_CS_fsm_pp0_stage3) & (1'b0 == ap_block_pp0_stage3_11001))
+INFO: [RTGEN 206-100] Generating core module 'DNN_fadd_32ns_32ndEe': 11 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fmul_32ns_32neOg': 11 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'L3'.
+INFO: [HLS 200-111]  Elapsed time: 14.248 seconds; current allocated memory: 250.385 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reconstruct_complex' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reconstruct_complex'.
+INFO: [HLS 200-111]  Elapsed time: 3.49 seconds; current allocated memory: 250.794 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'DNN' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/LS_stream_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_data' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'DNN/DNN_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'DNN' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'DNN_fadd_32ns_32ndEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'DNN_fmul_32ns_32neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'DNN'.
+INFO: [HLS 200-111]  Elapsed time: 3.473 seconds; current allocated memory: 270.700 MB.
+INFO: [RTMG 210-279] Implementing memory 'normalize_mean_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'normalize_std_in_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_10_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_11_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_12_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_13_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_14_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_15_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_16_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_17_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_18_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_19_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_20_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_21_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_22_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_23_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_24_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_25_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_26_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_27_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_28_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_29_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_30_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_31_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_32_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_33_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_34_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_35_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_36_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_37_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_38_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_39_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_40_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_41_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_42_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_43_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_44_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_45_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_46_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_47_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_48_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_49_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_50_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_51_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_52_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_53_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_54_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_55_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_56_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_57_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_58_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_59_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_60_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_61_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_62_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_63_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_64_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_65_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_66_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_67_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_68_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_69_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_70_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_71_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_72_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_73_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_74_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_75_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_76_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_77_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_78_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_79_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_80_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_81_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_82_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_83_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_84_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_85_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_86_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_87_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_88_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_89_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_90_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_91_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_92_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_93_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_94_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_95_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_96_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_97_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_98_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_99_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_104_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_103_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_102_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L2_L1_WEIGHTS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_BIAS_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_1_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_2_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_3_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_4_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_5_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_7_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_8_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_9_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_10_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_11_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_12_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_13_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_14_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_15_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_16_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_17_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_18_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_19_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_20_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_21_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_22_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_23_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_24_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_25_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_26_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_27_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_28_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_29_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_30_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_31_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_32_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_33_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_34_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_35_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_36_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_37_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_38_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_39_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_40_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_41_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_42_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_43_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_44_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_45_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_46_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_47_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_48_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_49_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_50_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'L3_L2_WEIGHTS_51_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_std_o_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'DNN_mean_o_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_LS_data_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_y_L3_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'DNN_denorm_DNN_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:29 ; elapsed = 00:03:39 . Memory (MB): peak = 397.773 ; gain = 306.094
+INFO: [VHDL 208-304] Generating VHDL RTL for DNN.
+INFO: [VLOG 209-307] Generating Verilog RTL for DNN.
+INFO: [HLS 200-112] Total elapsed time: 219.98 seconds; peak allocated memory: 270.700 MB.

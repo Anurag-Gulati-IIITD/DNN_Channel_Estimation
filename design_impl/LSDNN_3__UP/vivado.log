@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Aug  9 15:35:49 2022
+# Process ID: 16756
+# Current directory: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21492 D:\IIIT-D\Channel_Estimation\design_impl\LSDNN_3__UP\LSDNN_3__UP.xpr
+# Log file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/vivado.log
+# Journal file: D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.xpr
+INFO: [Project 1-313] Project file moved from 'D:/IIIT-D/Independent_Project/design_impl/LSDNN_3__UP' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/IIIT-D/Channel_Estimation/HLS/least_squares'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/IIIT-D/Channel_Estimation/HLS/dnn'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Softwares/Xilinx/Vivado/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:54 ; elapsed = 00:01:10 . Memory (MB): peak = 1031.266 ; gain = 408.703
+update_compile_order -fileset sources_1
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.runs/impl_1/design_LSDNN_wrapper.sysdef D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+
+launch_sdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk -hwspec D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.sdk/design_LSDNN_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/design_LSDNN.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:hls:LS_estimator:1.1 - LS_estimator_0
+Adding component instance block -- xilinx.com:hls:DNN_up:1.1 - DNN_up_0
+Excluding </processing_system7_0/S_AXI_ACP/ACP_IOP> from </axi_dma_0/Data_MM2S>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_M_AXI_GP0> from </axi_dma_0/Data_MM2S>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_IOP> from </axi_dma_0/Data_S2MM>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_M_AXI_GP0> from </axi_dma_0/Data_S2MM>
+Successfully read diagram <design_LSDNN> from BD file <D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/design_LSDNN.bd>
+open_bd_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:43 . Memory (MB): peak = 1219.684 ; gain = 9.828
+set_property HDL_ATTRIBUTE.DEBUG true [get_bd_intf_nets {LS_estimator_0_out_stream}]
+true
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:debug -dict [list \
+                                                          [get_bd_intf_nets LS_estimator_0_out_stream] {AXIS_SIGNALS "Data and Trigger" CLK_SRC "/processing_system7_0/FCLK_CLK0" SYSTEM_ILA "Auto" APC_EN "0" } \
+                                                         ]
+ipx::get_ipfiles: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1266.551 ; gain = 2.379
+Debug Automation : Instantiating new System ILA block '/system_ila_0' with mode INTERFACE, 1 slot interface pins and 0 probe pins. Also setting parameters on this block, corresponding to newly enabled interface pins and probe pins as specified via Debug Automation.
+Debug Automation : Connecting source clock pin /processing_system7_0/FCLK_CLK0 to the following sink clock pins :
+/system_ila_0/clk
+Debug Automation : Connecting source reset pin /rst_ps7_0_100M/peripheral_aresetn to the following sink reset pins :
+/system_ila_0/resetn
+Debug Automation : Connecting interface connection /LS_estimator_0_out_stream, to System ILA slot interface pin /system_ila_0/SLOT_0_AXIS for debug.
+apply_bd_automation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:17 . Memory (MB): peak = 1290.461 ; gain = 43.953
+endgroup
+save_bd_design
+Wrote  : <D:\IIIT-D\Channel_Estimation\design_impl\LSDNN_3__UP\LSDNN_3__UP.srcs\sources_1\bd\design_LSDNN\design_LSDNN.bd> 
+Wrote  : <D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/ui/bd_19f01e9c.ui> 
+regenerate_bd_layout -routing
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-1781] Updates have been made to one or more nets/interface connections marked for debug.
+Debug nets, which are already connected to System ILA IP core in the block-design, will be automatically available for debug in Hardware Manager.
+For unconnected Debug nets, please open synthesized design and use 'Set Up Debug' wizard to insert, modify or delete Debug Cores. Failure to do so could result in critical warnings and errors in the implementation flow.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+xit::source_ipfile: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1350.008 ; gain = 31.887
+xit::source_ipfile: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1352.949 ; gain = 2.941
+WARNING: [BD 41-1629] Slave segment </processing_system7_0/S_AXI_ACP/ACP_IOP> is excluded from all addressing paths.
+WARNING: [BD 41-1629] Slave segment </processing_system7_0/S_AXI_ACP/ACP_M_AXI_GP0> is excluded from all addressing paths.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /axi_smc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /axi_smc/M00_AXI(0)
+validate_bd_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 1443.500 ; gain = 139.516
+save_bd_design
+Wrote  : <D:\IIIT-D\Channel_Estimation\design_impl\LSDNN_3__UP\LSDNN_3__UP.srcs\sources_1\bd\design_LSDNN\design_LSDNN.bd> 
+Wrote  : <D:/IIIT-D/Channel_Estimation/design_impl/LSDNN_3__UP/LSDNN_3__UP.srcs/sources_1/bd/design_LSDNN/ui/bd_19f01e9c.ui> 
+save_bd_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1467.113 ; gain = 17.910
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  9 20:12:44 2022...
